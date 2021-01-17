@@ -1,0 +1,11 @@
+xcassets:
+  inputs: iOS-Sample-mvvm/Resources
+  outputs:
+    - templateName: swift5
+      output: iOS-Sample-mvvm/Resources/Generated/Assets.swift
+
+fonts:
+  inputs: iOS-Sample-mvvm/Resources/Fonts
+  outputs:
+    templateName: swift5
+    output: iOS-Sample-mvvm/Resources/Generated/Fonts.swift
