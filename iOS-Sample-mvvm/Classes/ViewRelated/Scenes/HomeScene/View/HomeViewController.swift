@@ -24,7 +24,17 @@ private extension HomeViewController {
     ///
     func configureView() {
         self.title = Strings.title
+        self.navigationController?.navigationBar.barTintColor = Asset.ColorPalette.blue0.color
+        setupNavigationBarFont()
+
     }
+    /// Setup navigation bar font
+    ///
+    func setupNavigationBarFont() {
+        let navigationBar =  self.navigationController?.navigationBar
+        let mediumFont = FontFamily._29LTAzer.medium.font(size: Constants.fontSize)
+        navigationBar?.titleTextAttributes = [NSAttributedString.Key.font: mediumFont]
+     }
 }
 // MARK: - Strings
 //
@@ -32,5 +42,14 @@ private extension HomeViewController {
     
     enum Strings {
         static let title = "Home"
+    }
+}
+
+// MARK: - Constants
+//
+private extension HomeViewController {
+    
+    enum Constants {
+        static let fontSize = CGFloat(22.0)
     }
 }
