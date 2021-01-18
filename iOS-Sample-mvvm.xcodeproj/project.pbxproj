@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -34,11 +34,6 @@
 		6040784525B4776800C8972F /* 29LTAzer-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6040781625B4724100C8972F /* 29LTAzer-Bold.otf */; };
 		6040784625B4776800C8972F /* 29LTAzer-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6040781725B4724100C8972F /* 29LTAzer-Medium.otf */; };
 		6040784725B4776800C8972F /* 29LTAzer-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6040781825B4724100C8972F /* 29LTAzer-Regular.otf */; };
-		60C347DB25B586C300BD03AC /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 60C347DA25B586C300BD03AC /* Moya */; };
-		60C347ED25B5897000BD03AC /* UIImage+LoadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C347EC25B5897000BD03AC /* UIImage+LoadImage.swift */; };
-		60C347F125B589AF00BD03AC /* ImageRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C347F025B589AF00BD03AC /* ImageRepresentable.swift */; };
-		60C3480825B58CBF00BD03AC /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60C347E025B588B800BD03AC /* Kingfisher.framework */; };
-		60C3480925B58CBF00BD03AC /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 60C347E025B588B800BD03AC /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,20 +52,6 @@
 			remoteInfo = "iOS-Sample-mvvm";
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		60C3480A25B58CBF00BD03AC /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				60C3480925B58CBF00BD03AC /* Kingfisher.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		6040775525B45E1100C8972F /* iOS-Sample-mvvm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Sample-mvvm.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,7 +89,6 @@
 		6040783725B473B700C8972F /* ColorPalette.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorPalette.xcassets; sourceTree = "<group>"; };
 		60C347E025B588B800BD03AC /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		60C347EC25B5897000BD03AC /* UIImage+LoadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+LoadImage.swift"; sourceTree = "<group>"; };
-		60C347F025B589AF00BD03AC /* ImageRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepresentable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,8 +96,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60C3480825B58CBF00BD03AC /* Kingfisher.framework in Frameworks */,
-				60C347DB25B586C300BD03AC /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +246,6 @@
 			isa = PBXGroup;
 			children = (
 				604077C225B462A100C8972F /* Protocols.swift */,
-				60C347F025B589AF00BD03AC /* ImageRepresentable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -371,11 +348,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6040777F25B45E1300C8972F /* Build configuration list for PBXNativeTarget "iOS-Sample-mvvm" */;
 			buildPhases = (
-				6040781C25B4729600C8972F /* SwiftGen */,
 				6040775125B45E1100C8972F /* Sources */,
 				6040775225B45E1100C8972F /* Frameworks */,
 				6040775325B45E1100C8972F /* Resources */,
-				60C3480A25B58CBF00BD03AC /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -383,7 +358,6 @@
 			);
 			name = "iOS-Sample-mvvm";
 			packageProductDependencies = (
-				60C347DA25B586C300BD03AC /* Moya */,
 			);
 			productName = "iOS-Sample-mvvm";
 			productReference = 6040775525B45E1100C8972F /* iOS-Sample-mvvm.app */;
@@ -457,7 +431,6 @@
 			);
 			mainGroup = 6040774C25B45E1100C8972F;
 			packageReferences = (
-				60C347D925B586C300BD03AC /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = 6040775625B45E1100C8972F /* Products */;
 			projectDirPath = "";
@@ -501,27 +474,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		6040781C25B4729600C8972F /* SwiftGen */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftGen;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftgen >/dev/null; then\n  swiftgen\nelse\n  echo \"warning: SwiftGen not installed, download it from https://github.com/SwiftGen/SwiftGen\"\nfi\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		6040775125B45E1100C8972F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -538,14 +490,12 @@
 				6040782925B4730C00C8972F /* Assets.swift in Sources */,
 				604077A525B4600D00C8972F /* HomeViewController.swift in Sources */,
 				604077B425B4627A00C8972F /* Placeholder.swift in Sources */,
-				60C347ED25B5897000BD03AC /* UIImage+LoadImage.swift in Sources */,
 				604077C325B462A100C8972F /* Protocols.swift in Sources */,
 				604077D725B462C100C8972F /* model.swift in Sources */,
 				604077E425B469C300C8972F /* PublishSubject.swift in Sources */,
 				604077E525B469C300C8972F /* BehaviorSubject.swift in Sources */,
 				604077C825B462A800C8972F /* Base.swift in Sources */,
 				604077CD25B462B100C8972F /* ViewModel.swift in Sources */,
-				60C347F125B589AF00BD03AC /* ImageRepresentable.swift in Sources */,
 				604077E725B469C300C8972F /* ObservationToken.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -879,25 +829,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		60C347D925B586C300BD03AC /* XCRemoteSwiftPackageReference "Moya" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Moya/Moya.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 14.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		60C347DA25B586C300BD03AC /* Moya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 60C347D925B586C300BD03AC /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = Moya;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6040774D25B45E1100C8972F /* Project object */;
 }
