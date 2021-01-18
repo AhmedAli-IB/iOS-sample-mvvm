@@ -13,3 +13,4 @@ protocol ImageRepresentable {
     var imageURL: String? { get }
     var placeholderImage: UIImage? { get }
 }
+/// leave a comment
