@@ -10,7 +10,7 @@ import Moya
 
 class NetworkManager {
     
-    lazy private var provider = MoyaProvider<AppEndPoint>
+    lazy private var provider = MoyaProvider<AppEndPoint>()
     
     func request<T: Codable>(_ target: AppEndPoint, completion: @escaping (Result<T, Error>) -> Void) {
         

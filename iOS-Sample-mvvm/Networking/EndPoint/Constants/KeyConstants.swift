@@ -26,4 +26,3 @@ struct KeyConstants {
         static let encodingValue = "application/json"
     }
 }
-

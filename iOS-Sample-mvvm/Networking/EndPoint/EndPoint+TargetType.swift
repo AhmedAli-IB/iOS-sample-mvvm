@@ -8,7 +8,7 @@
 import Foundation
 import Moya
 
-extension AppEndPoints: TargetType {
+extension AppEndPoint: TargetType {
     
     public var baseURL: URL { return Environment.rootURL }
     

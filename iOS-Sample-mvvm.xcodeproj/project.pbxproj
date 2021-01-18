@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,8 +11,6 @@
 		6040775B25B45E1100C8972F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6040775A25B45E1100C8972F /* SceneDelegate.swift */; };
 		6040776225B45E1200C8972F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6040776125B45E1200C8972F /* Assets.xcassets */; };
 		6040776525B45E1200C8972F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6040776325B45E1200C8972F /* LaunchScreen.storyboard */; };
-		6040777025B45E1200C8972F /* iOS_Sample_mvvmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6040776F25B45E1200C8972F /* iOS_Sample_mvvmTests.swift */; };
-		6040777B25B45E1300C8972F /* iOS_Sample_mvvmUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6040777A25B45E1300C8972F /* iOS_Sample_mvvmUITests.swift */; };
 		604077A525B4600D00C8972F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604077A325B4600D00C8972F /* HomeViewController.swift */; };
 		604077A625B4600D00C8972F /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 604077A425B4600D00C8972F /* HomeViewController.xib */; };
 		604077B925B4628C00C8972F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604077B825B4628C00C8972F /* Extensions.swift */; };
@@ -33,6 +31,11 @@
 		6040784525B4776800C8972F /* 29LTAzer-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6040781625B4724100C8972F /* 29LTAzer-Bold.otf */; };
 		6040784625B4776800C8972F /* 29LTAzer-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6040781725B4724100C8972F /* 29LTAzer-Medium.otf */; };
 		6040784725B4776800C8972F /* 29LTAzer-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6040781825B4724100C8972F /* 29LTAzer-Regular.otf */; };
+		60C3484625B5BCBE00BD03AC /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 60C3484525B5BCBE00BD03AC /* Moya */; };
+		60C3485425B5BE9C00BD03AC /* ImageRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C3485325B5BE9C00BD03AC /* ImageRepresentable.swift */; };
+		60C3485925B5BEC700BD03AC /* UIImage+LoadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C3485825B5BEC700BD03AC /* UIImage+LoadImage.swift */; };
+		60C3485F25B5BEFF00BD03AC /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60C3485E25B5BEFF00BD03AC /* Kingfisher.framework */; };
+		60C3486025B5BEFF00BD03AC /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 60C3485E25B5BEFF00BD03AC /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E0FC1BD525B55BFF00EDAE4E /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FC1BD425B55BFF00EDAE4E /* EndPoint.swift */; };
 		E0FC1BDA25B55C9500EDAE4E /* EndPoint+TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FC1BD925B55C9500EDAE4E /* EndPoint+TargetType.swift */; };
 		E0FC1BDF25B55EF100EDAE4E /* Enviroment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FC1BDE25B55EF100EDAE4E /* Enviroment.swift */; };
@@ -62,6 +65,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		60C3486125B5BEFF00BD03AC /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				60C3486025B5BEFF00BD03AC /* Kingfisher.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		6040775525B45E1100C8972F /* iOS-Sample-mvvm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Sample-mvvm.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6040775825B45E1100C8972F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,10 +87,8 @@
 		6040776425B45E1200C8972F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6040776625B45E1200C8972F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6040776B25B45E1200C8972F /* iOS-Sample-mvvmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS-Sample-mvvmTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6040776F25B45E1200C8972F /* iOS_Sample_mvvmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_Sample_mvvmTests.swift; sourceTree = "<group>"; };
 		6040777125B45E1300C8972F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6040777625B45E1300C8972F /* iOS-Sample-mvvmUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS-Sample-mvvmUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6040777A25B45E1300C8972F /* iOS_Sample_mvvmUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_Sample_mvvmUITests.swift; sourceTree = "<group>"; };
 		6040777C25B45E1300C8972F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		604077A325B4600D00C8972F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		604077A425B4600D00C8972F /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
@@ -95,6 +110,9 @@
 		6040782625B4730C00C8972F /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		6040782725B4730C00C8972F /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		6040783725B473B700C8972F /* ColorPalette.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorPalette.xcassets; sourceTree = "<group>"; };
+		60C3485325B5BE9C00BD03AC /* ImageRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepresentable.swift; sourceTree = "<group>"; };
+		60C3485825B5BEC700BD03AC /* UIImage+LoadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+LoadImage.swift"; sourceTree = "<group>"; };
+		60C3485E25B5BEFF00BD03AC /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		E0FC1BD425B55BFF00EDAE4E /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		E0FC1BD925B55C9500EDAE4E /* EndPoint+TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EndPoint+TargetType.swift"; sourceTree = "<group>"; };
 		E0FC1BDE25B55EF100EDAE4E /* Enviroment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enviroment.swift; sourceTree = "<group>"; };
@@ -112,6 +130,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60C3485F25B5BEFF00BD03AC /* Kingfisher.framework in Frameworks */,
+				60C3484625B5BCBE00BD03AC /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +159,7 @@
 				6040776E25B45E1200C8972F /* iOS-Sample-mvvmTests */,
 				6040777925B45E1300C8972F /* iOS-Sample-mvvmUITests */,
 				6040775625B45E1100C8972F /* Products */,
+				60C3485D25B5BEFF00BD03AC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -170,7 +191,6 @@
 		6040776E25B45E1200C8972F /* iOS-Sample-mvvmTests */ = {
 			isa = PBXGroup;
 			children = (
-				6040776F25B45E1200C8972F /* iOS_Sample_mvvmTests.swift */,
 				6040777125B45E1300C8972F /* Info.plist */,
 			);
 			path = "iOS-Sample-mvvmTests";
@@ -179,7 +199,6 @@
 		6040777925B45E1300C8972F /* iOS-Sample-mvvmUITests */ = {
 			isa = PBXGroup;
 			children = (
-				6040777A25B45E1300C8972F /* iOS_Sample_mvvmUITests.swift */,
 				6040777C25B45E1300C8972F /* Info.plist */,
 			);
 			path = "iOS-Sample-mvvmUITests";
@@ -210,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				604077B825B4628C00C8972F /* Extensions.swift */,
+				60C3485825B5BEC700BD03AC /* UIImage+LoadImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -264,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				604077C225B462A100C8972F /* Protocols.swift */,
+				60C3485325B5BE9C00BD03AC /* ImageRepresentable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -351,6 +372,14 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		60C3485D25B5BEFF00BD03AC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				60C3485E25B5BEFF00BD03AC /* Kingfisher.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E0FC1BD325B55BCC00EDAE4E /* EndPoint */ = {
 			isa = PBXGroup;
 			children = (
@@ -400,12 +429,16 @@
 				6040775225B45E1100C8972F /* Frameworks */,
 				6040775325B45E1100C8972F /* Resources */,
 				E0FC1C4D25B5751200EDAE4E /* ShellScript */,
+				60C3486125B5BEFF00BD03AC /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "iOS-Sample-mvvm";
+			packageProductDependencies = (
+				60C3484525B5BCBE00BD03AC /* Moya */,
+			);
 			productName = "iOS-Sample-mvvm";
 			productReference = 6040775525B45E1100C8972F /* iOS-Sample-mvvm.app */;
 			productType = "com.apple.product-type.application";
@@ -477,6 +510,9 @@
 				Base,
 			);
 			mainGroup = 6040774C25B45E1100C8972F;
+			packageReferences = (
+				60C3484425B5BCBE00BD03AC /* XCRemoteSwiftPackageReference "Moya" */,
+			);
 			productRefGroup = 6040775625B45E1100C8972F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -572,6 +608,7 @@
 				604077D225B462B800C8972F /* ServiceLocator.swift in Sources */,
 				604077B925B4628C00C8972F /* Extensions.swift in Sources */,
 				6040775B25B45E1100C8972F /* SceneDelegate.swift in Sources */,
+				60C3485425B5BE9C00BD03AC /* ImageRepresentable.swift in Sources */,
 				604077E625B469C300C8972F /* Variable.swift in Sources */,
 				6040782825B4730C00C8972F /* Fonts.swift in Sources */,
 				6040782925B4730C00C8972F /* Assets.swift in Sources */,
@@ -581,6 +618,7 @@
 				E0FC1BD525B55BFF00EDAE4E /* EndPoint.swift in Sources */,
 				604077C325B462A100C8972F /* Protocols.swift in Sources */,
 				604077D725B462C100C8972F /* model.swift in Sources */,
+				60C3485925B5BEC700BD03AC /* UIImage+LoadImage.swift in Sources */,
 				604077E425B469C300C8972F /* PublishSubject.swift in Sources */,
 				E0FC1BF925B5632F00EDAE4E /* NetworkManger.swift in Sources */,
 				E0FC1C0F25B56CCE00EDAE4E /* Encodable+Extention.swift in Sources */,
@@ -596,7 +634,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6040777025B45E1200C8972F /* iOS_Sample_mvvmTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -604,7 +641,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6040777B25B45E1300C8972F /* iOS_Sample_mvvmUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -757,6 +793,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/iOS-Sample-mvvm/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -766,6 +806,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Debug;
 		};
@@ -775,6 +816,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/iOS-Sample-mvvm/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -784,6 +829,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Release;
 		};
@@ -935,6 +981,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/iOS-Sample-mvvm/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -944,6 +994,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Demo;
 		};
@@ -1055,6 +1106,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/iOS-Sample-mvvm/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1064,6 +1119,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Demo_Debug;
 		};
@@ -1175,6 +1231,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/iOS-Sample-mvvm/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1184,6 +1244,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Demo_Release;
 		};
@@ -1289,6 +1350,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/iOS-Sample-mvvm/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1298,6 +1363,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Stage;
 		};
@@ -1403,6 +1469,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/iOS-Sample-mvvm/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1412,6 +1482,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Stage_Debug;
 		};
@@ -1517,6 +1588,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/iOS-Sample-mvvm/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1526,6 +1601,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Stage_Release;
 		};
@@ -1633,6 +1709,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		60C3484425B5BCBE00BD03AC /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 14.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		60C3484525B5BCBE00BD03AC /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 60C3484425B5BCBE00BD03AC /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6040774D25B45E1100C8972F /* Project object */;
 }

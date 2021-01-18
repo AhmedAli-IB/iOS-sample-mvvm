@@ -20,7 +20,7 @@ class HomeViewController: UIViewController {
 //
 private extension HomeViewController {
     
-    ///Configure View
+    /// Configure View
     ///
     func configureView() {
         self.title = Strings.title
