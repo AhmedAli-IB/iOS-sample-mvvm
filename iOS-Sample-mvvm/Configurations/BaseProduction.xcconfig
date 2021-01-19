@@ -1,0 +1,13 @@
+//
+//  BaseProduction.xcconfig
+//  iOS-Sample-mvvm
+//
+//  Created by Aya Essam on 19/01/2021.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+SERVER_URL = demo-smea.ibtikar.sa
+APP_NAME = Production
+APP_BUNDLE_IDENTIFIER = com.ibtikar.iOS-Sample-mvvm.prod
+API_KEY =

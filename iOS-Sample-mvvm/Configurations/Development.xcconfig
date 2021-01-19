@@ -1,0 +1,10 @@
+//
+//  Development.xcconfig
+//  iOS-Sample-mvvm
+//
+//  Created by Aya Essam on 19/01/2021.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+#include "BaseDevelopment.xcconfig"
