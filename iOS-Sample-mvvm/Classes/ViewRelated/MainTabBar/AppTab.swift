@@ -22,7 +22,6 @@ enum AppTab {
     /// Notification Tab
     ///
     case notification
-
     
     /// Account Tab
     ///

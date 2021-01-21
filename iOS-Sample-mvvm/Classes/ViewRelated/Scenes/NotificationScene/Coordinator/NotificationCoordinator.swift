@@ -1,5 +1,5 @@
 //
-//  HomeCoordinator.swift
+//  NotificationCoordinator.swift
 //  iOS-Sample-mvvm
 //
 //  Created by Ahmed Ali on 21/01/2021.
@@ -7,9 +7,9 @@
 
 import UIKit
 
-// MARK: - HomeCoordinator
+// MARK: - NotificationCoordinator
 //
-final class HomeCoordinator: Coordinator {
+final class NotificationCoordinator: Coordinator {
     
     // MARK: - Properties
     //
@@ -25,6 +25,4 @@ final class HomeCoordinator: Coordinator {
     func start() {
         print("start")
     }
-    
-    
 }

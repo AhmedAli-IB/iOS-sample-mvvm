@@ -1,5 +1,5 @@
 //
-//  HomeCoordinator.swift
+//  ChatCoordinator.swift
 //  iOS-Sample-mvvm
 //
 //  Created by Ahmed Ali on 21/01/2021.
@@ -7,9 +7,9 @@
 
 import UIKit
 
-// MARK: - HomeCoordinator
+// MARK: - ChatCoordinator
 //
-final class HomeCoordinator: Coordinator {
+final class ChatCoordinator: Coordinator {
     
     // MARK: - Properties
     //
