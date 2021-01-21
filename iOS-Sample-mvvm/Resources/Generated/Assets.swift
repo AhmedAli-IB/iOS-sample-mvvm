@@ -22,6 +22,29 @@ internal typealias AssetImageTypeAlias = ImageAsset.Image
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 internal enum Asset {
   internal enum Assets {
+    internal static let icon = ImageAsset(name: "Icon")
+    internal static let icon1 = ImageAsset(name: "Icon_1")
+    internal static let icon2 = ImageAsset(name: "Icon_2")
+    internal static let icon3 = ImageAsset(name: "Icon_3")
+    internal static let item2 = ImageAsset(name: "Item_2")
+    internal static let item2Copy = ImageAsset(name: "Item_2_Copy")
+    internal static let item3 = ImageAsset(name: "Item_3")
+    internal static let item4 = ImageAsset(name: "Item_4")
+    internal static let item5 = ImageAsset(name: "Item_5")
+    internal static let active = ImageAsset(name: "active")
+    internal static let icSearch = ImageAsset(name: "ic_Search")
+    internal static let icCancel = ImageAsset(name: "ic_cancel")
+    internal static let icChat = ImageAsset(name: "ic_chat")
+    internal static let icHomeActive = ImageAsset(name: "ic_home-active")
+    internal static let icHomeDot = ImageAsset(name: "ic_home_dot")
+    internal static let icInactiveProfile = ImageAsset(name: "ic_inactive-profile")
+    internal static let icNotBooked = ImageAsset(name: "ic_not-booked")
+    internal static let icNotificationActiveRed = ImageAsset(name: "ic_notification-active-red")
+    internal static let icNotificationActive = ImageAsset(name: "ic_notification-active")
+    internal static let icReadMore = ImageAsset(name: "ic_read-more")
+    internal static let mainIconIcConsultancy = ImageAsset(name: "main-icon_ic_Consultancy")
+    internal static let mainIconIcConsultancy1 = ImageAsset(name: "main-icon_ic_Consultancy_1")
+    internal static let mainIconIcConsultancy2 = ImageAsset(name: "main-icon_ic_Consultancy_2")
     internal static let placeholder = ImageAsset(name: "placeholder")
   }
   internal enum ColorPalette {
