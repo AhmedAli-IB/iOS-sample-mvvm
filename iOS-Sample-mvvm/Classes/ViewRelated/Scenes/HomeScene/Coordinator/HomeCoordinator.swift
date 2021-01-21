@@ -23,8 +23,13 @@ final class HomeCoordinator: Coordinator {
     // MARK: - Handlers
     //
     func start() {
-        print("start")
+        showHomeViewController()
     }
-    
-    
+    /// Show home flow
+    ///
+    private func showHomeViewController() {
+        let homeVC = HomeViewController()
+//        homeVC.coordinator = self
+        self.navigationController.setViewControllers([homeVC], animated: false)
+    }
 }

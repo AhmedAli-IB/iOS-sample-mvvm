@@ -23,8 +23,12 @@ final class ChatCoordinator: Coordinator {
     // MARK: - Handlers
     //
     func start() {
-        print("start")
+        showChatViewController()
     }
-    
-    
+    /// Show showAccount flow
+    ///
+    private func showChatViewController() {
+        let chatVC = ChatViewController()
+        self.navigationController.setViewControllers([chatVC], animated: false)
+    }
 }

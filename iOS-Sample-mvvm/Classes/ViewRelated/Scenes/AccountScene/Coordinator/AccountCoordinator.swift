@@ -23,7 +23,12 @@ final class AccountCoordinator: Coordinator {
     // MARK: - Handlers
     //
     func start() {
-        print("start")
+        showAccountViewController()
     }
-
+    /// Show showAccount flow
+    ///
+    private func showAccountViewController() {
+        let accountVC = AccountViewController()
+        self.navigationController.setViewControllers([accountVC], animated: false)
+    }
 }

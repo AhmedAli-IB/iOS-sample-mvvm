@@ -23,6 +23,12 @@ final class NotificationCoordinator: Coordinator {
     // MARK: - Handlers
     //
     func start() {
-        print("start")
+        showNotificationViewController()
+    }
+    /// Show Notification flow
+    ///
+    private func showNotificationViewController() {
+        let notificationVC = NotificationViewController()
+        self.navigationController.setViewControllers([notificationVC], animated: false)
     }
 }
