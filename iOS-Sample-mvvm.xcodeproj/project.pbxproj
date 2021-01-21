@@ -654,10 +654,10 @@
 			};
 			buildConfigurationList = 6040775025B45E1100C8972F /* Build configuration list for PBXProject "iOS-Sample-mvvm" */;
 			compatibilityVersion = "Xcode 9.3";
-			developmentRegion = en;
+			developmentRegion = ar;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
+				ar,
 				Base,
 			);
 			mainGroup = 6040774C25B45E1100C8972F;
