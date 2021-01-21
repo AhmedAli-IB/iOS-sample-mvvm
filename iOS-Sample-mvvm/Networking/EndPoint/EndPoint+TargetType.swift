@@ -10,16 +10,16 @@ import Moya
 
 extension AppEndPoint: TargetType {
     
-    public var baseURL: URL { return Environment.rootURL }
+    var baseURL: URL { return Environment.rootURL }
     
-    public var path: String {
+    var path: String {
         switch self {
         case .getSomeEndpoint:
-            return AppURL.Paths.SomePath
+            return "/some/path"
         }
     }
     
-    public var method: Moya.Method {
+    var method: Moya.Method {
        switch self {
        case .getSomeEndpoint:
         return .get
@@ -27,7 +27,7 @@ extension AppEndPoint: TargetType {
        }
     }
     
-    public var task: Task {
+    var task: Task {
         switch self {
         case .getSomeEndpoint:
             return .requestParameters(parameters: [:], encoding: URLEncoding.default)
@@ -36,7 +36,7 @@ extension AppEndPoint: TargetType {
     
     var sampleData: Data { return Data() }  // We just need to return something here to fully implement the protocol
     
-    public var headers: [String: String]? {
+    var headers: [String: String]? {
         return [KeyConstants.Headers.contentType: KeyConstants.Headers.contentTypeValue]
     }
 

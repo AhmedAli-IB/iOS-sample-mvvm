@@ -10,6 +10,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    var coordinator: ApplicationCoordinator?
 
     func scene(_ scene: UIScene,
                willConnectTo session: UISceneSession,
@@ -56,12 +57,10 @@ private extension SceneDelegate {
     ///
     func setupAppWindow(_ windowScene: UIWindowScene) {
         let window = UIWindow(windowScene: windowScene)
-        let homeViewController = HomeViewController()
-        let navigationController = UINavigationController()
-        navigationController.viewControllers = [homeViewController]
-        window.rootViewController = navigationController
         self.window = window
-        window.makeKeyAndVisible()
+        let navController = UINavigationController()
+        coordinator = ApplicationCoordinator(window: window, navigationController: navController)
+        coordinator?.start()
 
     }
 }
