@@ -34,6 +34,7 @@ class FiltrationCollectionViewCell: UICollectionViewCell {
     }
     
     // MARK: - ViewModel
+    //
     var viewModel: FiltrationCellRepresentable? {
         didSet {
             configureCell()
@@ -57,8 +58,20 @@ private extension FiltrationCollectionViewCell {
     func configureCell() {
         titleLabel.text = viewModel?.filtrationTitle
         filtrationImageView.image = UIImage(named: viewModel?.filtrationUnselectedImageName ?? "placeholder")
+        viewModel?.isExpanded ?? false ? showSelectionView() : hideSelectionView()
     }
     
+    /// Hide selection \view
+    ///
+    func hideSelectionView() {
+        selectionView.isHidden = true
+    }
+    
+    /// Show selection \view
+    ///
+    func showSelectionView() {
+        selectionView.isHidden = false
+    }
     /// Toggle state
     ///
     func updateViewForSelectedState() {
@@ -87,3 +100,4 @@ private extension FiltrationCollectionViewCell {
         static let containerCornerRadius = CGFloat(16)
     }
 }
+

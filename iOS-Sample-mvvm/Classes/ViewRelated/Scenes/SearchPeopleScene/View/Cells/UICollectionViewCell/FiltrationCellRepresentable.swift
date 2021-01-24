@@ -11,4 +11,7 @@ protocol FiltrationCellRepresentable {
     var filtrationTitle: String { get }
     var filtrationSelectedImageName: String { get }
     var filtrationUnselectedImageName: String { get }
+    var isExpanded: Bool { get }
+
+    
 }

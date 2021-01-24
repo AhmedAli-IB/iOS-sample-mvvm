@@ -22,4 +22,7 @@ extension FiltrationModel: FiltrationCellRepresentable {
     var filtrationUnselectedImageName: String {
         return unSelectedImageName
     }
+    var isExpanded: Bool {
+        return expanded
+    }
 }
