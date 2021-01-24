@@ -6,13 +6,14 @@
 //
 
 import UIKit
+import Cosmos
 
 class CardCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var userRating: CosmosView!
     @IBOutlet private weak var cancel: UIButton!
     @IBOutlet private weak var wayOfCommunication: UILabel!
     @IBOutlet private weak var date: UILabel!
-    @IBOutlet private weak var userRating: UIView!
     @IBOutlet private weak var userDepartment: UILabel!
     @IBOutlet private weak var userName: UILabel!
     @IBOutlet private weak var userImage: UIImageView!

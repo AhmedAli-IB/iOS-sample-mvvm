@@ -40,13 +40,24 @@
                                 <color key="textColor" name="Mantis"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e3i-mr-uBK">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e3i-mr-uBK" customClass="CosmosView" customModule="Cosmos">
                                 <rect key="frame" x="21" y="17" width="25" height="25"/>
                                 <color key="backgroundColor" name="Pink5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="fFE-yc-TUC"/>
                                     <constraint firstAttribute="width" constant="25" id="p8a-Mc-DFJ"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
+                                        <color key="value" name="Mikado yellow"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="filledBorderColor">
+                                        <color key="value" name="Mikado yellow"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8fg-D8-u7w">
                                 <rect key="frame" x="21" y="82" width="304" height="1"/>
@@ -136,7 +147,7 @@
                 <outlet property="userDepartment" destination="Ad6-Vz-3t3" id="05R-03-Ydt"/>
                 <outlet property="userImage" destination="gDO-lu-mpv" id="whA-cW-8fr"/>
                 <outlet property="userName" destination="HC5-AS-p0v" id="9fP-XL-7xT"/>
-                <outlet property="userRating" destination="e3i-mr-uBK" id="Bd6-qj-jBX"/>
+                <outlet property="userRating" destination="e3i-mr-uBK" id="55v-Pm-NWX"/>
                 <outlet property="wayOfCommunication" destination="NQz-7z-9I6" id="Krs-bm-CVh"/>
             </connections>
             <point key="canvasLocation" x="225.36231884057972" y="79.352678571428569"/>
@@ -158,6 +169,9 @@
         </namedColor>
         <namedColor name="Mantis">
             <color red="0.36078431372549019" green="0.70588235294117652" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Mikado yellow">
+            <color red="0.97254901960784312" green="0.80392156862745101" blue="0.10980392156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Pink5">
             <color red="0.98000001907348633" green="0.80000001192092896" blue="0.86299997568130493" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

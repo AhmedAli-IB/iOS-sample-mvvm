@@ -52,6 +52,7 @@
 		60D321DC25B9B8EA0030E5FA /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D321DB25B9B8EA0030E5FA /* ApplicationCoordinator.swift */; };
 		E08C032825BD615D0034E887 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08C032725BD615D0034E887 /* CardCollectionViewCell.swift */; };
 		E08C032C25BD616F0034E887 /* CardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E08C032B25BD616F0034E887 /* CardCollectionViewCell.xib */; };
+		E08C033125BD77640034E887 /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = E08C033025BD77640034E887 /* Cosmos */; };
 		E0FC1BD525B55BFF00EDAE4E /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FC1BD425B55BFF00EDAE4E /* EndPoint.swift */; };
 		E0FC1BDA25B55C9500EDAE4E /* EndPoint+TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FC1BD925B55C9500EDAE4E /* EndPoint+TargetType.swift */; };
 		E0FC1BDF25B55EF100EDAE4E /* Enviroment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FC1BDE25B55EF100EDAE4E /* Enviroment.swift */; };
@@ -164,6 +165,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E08C033125BD77640034E887 /* Cosmos in Frameworks */,
 				60C3485F25B5BEFF00BD03AC /* Kingfisher.framework in Frameworks */,
 				60C3484625B5BCBE00BD03AC /* Moya in Frameworks */,
 			);
@@ -595,6 +597,7 @@
 			name = "iOS-Sample-mvvm";
 			packageProductDependencies = (
 				60C3484525B5BCBE00BD03AC /* Moya */,
+				E08C033025BD77640034E887 /* Cosmos */,
 			);
 			productName = "iOS-Sample-mvvm";
 			productReference = 6040775525B45E1100C8972F /* iOS-Sample-mvvm.app */;
@@ -669,6 +672,7 @@
 			mainGroup = 6040774C25B45E1100C8972F;
 			packageReferences = (
 				60C3484425B5BCBE00BD03AC /* XCRemoteSwiftPackageReference "Moya" */,
+				E08C032F25BD77640034E887 /* XCRemoteSwiftPackageReference "Cosmos" */,
 			);
 			productRefGroup = 6040775625B45E1100C8972F /* Products */;
 			projectDirPath = "";
@@ -1653,6 +1657,14 @@
 				minimumVersion = 14.0.0;
 			};
 		};
+		E08C032F25BD77640034E887 /* XCRemoteSwiftPackageReference "Cosmos" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/Cosmos.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 23.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1660,6 +1672,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 60C3484425B5BCBE00BD03AC /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
+		};
+		E08C033025BD77640034E887 /* Cosmos */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E08C032F25BD77640034E887 /* XCRemoteSwiftPackageReference "Cosmos" */;
+			productName = Cosmos;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
