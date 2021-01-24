@@ -381,10 +381,9 @@
 		604077A225B45F8700C8972F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E08C033425BD86B70034E887 /* Card */,
 				604077A325B4600D00C8972F /* HomeViewController.swift */,
 				604077A425B4600D00C8972F /* HomeViewController.xib */,
-				E08C032725BD615D0034E887 /* CardCollectionViewCell.swift */,
-				E08C032B25BD616F0034E887 /* CardCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -538,6 +537,15 @@
 				60D321DB25B9B8EA0030E5FA /* ApplicationCoordinator.swift */,
 			);
 			path = Landing;
+			sourceTree = "<group>";
+		};
+		E08C033425BD86B70034E887 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				E08C032725BD615D0034E887 /* CardCollectionViewCell.swift */,
+				E08C032B25BD616F0034E887 /* CardCollectionViewCell.xib */,
+			);
+			path = Card;
 			sourceTree = "<group>";
 		};
 		E0FC1BD325B55BCC00EDAE4E /* EndPoint */ = {
