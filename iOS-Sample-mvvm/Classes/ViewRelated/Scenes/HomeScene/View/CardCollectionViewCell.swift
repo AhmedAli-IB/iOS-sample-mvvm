@@ -20,9 +20,17 @@ class CardCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        setupLabelFonts()
     }
     
     @IBAction func cancelAppointment(_ sender: UIButton) {
+    }
+    
+    func setupLabelFonts() {
+        userName.font = UIFont(font: FontFamily._29LTAzer.medium, size: 18)
+        userDepartment.font = UIFont(font: FontFamily._29LTAzer.medium, size: 13)
+        date.font = UIFont(font: FontFamily._29LTAzer.regular, size: 16)
+        wayOfCommunication.font = UIFont(font: FontFamily._29LTAzer.regular, size: 13)
+        cancel.titleLabel?.font = UIFont(font: FontFamily._29LTAzer.medium, size: 15)
     }
 }
