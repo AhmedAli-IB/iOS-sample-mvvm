@@ -53,6 +53,8 @@
 		E08C032825BD615D0034E887 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08C032725BD615D0034E887 /* CardCollectionViewCell.swift */; };
 		E08C032C25BD616F0034E887 /* CardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E08C032B25BD616F0034E887 /* CardCollectionViewCell.xib */; };
 		E08C033125BD77640034E887 /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = E08C033025BD77640034E887 /* Cosmos */; };
+		E08C034925BDB7160034E887 /* SessionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08C034825BDB7160034E887 /* SessionTableViewCell.swift */; };
+		E08C034D25BDB7240034E887 /* SessionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E08C034C25BDB7240034E887 /* SessionTableViewCell.xib */; };
 		E0FC1BD525B55BFF00EDAE4E /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FC1BD425B55BFF00EDAE4E /* EndPoint.swift */; };
 		E0FC1BDA25B55C9500EDAE4E /* EndPoint+TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FC1BD925B55C9500EDAE4E /* EndPoint+TargetType.swift */; };
 		E0FC1BDF25B55EF100EDAE4E /* Enviroment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FC1BDE25B55EF100EDAE4E /* Enviroment.swift */; };
@@ -149,6 +151,8 @@
 		E01D617E25B6EE1A007E39FE /* BaseDevelopment.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = BaseDevelopment.xcconfig; sourceTree = "<group>"; };
 		E08C032725BD615D0034E887 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		E08C032B25BD616F0034E887 /* CardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardCollectionViewCell.xib; sourceTree = "<group>"; };
+		E08C034825BDB7160034E887 /* SessionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTableViewCell.swift; sourceTree = "<group>"; };
+		E08C034C25BDB7240034E887 /* SessionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionTableViewCell.xib; sourceTree = "<group>"; };
 		E0FC1BD425B55BFF00EDAE4E /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		E0FC1BD925B55C9500EDAE4E /* EndPoint+TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EndPoint+TargetType.swift"; sourceTree = "<group>"; };
 		E0FC1BDE25B55EF100EDAE4E /* Enviroment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enviroment.swift; sourceTree = "<group>"; };
@@ -381,6 +385,7 @@
 		604077A225B45F8700C8972F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E08C033D25BD94110034E887 /* Session */,
 				E08C033425BD86B70034E887 /* Card */,
 				604077A325B4600D00C8972F /* HomeViewController.swift */,
 				604077A425B4600D00C8972F /* HomeViewController.xib */,
@@ -548,6 +553,15 @@
 			path = Card;
 			sourceTree = "<group>";
 		};
+		E08C033D25BD94110034E887 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				E08C034825BDB7160034E887 /* SessionTableViewCell.swift */,
+				E08C034C25BDB7240034E887 /* SessionTableViewCell.xib */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
 		E0FC1BD325B55BCC00EDAE4E /* EndPoint */ = {
 			isa = PBXGroup;
 			children = (
@@ -706,6 +720,7 @@
 				60D321C825B9AB850030E5FA /* ChatViewController.xib in Resources */,
 				6040776525B45E1200C8972F /* LaunchScreen.storyboard in Resources */,
 				6040776225B45E1200C8972F /* Assets.xcassets in Resources */,
+				E08C034D25BDB7240034E887 /* SessionTableViewCell.xib in Resources */,
 				E0FC1C1625B56FE700EDAE4E /* Staging.xcconfig in Resources */,
 				60D321CF25B9ABE10030E5FA /* NotificationViewController.xib in Resources */,
 				604077A625B4600D00C8972F /* HomeViewController.xib in Resources */,
@@ -788,6 +803,7 @@
 				6040775B25B45E1100C8972F /* SceneDelegate.swift in Sources */,
 				60C3485425B5BE9C00BD03AC /* ImageRepresentable.swift in Sources */,
 				604077E625B469C300C8972F /* Variable.swift in Sources */,
+				E08C034925BDB7160034E887 /* SessionTableViewCell.swift in Sources */,
 				60D321CE25B9ABE10030E5FA /* NotificationViewController.swift in Sources */,
 				60D3219625B99CA00030E5FA /* MainTabBarController.swift in Sources */,
 				60D321B625B9A0CF0030E5FA /* NotificationCoordinator.swift in Sources */,
