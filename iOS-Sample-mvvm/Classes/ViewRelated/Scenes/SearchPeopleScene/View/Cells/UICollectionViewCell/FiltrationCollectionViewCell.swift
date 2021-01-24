@@ -31,6 +31,7 @@ class FiltrationCollectionViewCell: UICollectionViewCell {
             super.isSelected = newValue
             updateViewForSelectedState()
         }
+        
     }
     
     // MARK: - ViewModel
@@ -100,4 +101,3 @@ private extension FiltrationCollectionViewCell {
         static let containerCornerRadius = CGFloat(16)
     }
 }
-
