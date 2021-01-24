@@ -14,7 +14,7 @@
 		604077A525B4600D00C8972F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604077A325B4600D00C8972F /* HomeViewController.swift */; };
 		604077A625B4600D00C8972F /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 604077A425B4600D00C8972F /* HomeViewController.xib */; };
 		604077C325B462A100C8972F /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604077C225B462A100C8972F /* Protocols.swift */; };
-		604077C825B462A800C8972F /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604077C725B462A800C8972F /* Base.swift */; };
+		604077C825B462A800C8972F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604077C725B462A800C8972F /* BaseViewController.swift */; };
 		604077CD25B462B100C8972F /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604077CC25B462B100C8972F /* ViewModel.swift */; };
 		604077D225B462B800C8972F /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604077D125B462B800C8972F /* ServiceLocator.swift */; };
 		604077D725B462C100C8972F /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604077D625B462C100C8972F /* model.swift */; };
@@ -50,6 +50,20 @@
 		60D321CF25B9ABE10030E5FA /* NotificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60D321CD25B9ABE10030E5FA /* NotificationViewController.xib */; };
 		60D321D525B9B6F70030E5FA /* TabBarItem + ImageOnly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D321D425B9B6F70030E5FA /* TabBarItem + ImageOnly.swift */; };
 		60D321DC25B9B8EA0030E5FA /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D321DB25B9B8EA0030E5FA /* ApplicationCoordinator.swift */; };
+		60D321ED25BD6A4B0030E5FA /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D321EC25BD6A4B0030E5FA /* State.swift */; };
+		60D321F325BD6AC00030E5FA /* BaseVeiwModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D321F225BD6AC00030E5FA /* BaseVeiwModel.swift */; };
+		60D321F725BD6B080030E5FA /* UIViewController.swift+Loadding+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D321F625BD6B080030E5FA /* UIViewController.swift+Loadding+Alert.swift */; };
+		60D321FB25BD6B440030E5FA /* NSObject+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D321FA25BD6B440030E5FA /* NSObject+Helpers.swift */; };
+		60D321FF25BD6B5B0030E5FA /* UIView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D321FE25BD6B5B0030E5FA /* UIView+Helpers.swift */; };
+		60D3220D25BD70200030E5FA /* SearchPepoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D3220B25BD70200030E5FA /* SearchPepoleViewController.swift */; };
+		60D3220E25BD70200030E5FA /* SearchPepoleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60D3220C25BD70200030E5FA /* SearchPepoleViewController.xib */; };
+		60D3221525BD72C20030E5FA /* SearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D3221425BD72C20030E5FA /* SearchCoordinator.swift */; };
+		60D3221B25BD74610030E5FA /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D3221A25BD74610030E5FA /* BaseNavigationController.swift */; };
+		60D3222025BD78B80030E5FA /* SMESearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D3221F25BD78B80030E5FA /* SMESearchBar.swift */; };
+		60D3222F25BD8CA40030E5FA /* UITableViewCell + Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D3222E25BD8CA40030E5FA /* UITableViewCell + Helpers.swift */; };
+		60D3223325BD8D150030E5FA /* UICollectionViewCell + Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D3223225BD8D150030E5FA /* UICollectionViewCell + Helpers.swift */; };
+		60D3223E25BD93770030E5FA /* FiltrationCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60D3222725BD82340030E5FA /* FiltrationCollectionViewCell.xib */; };
+		60D3224125BD93880030E5FA /* FiltrationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D3222625BD82340030E5FA /* FiltrationCollectionViewCell.swift */; };
 		E0FC1BD525B55BFF00EDAE4E /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FC1BD425B55BFF00EDAE4E /* EndPoint.swift */; };
 		E0FC1BDA25B55C9500EDAE4E /* EndPoint+TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FC1BD925B55C9500EDAE4E /* EndPoint+TargetType.swift */; };
 		E0FC1BDF25B55EF100EDAE4E /* Enviroment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FC1BDE25B55EF100EDAE4E /* Enviroment.swift */; };
@@ -106,7 +120,7 @@
 		604077A325B4600D00C8972F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		604077A425B4600D00C8972F /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		604077C225B462A100C8972F /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
-		604077C725B462A800C8972F /* Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
+		604077C725B462A800C8972F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		604077CC25B462B100C8972F /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		604077D125B462B800C8972F /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
 		604077D625B462C100C8972F /* model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
@@ -140,6 +154,20 @@
 		60D321CD25B9ABE10030E5FA /* NotificationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationViewController.xib; sourceTree = "<group>"; };
 		60D321D425B9B6F70030E5FA /* TabBarItem + ImageOnly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabBarItem + ImageOnly.swift"; sourceTree = "<group>"; };
 		60D321DB25B9B8EA0030E5FA /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
+		60D321EC25BD6A4B0030E5FA /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		60D321F225BD6AC00030E5FA /* BaseVeiwModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVeiwModel.swift; sourceTree = "<group>"; };
+		60D321F625BD6B080030E5FA /* UIViewController.swift+Loadding+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController.swift+Loadding+Alert.swift"; sourceTree = "<group>"; };
+		60D321FA25BD6B440030E5FA /* NSObject+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Helpers.swift"; sourceTree = "<group>"; };
+		60D321FE25BD6B5B0030E5FA /* UIView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Helpers.swift"; sourceTree = "<group>"; };
+		60D3220B25BD70200030E5FA /* SearchPepoleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPepoleViewController.swift; sourceTree = "<group>"; };
+		60D3220C25BD70200030E5FA /* SearchPepoleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchPepoleViewController.xib; sourceTree = "<group>"; };
+		60D3221425BD72C20030E5FA /* SearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoordinator.swift; sourceTree = "<group>"; };
+		60D3221A25BD74610030E5FA /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		60D3221F25BD78B80030E5FA /* SMESearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMESearchBar.swift; sourceTree = "<group>"; };
+		60D3222625BD82340030E5FA /* FiltrationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltrationCollectionViewCell.swift; sourceTree = "<group>"; };
+		60D3222725BD82340030E5FA /* FiltrationCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FiltrationCollectionViewCell.xib; sourceTree = "<group>"; };
+		60D3222E25BD8CA40030E5FA /* UITableViewCell + Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell + Helpers.swift"; sourceTree = "<group>"; };
+		60D3223225BD8D150030E5FA /* UICollectionViewCell + Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell + Helpers.swift"; sourceTree = "<group>"; };
 		E01D614B25B6DE6B007E39FE /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 		E01D617B25B6EDE1007E39FE /* BaseProduction.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = BaseProduction.xcconfig; sourceTree = "<group>"; };
 		E01D617C25B6EDFC007E39FE /* BaseStaging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = BaseStaging.xcconfig; sourceTree = "<group>"; };
@@ -264,6 +292,11 @@
 			children = (
 				60C3485825B5BEC700BD03AC /* UIImage+LoadImage.swift */,
 				60D321D425B9B6F70030E5FA /* TabBarItem + ImageOnly.swift */,
+				60D321F625BD6B080030E5FA /* UIViewController.swift+Loadding+Alert.swift */,
+				60D321FA25BD6B440030E5FA /* NSObject+Helpers.swift */,
+				60D321FE25BD6B5B0030E5FA /* UIView+Helpers.swift */,
+				60D3222E25BD8CA40030E5FA /* UITableViewCell + Helpers.swift */,
+				60D3223225BD8D150030E5FA /* UICollectionViewCell + Helpers.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -283,6 +316,7 @@
 			children = (
 				60D321A025B99D910030E5FA /* Coordinator */,
 				604077EB25B469CF00C8972F /* Observers */,
+				60D321EC25BD6A4B0030E5FA /* State.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -298,6 +332,7 @@
 		6040779A25B45ED900C8972F /* ViewRelated */ = {
 			isa = PBXGroup;
 			children = (
+				60D3221E25BD78980030E5FA /* CustomViews */,
 				60D321DA25B9B8DB0030E5FA /* Landing */,
 				60D3219025B99B010030E5FA /* MainTabBar */,
 				6040779C25B45F1600C8972F /* Protocols */,
@@ -329,7 +364,9 @@
 		6040779D25B45F1B00C8972F /* BaseClasses */ = {
 			isa = PBXGroup;
 			children = (
-				604077C725B462A800C8972F /* Base.swift */,
+				604077C725B462A800C8972F /* BaseViewController.swift */,
+				60D321F225BD6AC00030E5FA /* BaseVeiwModel.swift */,
+				60D3221A25BD74610030E5FA /* BaseNavigationController.swift */,
 			);
 			path = BaseClasses;
 			sourceTree = "<group>";
@@ -337,6 +374,8 @@
 		6040779E25B45F4700C8972F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				60D3221325BD729C0030E5FA /* SearchCoordinator */,
+				60D3220625BD6C9F0030E5FA /* SearchPeopleScene */,
 				60D321A725B9A0790030E5FA /* AccountScene */,
 				60D321A525B9A0550030E5FA /* ChatScene */,
 				6040779F25B45F6000C8972F /* HomeScene */,
@@ -532,6 +571,73 @@
 			path = Landing;
 			sourceTree = "<group>";
 		};
+		60D3220625BD6C9F0030E5FA /* SearchPeopleScene */ = {
+			isa = PBXGroup;
+			children = (
+				60D3220A25BD70020030E5FA /* ViewModel */,
+				60D3220925BD6CEA0030E5FA /* View */,
+			);
+			path = SearchPeopleScene;
+			sourceTree = "<group>";
+		};
+		60D3220925BD6CEA0030E5FA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				60D3222325BD81EF0030E5FA /* Cells */,
+				60D3220B25BD70200030E5FA /* SearchPepoleViewController.swift */,
+				60D3220C25BD70200030E5FA /* SearchPepoleViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		60D3220A25BD70020030E5FA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		60D3221325BD729C0030E5FA /* SearchCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				60D3221425BD72C20030E5FA /* SearchCoordinator.swift */,
+			);
+			path = SearchCoordinator;
+			sourceTree = "<group>";
+		};
+		60D3221E25BD78980030E5FA /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				60D3221F25BD78B80030E5FA /* SMESearchBar.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		60D3222325BD81EF0030E5FA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				60D3222525BD82010030E5FA /* UICollectionViewCell */,
+				60D3222425BD81F50030E5FA /* UItableViewCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		60D3222425BD81F50030E5FA /* UItableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UItableViewCell;
+			sourceTree = "<group>";
+		};
+		60D3222525BD82010030E5FA /* UICollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				60D3222625BD82340030E5FA /* FiltrationCollectionViewCell.swift */,
+				60D3222725BD82340030E5FA /* FiltrationCollectionViewCell.xib */,
+			);
+			path = UICollectionViewCell;
+			sourceTree = "<group>";
+		};
 		E0FC1BD325B55BCC00EDAE4E /* EndPoint */ = {
 			isa = PBXGroup;
 			children = (
@@ -680,11 +786,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60D3223E25BD93770030E5FA /* FiltrationCollectionViewCell.xib in Resources */,
 				6040784525B4776800C8972F /* 29LTAzer-Bold.otf in Resources */,
 				E0FC1C1525B56FE700EDAE4E /* Production.xcconfig in Resources */,
 				6040784625B4776800C8972F /* 29LTAzer-Medium.otf in Resources */,
 				6040784725B4776800C8972F /* 29LTAzer-Regular.otf in Resources */,
 				60D321BF25B9AAFB0030E5FA /* AccountViewController.xib in Resources */,
+				60D3220E25BD70200030E5FA /* SearchPepoleViewController.xib in Resources */,
 				60D321C825B9AB850030E5FA /* ChatViewController.xib in Resources */,
 				6040776525B45E1200C8972F /* LaunchScreen.storyboard in Resources */,
 				6040776225B45E1200C8972F /* Assets.xcassets in Resources */,
@@ -754,6 +862,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60D3224125BD93880030E5FA /* FiltrationCollectionViewCell.swift in Sources */,
 				E0FC1BFE25B567EC00EDAE4E /* NetworkError.swift in Sources */,
 				6040775925B45E1100C8972F /* AppDelegate.swift in Sources */,
 				60D321A225B99D9B0030E5FA /* Coordinator.swift in Sources */,
@@ -765,31 +874,42 @@
 				604077D225B462B800C8972F /* ServiceLocator.swift in Sources */,
 				60D321BE25B9AAFB0030E5FA /* AccountViewController.swift in Sources */,
 				60D321D525B9B6F70030E5FA /* TabBarItem + ImageOnly.swift in Sources */,
+				60D321F325BD6AC00030E5FA /* BaseVeiwModel.swift in Sources */,
 				6040775B25B45E1100C8972F /* SceneDelegate.swift in Sources */,
 				60C3485425B5BE9C00BD03AC /* ImageRepresentable.swift in Sources */,
 				604077E625B469C300C8972F /* Variable.swift in Sources */,
 				60D321CE25B9ABE10030E5FA /* NotificationViewController.swift in Sources */,
+				60D3220D25BD70200030E5FA /* SearchPepoleViewController.swift in Sources */,
+				60D3222025BD78B80030E5FA /* SMESearchBar.swift in Sources */,
 				60D3219625B99CA00030E5FA /* MainTabBarController.swift in Sources */,
 				60D321B625B9A0CF0030E5FA /* NotificationCoordinator.swift in Sources */,
 				6040782825B4730C00C8972F /* Fonts.swift in Sources */,
 				60D321DC25B9B8EA0030E5FA /* ApplicationCoordinator.swift in Sources */,
 				60D3219225B99B250030E5FA /* AppTab.swift in Sources */,
 				6040782925B4730C00C8972F /* Assets.swift in Sources */,
+				60D3222F25BD8CA40030E5FA /* UITableViewCell + Helpers.swift in Sources */,
+				60D3221B25BD74610030E5FA /* BaseNavigationController.swift in Sources */,
+				60D321F725BD6B080030E5FA /* UIViewController.swift+Loadding+Alert.swift in Sources */,
+				60D3221525BD72C20030E5FA /* SearchCoordinator.swift in Sources */,
 				604077A525B4600D00C8972F /* HomeViewController.swift in Sources */,
 				E0FC1BDF25B55EF100EDAE4E /* Enviroment.swift in Sources */,
 				E0FC1BF225B561D500EDAE4E /* KeyConstants.swift in Sources */,
 				E0FC1BD525B55BFF00EDAE4E /* EndPoint.swift in Sources */,
+				60D321FB25BD6B440030E5FA /* NSObject+Helpers.swift in Sources */,
+				60D321FF25BD6B5B0030E5FA /* UIView+Helpers.swift in Sources */,
 				60D321B225B9A0BE0030E5FA /* ChatCoordinator.swift in Sources */,
 				604077C325B462A100C8972F /* Protocols.swift in Sources */,
 				604077D725B462C100C8972F /* model.swift in Sources */,
 				60C3485925B5BEC700BD03AC /* UIImage+LoadImage.swift in Sources */,
+				60D321ED25BD6A4B0030E5FA /* State.swift in Sources */,
 				604077E425B469C300C8972F /* PublishSubject.swift in Sources */,
 				E0FC1BF925B5632F00EDAE4E /* NetworkManger.swift in Sources */,
 				E0FC1C0F25B56CCE00EDAE4E /* Encodable+Extention.swift in Sources */,
 				604077E525B469C300C8972F /* BehaviorSubject.swift in Sources */,
 				60D321AC25B9A0B20030E5FA /* AccountCoordinator.swift in Sources */,
-				604077C825B462A800C8972F /* Base.swift in Sources */,
+				604077C825B462A800C8972F /* BaseViewController.swift in Sources */,
 				604077CD25B462B100C8972F /* ViewModel.swift in Sources */,
+				60D3223325BD8D150030E5FA /* UICollectionViewCell + Helpers.swift in Sources */,
 				604077E725B469C300C8972F /* ObservationToken.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

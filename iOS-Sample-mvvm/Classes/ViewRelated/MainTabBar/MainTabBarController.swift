@@ -17,8 +17,8 @@ class MainTabBarController: UITabBarController {
     /// HomeViewController
     ///
     private lazy var homeViewController: UIViewController = {
-        let navigationController = UINavigationController()
-        HomeCoordinator(navigationController: navigationController).start()
+        let navigationController = BaseNavigationController()
+        SearchCoordinator(navigationController: navigationController).start()
         let tabBarItem = UITabBarItem(title: nil,
                                       image: Asset.Assets.icHomeActive.image,
                                       selectedImage: Asset.Assets.icHomeDot.image)
@@ -30,7 +30,7 @@ class MainTabBarController: UITabBarController {
     /// ChatViewController
     ///
     private lazy var chatViewController: UIViewController = {
-        let navigationController = UINavigationController()
+        let navigationController = BaseNavigationController()
         ChatCoordinator(navigationController: navigationController).start()
         let tabBarItem = UITabBarItem(title: nil,
                                       image: Asset.Assets.icChat.image,
@@ -44,7 +44,7 @@ class MainTabBarController: UITabBarController {
     /// NotificationsViewController
     ///
     private lazy var notificationViewController: UIViewController = {
-        let navigationController = UINavigationController()
+        let navigationController = BaseNavigationController()
         NotificationCoordinator(navigationController: navigationController).start()
         let tabBarItem = UITabBarItem(title: nil,
                                       image: Asset.Assets.icNotificationActiveRed.image,
@@ -58,7 +58,7 @@ class MainTabBarController: UITabBarController {
     /// AccountViewController
     ///
     private lazy var accountViewController: UIViewController = {
-        let navigationController = UINavigationController()
+        let navigationController = BaseNavigationController()
         AccountCoordinator(navigationController: navigationController).start()
         let tabBarItem = UITabBarItem(title: nil,
                                       image: Asset.Assets.icInactiveProfile.image,
