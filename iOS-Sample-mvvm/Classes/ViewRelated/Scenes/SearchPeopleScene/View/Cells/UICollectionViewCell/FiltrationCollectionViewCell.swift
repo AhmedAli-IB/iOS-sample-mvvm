@@ -22,16 +22,72 @@ class FiltrationCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         configureView()
     }
+    
+    override var isSelected: Bool {
+        get {
+            return super.isSelected
+        }
+        set {
+            super.isSelected = newValue
+            updateViewForSelectedState()
+        }
+    }
+    
+    // MARK: - ViewModel
+    //
+    var viewModel: FiltrationCellRepresentable? {
+        didSet {
+            configureCell()
+        }
+    }
 }
 
 // MARK: - Configure View
 //
- extension FiltrationCollectionViewCell {
+private extension FiltrationCollectionViewCell {
     
     /// Configure view
     ///
     func configureView() {
         containerView.layer.cornerRadius = Constants.containerCornerRadius
+        containerView.backgroundColor = Asset.ColorPalette.unselectedColor.color
+    }
+    
+    /// Configure cell data
+    ///
+    func configureCell() {
+        titleLabel.text = viewModel?.filtrationTitle
+        filtrationImageView.image = UIImage(named: viewModel?.filtrationUnselectedImageName ?? "placeholder")
+        viewModel?.isExpanded ?? false ? showSelectionView() : hideSelectionView()
+    }
+    
+    /// Hide selection \view
+    ///
+    func hideSelectionView() {
+        selectionView.isHidden = true
+    }
+    
+    /// Show selection \view
+    ///
+    func showSelectionView() {
+        selectionView.isHidden = false
+    }
+    /// Toggle state
+    ///
+    func updateViewForSelectedState() {
+        isSelected ? makeSelected() : makeUnSelected()
+        
+    }
+    
+    func makeSelected() {
+        containerView.backgroundColor = Asset.ColorPalette.selectedColor.color
+        filtrationImageView.image = UIImage(named: viewModel?.filtrationSelectedImageName ?? "placeholder")
+    }
+    
+    func makeUnSelected() {
+        containerView.backgroundColor = Asset.ColorPalette.unselectedColor.color
+        filtrationImageView.image = UIImage(named: viewModel?.filtrationUnselectedImageName ?? "placeholder")
+        
     }
     
 }
@@ -44,3 +100,4 @@ private extension FiltrationCollectionViewCell {
         static let containerCornerRadius = CGFloat(16)
     }
 }
+
