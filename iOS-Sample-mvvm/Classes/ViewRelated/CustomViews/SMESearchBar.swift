@@ -26,6 +26,7 @@ class SMESearchBar: UISearchBar {
     // MARK: - Handlers
     
     /// Apply search configuration, override this method to add custom implementation.
+    ///
     func configureView() {
         searchTextField.layer.cornerRadius = Constants.textFieldCornerRadius
         searchTextField.layer.masksToBounds = true
