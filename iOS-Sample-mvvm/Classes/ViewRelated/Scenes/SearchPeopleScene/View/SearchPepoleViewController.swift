@@ -14,8 +14,17 @@ class SearchPepoleViewController: UIViewController {
     @IBOutlet weak private var searchBar: SMESearchBar!
     @IBOutlet weak private var collectionView: UICollectionView!
     
+    // MARK: - Properties
+    //
+    private let viewModel: SearchPepoleViewModel = SearchPepoleViewModel()
+    
+    // MARK: - Life cycle
+    //
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        viewModel.viewDidLoad()
+        
         configureView()
     }
 }
@@ -56,17 +65,16 @@ extension SearchPepoleViewController: UICollectionViewDelegate,
                                       UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return viewModel.numberOfItms
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let reuseIdentifier  = FiltrationCollectionViewCell.reuseIdentifier
-        // swiftlint:disable all
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-            as! FiltrationCollectionViewCell
-        cell.configureView()
-        return cell
+            as? FiltrationCollectionViewCell
+        cell?.viewModel = viewModel.getFiltrationItem(indexPath: indexPath)
+        return cell ?? UICollectionViewCell()
     }
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 //        CGSize(width: 100, height: 40)
