@@ -40,6 +40,7 @@ private extension SearchPepoleViewController {
     func configureView() {
         searchBar.searchTextField.placeholder = Strings.searchBarBlaceholder
         registerCells()
+        registerHeader()
         setupCollectionView()
         setupTableView()
     }
@@ -50,6 +51,12 @@ private extension SearchPepoleViewController {
                                 forCellWithReuseIdentifier: FiltrationCollectionViewCell.reuseIdentifier)
         let contributorCellNib = UINib(nibName: ContributorTableViewCell.classNameWithoutNamespaces, bundle: nil)
         tableView.register(contributorCellNib, forCellReuseIdentifier: ContributorTableViewCell.reuseIdentifier)
+    }
+    /// Register headers
+    ///
+    func registerHeader() {
+        tableView.register(ContributorsHeaderView.loadNib(),
+                           forHeaderFooterViewReuseIdentifier: ContributorsHeaderView.classNameWithoutNamespaces)
     }
     
     func setupCollectionView() {

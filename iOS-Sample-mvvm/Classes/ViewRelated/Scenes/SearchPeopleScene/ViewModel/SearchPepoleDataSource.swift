@@ -69,10 +69,18 @@ extension SearchPeopleDataSource {
     
     func viewForHeaderInSection(_ section: Int, in tableView: UITableView) -> UIView? {
         
-        let header = UILabel()
-        header.text = "اقتراحات"
-        header.textColor = Asset.ColorPalette.primaryColor.color
-        
+//        let header = UILabel()
+//        header.text =
+//        header.textColor = Asset.ColorPalette.primaryColor.color
+//
+//        return header
+        guard let header = tableView.dequeueReusableHeaderFooterView(
+                withIdentifier: ContributorsHeaderView.classNameWithoutNamespaces)
+                as? ContributorsHeaderView else {
+            fatalError("Unable to get header view")
+        }
+        header.cinfigureView(title: "اقتراحات")
+//        header.headerTitleLabel.font = .boldSystemFont(ofSize: Constants.headerFontSize)
         return header
     }
     
