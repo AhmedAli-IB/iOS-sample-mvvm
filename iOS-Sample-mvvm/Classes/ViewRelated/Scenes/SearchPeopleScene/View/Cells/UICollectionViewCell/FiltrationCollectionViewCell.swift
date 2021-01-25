@@ -100,4 +100,3 @@ private extension FiltrationCollectionViewCell {
         static let containerCornerRadius = CGFloat(16)
     }
 }
-

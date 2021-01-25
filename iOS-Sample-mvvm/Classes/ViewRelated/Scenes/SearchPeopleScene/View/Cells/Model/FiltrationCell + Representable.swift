@@ -7,7 +7,7 @@
 
 import Foundation
 
-// MARK: - EpisodeCellRepresentable
+// MARK: - Filtration Cell Representable
 //
 extension FiltrationModel: FiltrationCellRepresentable {
 
