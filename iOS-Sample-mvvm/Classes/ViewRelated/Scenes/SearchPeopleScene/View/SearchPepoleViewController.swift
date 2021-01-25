@@ -8,13 +8,14 @@
 import UIKit
 
 class SearchPepoleViewController: UIViewController {
-
+    
     // MARK: - IBOutlets
     //
     @IBOutlet weak private var searchBar: SMESearchBar!
     @IBOutlet weak private var collectionView: UICollectionView!
     
     @IBOutlet weak private var tableView: UITableView!
+    
     // MARK: - Properties
     //
     private let viewModel: SearchPepoleViewModel = SearchPepoleViewModel()
@@ -61,13 +62,22 @@ private extension SearchPepoleViewController {
         tableView.dataSource = viewModel.dataSource
     }
 }
-// MARK: - Strings
+
+// MARK: - Helpers
 //
 private extension SearchPepoleViewController {
-    enum Strings {
-       static let searchBarBlaceholder = "البحث"
+    
+    /// calculate item wifth based on title text
+    /// - Returns: cell width
+    func calculateItemWidth(item: FiltrationModel) -> CGFloat {
+        var staticWidth: CGFloat = .zero
+        item.expanded == true ? (staticWidth = Constants.expandedItemWidth) : (staticWidth = Constants.normalItemWidth)
+        let itemFont =  UIFont.systemFont(ofSize: Constants.itemFontSize)
+        let  itemTextWidth = item.filterTitle.size(withAttributes: [.font: itemFont])
+        return CGFloat(itemTextWidth.width + staticWidth)
     }
 }
+
 // MARK: - UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 //
 extension SearchPepoleViewController: UICollectionViewDelegate,
@@ -86,9 +96,15 @@ extension SearchPepoleViewController: UICollectionViewDelegate,
         cell?.viewModel = viewModel.getFiltrationItem(indexPath: indexPath)
         return cell ?? UICollectionViewCell()
     }
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        CGSize(width: 100, height: 40)
-//    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let itemWidth = calculateItemWidth(item: viewModel.getFiltrationItem(indexPath: indexPath))
+        
+        return CGSize(width: itemWidth, height: Constants.collectionItemHeight)
+    }
 }
 
 // MARK: - UITableViewDelegate
@@ -101,5 +117,24 @@ extension SearchPepoleViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         viewModel.dataSource.heightForHeaderInTableView(tableView, section: section)
+    }
+}
+
+// MARK: - Strings
+//
+private extension SearchPepoleViewController {
+    enum Strings {
+        static let searchBarBlaceholder = "البحث"
+    }
+}
+
+// MARK: - Constants
+//
+private extension SearchPepoleViewController {
+    enum Constants {
+        static let expandedItemWidth = CGFloat(74)
+        static let normalItemWidth = CGFloat(52)
+        static let collectionItemHeight = CGFloat(40)
+        static let itemFontSize = CGFloat(17)
     }
 }

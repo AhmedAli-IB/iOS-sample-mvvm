@@ -20,19 +20,22 @@ struct FiltrationModel {
 //
 extension FiltrationModel {
     
-   static func createFiltrationModels() -> [FiltrationModel] {
-    let firstItem = FiltrationModel(filterTitle: Strings.online,
-                                    selectedImageName: Asset.Assets.icOnlineCricleSelected.name,
-                                    unSelectedImageName: Asset.Assets.icOnlineCircleUnselected.name,
-                                    expanded: false)
-    let secoundItem = FiltrationModel(filterTitle: Strings.inCenter,
-                                      selectedImageName: Asset.Assets.icLocationCircleSelected.name,
-                                      unSelectedImageName: Asset.Assets.icLocationCircle.name,
-                                      expanded: true)
-    let thirdItem = FiltrationModel(filterTitle: Strings.fields,
-                                    selectedImageName: Asset.Assets.icFieldsCircle.name,
-                                    unSelectedImageName: Asset.Assets.icFieldsCircle.name,
-                                    expanded: true)
+    static func createFiltrationModels() -> [FiltrationModel] {
+        
+        let  firstItem = FiltrationModel(filterTitle: Strings.fields,
+                                         selectedImageName: Asset.Assets.icFieldsCircle.name,
+                                         unSelectedImageName: Asset.Assets.icFieldsCircle.name,
+                                         expanded: true)
+        
+        let secoundItem = FiltrationModel(filterTitle: Strings.inCenter,
+                                          selectedImageName: Asset.Assets.icLocationCircleSelected.name,
+                                          unSelectedImageName: Asset.Assets.icLocationCircle.name,
+                                          expanded: true)
+        let thirdItem = FiltrationModel(filterTitle: Strings.online,
+                                        selectedImageName: Asset.Assets.icOnlineCricleSelected.name,
+                                        unSelectedImageName: Asset.Assets.icOnlineCircleUnselected.name,
+                                        expanded: false)
+        
         return [firstItem, secoundItem, thirdItem]
     }
 }
