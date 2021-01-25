@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - Filtration Model
 /// Model for render filtration items in search screen
-
+///
 struct FiltrationModel {
     let filterTitle: String
     let selectedImageName: String
