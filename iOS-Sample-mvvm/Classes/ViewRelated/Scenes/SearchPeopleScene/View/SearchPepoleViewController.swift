@@ -14,6 +14,7 @@ class SearchPepoleViewController: UIViewController {
     @IBOutlet weak private var searchBar: SMESearchBar!
     @IBOutlet weak private var collectionView: UICollectionView!
     
+    @IBOutlet weak private var tableView: UITableView!
     // MARK: - Properties
     //
     private let viewModel: SearchPepoleViewModel = SearchPepoleViewModel()
@@ -39,17 +40,25 @@ private extension SearchPepoleViewController {
         searchBar.searchTextField.placeholder = Strings.searchBarBlaceholder
         registerCells()
         setupCollectionView()
+        setupTableView()
     }
     
     func registerCells() {
         let cellNib = UINib(nibName: FiltrationCollectionViewCell.classNameWithoutNamespaces, bundle: nil)
         collectionView.register(cellNib,
                                 forCellWithReuseIdentifier: FiltrationCollectionViewCell.reuseIdentifier)
+        let contributorCellNib = UINib(nibName: ContributorTableViewCell.classNameWithoutNamespaces, bundle: nil)
+        tableView.register(contributorCellNib, forCellReuseIdentifier: ContributorTableViewCell.reuseIdentifier)
     }
     
     func setupCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
+    }
+    
+    func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = viewModel.dataSource
     }
 }
 // MARK: - Strings
@@ -59,7 +68,8 @@ private extension SearchPepoleViewController {
        static let searchBarBlaceholder = "البحث"
     }
 }
-
+// MARK: - UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
+//
 extension SearchPepoleViewController: UICollectionViewDelegate,
                                       UICollectionViewDataSource,
                                       UICollectionViewDelegateFlowLayout {
@@ -79,4 +89,17 @@ extension SearchPepoleViewController: UICollectionViewDelegate,
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 //        CGSize(width: 100, height: 40)
 //    }
+}
+
+// MARK: - UITableViewDelegate
+//
+extension SearchPepoleViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        viewModel.dataSource.viewForHeaderInSection(section, in: tableView)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        viewModel.dataSource.heightForHeaderInTableView(tableView, section: section)
+    }
 }

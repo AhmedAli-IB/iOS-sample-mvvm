@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="collectionView" destination="cmd-qQ-Qhu" id="3bT-mw-esZ"/>
                 <outlet property="searchBar" destination="XTY-DK-3qn" id="yKB-QF-AfY"/>
+                <outlet property="tableView" destination="IIg-Hr-A0Z" id="77H-N7-hLG"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -93,14 +94,22 @@
                         <constraint firstItem="5qa-18-F1x" firstAttribute="leading" secondItem="Lya-sa-InA" secondAttribute="leading" constant="8" id="uKO-NE-c2w"/>
                     </constraints>
                 </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="IIg-Hr-A0Z">
+                    <rect key="frame" x="8" y="258" width="398" height="604"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" red="0.96078431372549022" green="0.96470588235294119" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="Lya-sa-InA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="5Is-JL-Tah"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="IIg-Hr-A0Z" secondAttribute="trailing" constant="8" id="FMH-bc-L7u"/>
                 <constraint firstItem="Lya-sa-InA" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="OvH-0b-fCd"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Lya-sa-InA" secondAttribute="trailing" id="UUl-OH-Nz1"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="IIg-Hr-A0Z" secondAttribute="bottom" id="Zva-A0-6BT"/>
                 <constraint firstItem="Lya-sa-InA" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.27" id="gk1-Hd-0cH"/>
+                <constraint firstItem="IIg-Hr-A0Z" firstAttribute="top" secondItem="Lya-sa-InA" secondAttribute="bottom" constant="16" id="h7M-NB-7Dh"/>
+                <constraint firstItem="IIg-Hr-A0Z" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="zqm-Ux-WoZ"/>
             </constraints>
             <point key="canvasLocation" x="-35" y="87"/>
         </view>

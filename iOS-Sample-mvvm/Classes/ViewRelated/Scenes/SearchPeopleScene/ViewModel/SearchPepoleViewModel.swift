@@ -14,6 +14,11 @@ class SearchPepoleViewModel: BaseViewModel {
     // MARK: - Properties
     //
     private var filtrationItems: [FiltrationModel] = []
+    /// SearchPeopleDataSource
+    ///
+    var dataSource: SearchPeopleDataSource = {
+        return SearchPeopleDataSource()
+    }()
     
     var numberOfItms: Int {
         return filtrationItems.count
