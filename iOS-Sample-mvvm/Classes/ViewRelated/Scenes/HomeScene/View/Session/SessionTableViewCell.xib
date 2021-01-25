@@ -48,10 +48,10 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="contentView" destination="s4x-yw-2tx" id="NQi-Wr-8km"/>
-                <outlet property="description" destination="yKm-WV-9He" id="ePW-Jo-KbS"/>
-                <outlet property="icon" destination="GN6-Aj-FW6" id="BiG-r2-8TD"/>
-                <outlet property="title" destination="ray-qt-EGj" id="OzI-EZ-La8"/>
+                <outlet property="cellDescription" destination="yKm-WV-9He" id="L7f-U6-D2C"/>
+                <outlet property="cellIcon" destination="GN6-Aj-FW6" id="CYX-AU-5w2"/>
+                <outlet property="cellTitle" destination="ray-qt-EGj" id="ZvW-1h-I1f"/>
+                <outlet property="rootView" destination="s4x-yw-2tx" id="pwb-Ju-3uL"/>
             </connections>
             <point key="canvasLocation" x="-226.08695652173915" y="84.375"/>
         </tableViewCell>
