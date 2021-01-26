@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="iOS_Sample_mvvm" customModuleProvider="target">
             <connections>
+                <outlet property="upcommingSessionLogo" destination="Tij-EL-5vc" id="5xP-58-1h2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -31,6 +32,9 @@
                         <constraint firstAttribute="height" constant="16" id="aKW-Ke-4wT"/>
                     </constraints>
                     <state key="normal" image="ic_Search"/>
+                    <connections>
+                        <action selector="searchTapped:" destination="-1" eventType="touchUpInside" id="hOw-VX-BVG"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الجلسات القادمة" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tij-EL-5vc">
                     <rect key="frame" x="287.5" y="138" width="111.5" height="20.5"/>

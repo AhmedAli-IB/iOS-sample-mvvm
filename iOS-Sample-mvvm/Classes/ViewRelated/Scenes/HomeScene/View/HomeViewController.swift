@@ -9,11 +9,15 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var upcommingSessionLogo: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
     }
 
+    @IBAction func searchTapped(_ sender: Any) {
+    }
 }
 
 // MARK: - Configuration
