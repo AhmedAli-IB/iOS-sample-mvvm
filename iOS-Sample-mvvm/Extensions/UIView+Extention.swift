@@ -17,8 +17,7 @@ extension UIView {
     }
     return contentView
   }
-    @IBInspectable
-    var cornerRadius: CGFloat {
+    @IBInspectable var cornerRadius: CGFloat {
         get {
             return layer.cornerRadius
         }
@@ -27,8 +26,7 @@ extension UIView {
         }
     }
     
-    @IBInspectable
-    var borderColor: UIColor? {
+    @IBInspectable var borderColor: UIColor? {
         get {
             guard let color = layer.borderColor else { return nil }
             return UIColor(cgColor: color)
@@ -39,8 +37,7 @@ extension UIView {
         }
     }
     
-    @IBInspectable
-    var borderWidth: CGFloat {
+    @IBInspectable var borderWidth: CGFloat {
         get {
             return layer.borderWidth
         }
@@ -49,4 +46,3 @@ extension UIView {
         }
     }
 }
-

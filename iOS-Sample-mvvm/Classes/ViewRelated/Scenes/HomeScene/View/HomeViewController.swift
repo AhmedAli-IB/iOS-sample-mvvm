@@ -9,7 +9,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-    @IBOutlet weak var upcommingSessionLogo: UILabel!
+    @IBOutlet private weak var upcommingSessionLogo: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
