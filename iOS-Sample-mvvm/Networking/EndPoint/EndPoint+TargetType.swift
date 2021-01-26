@@ -14,14 +14,14 @@ extension AppEndPoint: TargetType {
     
     var path: String {
         switch self {
-        case .getSomeEndpoint:
-            return "/some/path"
+        case .getContributors:
+            return "/api/profile/contributors"
         }
     }
     
     var method: Moya.Method {
        switch self {
-       case .getSomeEndpoint:
+       case .getContributors:
         return .get
         
        }
@@ -29,7 +29,7 @@ extension AppEndPoint: TargetType {
     
     var task: Task {
         switch self {
-        case .getSomeEndpoint:
+        case .getContributors:
             return .requestParameters(parameters: [:], encoding: URLEncoding.default)
         }
     }

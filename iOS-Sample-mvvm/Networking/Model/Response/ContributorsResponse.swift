@@ -1,5 +1,5 @@
 //
-//  Contributors.swift
+//  ContributorsResponse.swift
 //  iOS-Sample-mvvm
 //
 //  Created by Ahmed Ali on 25/01/2021.
@@ -11,32 +11,34 @@ import Foundation
 //
 //   let contributors = try? newJSONDecoder().decode(Contributors.self, from: jsonData)
 
-// MARK: - Contributors
-struct Contributorssss: Codable {
-    let status: Int
-    let success: Bool
-    let data: [Datum]
-    let pagination: Pagination
+// MARK: - ContributorsMainResponse
+//
+struct ContributorsMainResponse: Codable {
+    let status: Int?
+    let success: Bool?
+    let data: [ContributorsResponse]?
+    let pagination: Pagination?
 }
 
-// MARK: - Datum
-struct Datum: Codable {
-    let id: String
-    let rating: Double
-    let availability: Int
-    let onlineEnabled: Bool
+// MARK: - ContributorsResponse
+//
+struct ContributorsResponse: Codable {
+    let id: String?
+    let rating: Double?
+    let availability: Int?
+    let onlineEnabled: Bool?
     let aboutMe: String?
-    let isAvailable, joinNowEnabled, chatStatus, isOnline: Bool
-    let createdAt: Int
-    let isSubscribed: Bool
-    let subscribersCount: Int
-    let ssoUser: SsoUser
-    let subject: Subject
+    let isAvailable, joinNowEnabled, chatStatus, isOnline: Bool?
+    let createdAt: Int?
+    let isSubscribed: Bool?
+    let subscribersCount: Int?
+    let ssoUser: SsoUser?
+    let subject: Subject?
     let consultant: Consultant?
     let advisor: Advisor?
     let zoom: Zoom?
     let office: Interest?
-    let interests: [Interest]
+    let interests: [Interest]?
     let file: File?
 
     enum CodingKeys: String, CodingKey {
@@ -56,9 +58,10 @@ struct Datum: Codable {
 }
 
 // MARK: - Advisor
+//
 struct Advisor: Codable {
-    let id: String
-    let creationDate: Int
+    let id: String?
+    let creationDate: Int?
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -67,9 +70,10 @@ struct Advisor: Codable {
 }
 
 // MARK: - Consultant
+//
 struct Consultant: Codable {
-    let id: String
-    let createdAt: Int
+    let id: String?
+    let createdAt: In?
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -78,9 +82,10 @@ struct Consultant: Codable {
 }
 
 // MARK: - File
+//
 struct File: Codable {
-    let id, path: String
-    let createdAt: Int
+    let id, path: String?
+    let createdAt: Int?
 
     enum CodingKeys: String, CodingKey {
         case id, path
@@ -89,12 +94,13 @@ struct File: Codable {
 }
 
 // MARK: - Center
+//
 struct Center: Codable {
-    let id, name: String
-    let latitude, longitude: Double
-    let address: String
-    let createdAt: Int
-    let city: Interest
+    let id, name: String?
+    let latitude, longitude: Double?
+    let address: String?
+    let createdAt: Int?
+    let city: Interest?
 
     enum CodingKeys: String, CodingKey {
         case id, name, latitude, longitude, address
@@ -104,9 +110,10 @@ struct Center: Codable {
 }
 
 // MARK: - Interest
+//
 class Interest: Codable {
-    let id, name: String
-    let createdAt: Int
+    let id, name: String?
+    let createdAt: Int?
     let center: Center?
 
     enum CodingKeys: String, CodingKey {
@@ -124,6 +131,7 @@ class Interest: Codable {
 }
 
 // MARK: - SsoUser
+//
 struct SsoUser: Codable {
     let id, nationalIdentity, fullName: String
     let mobileNumber: String?
@@ -142,9 +150,10 @@ struct SsoUser: Codable {
 }
 
 // MARK: - User
+//
 struct User: Codable {
-    let id, email: String
-    let createdAt: Int
+    let id, email: String?
+    let createdAt: Int?
 
     enum CodingKeys: String, CodingKey {
         case id, email
@@ -153,16 +162,17 @@ struct User: Codable {
 }
 
 // MARK: - Subject
+//
 struct Subject: Codable {
-    let id, title: String
-    let type: Int
+    let id, title: String?
+    let type: Int?
     let file: File?
 }
 
 // MARK: - Zoom
 struct Zoom: Codable {
-    let id, email, meetingPassword, pid: String
-    let createdAt: Int
+    let id, email, meetingPassword, pid: String?
+    let createdAt: Int?
 
     enum CodingKeys: String, CodingKey {
         case id, email
@@ -175,6 +185,6 @@ struct Zoom: Codable {
 // MARK: - Pagination
 //
 struct Pagination: Codable {
-    let count, total, perPage, currentPage: Int
-    let totalPages: Int
+    let count, total, perPage, currentPage: Int?
+    let totalPages: Int?
 }
