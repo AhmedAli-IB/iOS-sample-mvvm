@@ -18,7 +18,7 @@ class SearchPepoleViewController: UIViewController {
     
     // MARK: - Properties
     //
-    private let viewModel: SearchPepoleViewModel = SearchPepoleViewModel()
+    private let viewModel: SearchPepoleViewModel = SearchPepoleViewModel(serviceLocator: SearchServiceLocator())
     
     // MARK: - Life cycle
     //

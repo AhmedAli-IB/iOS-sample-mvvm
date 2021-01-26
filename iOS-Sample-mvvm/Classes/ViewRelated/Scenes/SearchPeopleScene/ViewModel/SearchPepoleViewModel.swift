@@ -14,11 +14,18 @@ class SearchPepoleViewModel: BaseViewModel {
     // MARK: - Properties
     //
     private var filtrationItems: [FiltrationModel] = []
+    private let serviceLocator: SearchServiceLocatorProtocol
+
     /// SearchPeopleDataSource
     ///
     var dataSource: SearchPeopleDataSource = {
         return SearchPeopleDataSource()
     }()
+    
+    // MARK: - Init
+    init(serviceLocator: SearchServiceLocatorProtocol) {
+        self.serviceLocator = serviceLocator
+    }
     
     var numberOfItms: Int {
         return filtrationItems.count
@@ -28,6 +35,15 @@ class SearchPepoleViewModel: BaseViewModel {
     //
     func viewDidLoad() {
         filtrationItems = FiltrationModel.createFiltrationModels()
+        serviceLocator.getContributors { result in
+            switch result {
+            
+            case .success(_):
+                print("success")
+            case .failure(_):
+                print("failure")
+            }
+        }
     }
     
     /// Get Filtration Item for specific

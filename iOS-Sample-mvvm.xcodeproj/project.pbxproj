@@ -68,7 +68,7 @@
 		60D3225D25BDB1F40030E5FA /* FiltrationCell + Representable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D3225C25BDB1F40030E5FA /* FiltrationCell + Representable.swift */; };
 		60D3226125BDB29B0030E5FA /* FiltrationCellRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D3226025BDB29B0030E5FA /* FiltrationCellRepresentable.swift */; };
 		60F785BE25BEC151008978D5 /* SearchPepoleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F785BD25BEC151008978D5 /* SearchPepoleDataSource.swift */; };
-		60F785CD25BED080008978D5 /* Contributors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F785CC25BED080008978D5 /* Contributors.swift */; };
+		60F785CD25BED080008978D5 /* ContributorsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F785CC25BED080008978D5 /* ContributorsResponse.swift */; };
 		60F785D125BED1CC008978D5 /* Contributor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F785D025BED1CC008978D5 /* Contributor.swift */; };
 		60F785D825BED382008978D5 /* ContributorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F785D625BED382008978D5 /* ContributorTableViewCell.swift */; };
 		60F785D925BED382008978D5 /* ContributorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60F785D725BED382008978D5 /* ContributorTableViewCell.xib */; };
@@ -76,6 +76,8 @@
 		60F785E125BED755008978D5 /* Contributor+Representable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F785E025BED755008978D5 /* Contributor+Representable.swift */; };
 		60F785E625BF11A6008978D5 /* ContributorsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F785E525BF11A6008978D5 /* ContributorsHeaderView.swift */; };
 		60F785EA25BF11B1008978D5 /* ContributorsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60F785E925BF11B1008978D5 /* ContributorsHeaderView.xib */; };
+		60F785EF25BF1927008978D5 /* SearchPepoleServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F785EE25BF1927008978D5 /* SearchPepoleServiceLocator.swift */; };
+		60F785F525BF1FEB008978D5 /* ContributorRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F785F425BF1FEB008978D5 /* ContributorRequest.swift */; };
 		E0FC1BD525B55BFF00EDAE4E /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FC1BD425B55BFF00EDAE4E /* EndPoint.swift */; };
 		E0FC1BDA25B55C9500EDAE4E /* EndPoint+TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FC1BD925B55C9500EDAE4E /* EndPoint+TargetType.swift */; };
 		E0FC1BDF25B55EF100EDAE4E /* Enviroment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FC1BDE25B55EF100EDAE4E /* Enviroment.swift */; };
@@ -184,7 +186,7 @@
 		60D3225C25BDB1F40030E5FA /* FiltrationCell + Representable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FiltrationCell + Representable.swift"; sourceTree = "<group>"; };
 		60D3226025BDB29B0030E5FA /* FiltrationCellRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltrationCellRepresentable.swift; sourceTree = "<group>"; };
 		60F785BD25BEC151008978D5 /* SearchPepoleDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPepoleDataSource.swift; sourceTree = "<group>"; };
-		60F785CC25BED080008978D5 /* Contributors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contributors.swift; sourceTree = "<group>"; };
+		60F785CC25BED080008978D5 /* ContributorsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributorsResponse.swift; sourceTree = "<group>"; };
 		60F785D025BED1CC008978D5 /* Contributor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contributor.swift; sourceTree = "<group>"; };
 		60F785D625BED382008978D5 /* ContributorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributorTableViewCell.swift; sourceTree = "<group>"; };
 		60F785D725BED382008978D5 /* ContributorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContributorTableViewCell.xib; sourceTree = "<group>"; };
@@ -192,6 +194,8 @@
 		60F785E025BED755008978D5 /* Contributor+Representable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contributor+Representable.swift"; sourceTree = "<group>"; };
 		60F785E525BF11A6008978D5 /* ContributorsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributorsHeaderView.swift; sourceTree = "<group>"; };
 		60F785E925BF11B1008978D5 /* ContributorsHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContributorsHeaderView.xib; sourceTree = "<group>"; };
+		60F785EE25BF1927008978D5 /* SearchPepoleServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPepoleServiceLocator.swift; sourceTree = "<group>"; };
+		60F785F425BF1FEB008978D5 /* ContributorRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributorRequest.swift; sourceTree = "<group>"; };
 		E01D614B25B6DE6B007E39FE /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 		E01D617B25B6EDE1007E39FE /* BaseProduction.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = BaseProduction.xcconfig; sourceTree = "<group>"; };
 		E01D617C25B6EDFC007E39FE /* BaseStaging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = BaseStaging.xcconfig; sourceTree = "<group>"; };
@@ -600,6 +604,7 @@
 		60D3220625BD6C9F0030E5FA /* SearchPeopleScene */ = {
 			isa = PBXGroup;
 			children = (
+				60F785ED25BF18FB008978D5 /* ServiceLocator */,
 				60D3220A25BD70020030E5FA /* ViewModel */,
 				60D3220925BD6CEA0030E5FA /* View */,
 			);
@@ -693,6 +698,7 @@
 		60F785CA25BED055008978D5 /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				60F785F425BF1FEB008978D5 /* ContributorRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -700,7 +706,7 @@
 		60F785CB25BED05C008978D5 /* Response */ = {
 			isa = PBXGroup;
 			children = (
-				60F785CC25BED080008978D5 /* Contributors.swift */,
+				60F785CC25BED080008978D5 /* ContributorsResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -712,6 +718,14 @@
 				60F785E925BF11B1008978D5 /* ContributorsHeaderView.xib */,
 			);
 			path = Headers;
+			sourceTree = "<group>";
+		};
+		60F785ED25BF18FB008978D5 /* ServiceLocator */ = {
+			isa = PBXGroup;
+			children = (
+				60F785EE25BF1927008978D5 /* SearchPepoleServiceLocator.swift */,
+			);
+			path = ServiceLocator;
 			sourceTree = "<group>";
 		};
 		E0FC1BD325B55BCC00EDAE4E /* EndPoint */ = {
@@ -960,6 +974,7 @@
 				604077E625B469C300C8972F /* Variable.swift in Sources */,
 				60D321CE25B9ABE10030E5FA /* NotificationViewController.swift in Sources */,
 				60D3220D25BD70200030E5FA /* SearchPepoleViewController.swift in Sources */,
+				60F785F525BF1FEB008978D5 /* ContributorRequest.swift in Sources */,
 				60F785BE25BEC151008978D5 /* SearchPepoleDataSource.swift in Sources */,
 				60D3222025BD78B80030E5FA /* SMESearchBar.swift in Sources */,
 				60D3219625B99CA00030E5FA /* MainTabBarController.swift in Sources */,
@@ -975,7 +990,8 @@
 				60D3221B25BD74610030E5FA /* BaseNavigationController.swift in Sources */,
 				60F785DD25BED5CB008978D5 /* ContributorCellRepresentable.swift in Sources */,
 				60D321F725BD6B080030E5FA /* UIViewController.swift+Loadding+Alert.swift in Sources */,
-				60F785CD25BED080008978D5 /* Contributors.swift in Sources */,
+				60F785CD25BED080008978D5 /* ContributorsResponse.swift in Sources */,
+				60F785EF25BF1927008978D5 /* SearchPepoleServiceLocator.swift in Sources */,
 				60D3221525BD72C20030E5FA /* SearchCoordinator.swift in Sources */,
 				604077A525B4600D00C8972F /* HomeViewController.swift in Sources */,
 				E0FC1BDF25B55EF100EDAE4E /* Enviroment.swift in Sources */,
