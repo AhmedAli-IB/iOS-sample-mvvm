@@ -46,7 +46,7 @@ file_name:
   excluded:
     - main.swift
 
-force_cast: error
+force_cast: warning
 force_try: error
 force_unwrapping: error
 legacy_constant: error
