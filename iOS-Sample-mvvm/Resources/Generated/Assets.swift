@@ -44,9 +44,9 @@ internal enum Asset {
     internal static let icNotificationActiveRed = ImageAsset(name: "ic_notification-active-red")
     internal static let icNotificationActive = ImageAsset(name: "ic_notification-active")
     internal static let icReadMore = ImageAsset(name: "ic_read-more")
-    internal static let mainIconIcConsultancy = ImageAsset(name: "main-icon_ic_Consultancy")
-    internal static let mainIconIcConsultancy1 = ImageAsset(name: "main-icon_ic_Consultancy_1")
-    internal static let mainIconIcConsultancy2 = ImageAsset(name: "main-icon_ic_Consultancy_2")
+    internal static let main1 = ImageAsset(name: "main1")
+    internal static let main2 = ImageAsset(name: "main2")
+    internal static let main3 = ImageAsset(name: "main3")
     internal static let placeholder = ImageAsset(name: "placeholder")
   }
   internal enum ColorPalette {
@@ -154,6 +154,7 @@ internal enum Asset {
     internal static let pink70 = ColorAsset(name: "Pink70")
     internal static let pink80 = ColorAsset(name: "Pink80")
     internal static let pink90 = ColorAsset(name: "Pink90")
+    internal static let platinum = ColorAsset(name: "Platinum")
     internal static let purple0 = ColorAsset(name: "Purple0")
     internal static let purple10 = ColorAsset(name: "Purple10")
     internal static let purple100 = ColorAsset(name: "Purple100")
