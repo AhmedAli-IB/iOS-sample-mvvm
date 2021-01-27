@@ -27,4 +27,11 @@ class SessionTableViewCell: UITableViewCell {
         cellTitle.font = UIFont(font: FontFamily._29LTAzer.medium, size: 20)
         cellDescription.font = UIFont(font: FontFamily._29LTAzer.regular, size: 15)
     }
+    
+    func setupCellData(staticSession: [String: String]) {
+        cellTitle.text = staticSession["title"]
+        cellDescription.text = staticSession["description"]
+        cellIcon.image = UIImage(named: staticSession["icon"] ?? "")
+        cellTitle.textColor = UIColor(named: staticSession["color"] ?? "gray")
+    }
 }

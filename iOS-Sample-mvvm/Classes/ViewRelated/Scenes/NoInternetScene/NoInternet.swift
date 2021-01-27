@@ -36,7 +36,6 @@ class NoInternet: UIView {
     }
     
     @IBAction func tryAgain(_ sender: UIButton) {
-        print(" in action ")
         self.view?.tryAgain()
     }
     

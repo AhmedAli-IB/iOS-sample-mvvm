@@ -19,10 +19,11 @@ class CardCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var userImage: UIImageView!
     @IBOutlet weak var pageControl: UIPageControl!
     
+    @IBOutlet weak var officeName: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-
-//        setupLabelFonts()
+        setupLabelFonts()
+        setupImageView()
     }
     
     @IBAction func cancelAppointment(_ sender: UIButton) {
@@ -36,9 +37,62 @@ class CardCollectionViewCell: UICollectionViewCell {
         cancel.titleLabel?.font = UIFont(font: FontFamily._29LTAzer.medium, size: 15)
     }
     
+    func setupImageView() {
+        userImage.layer.masksToBounds = true
+        userImage.layer.borderWidth = 3
+        userImage.layer.borderColor = UIColor(asset: Asset.ColorPalette.platinum)?.cgColor
+        userImage.layer.cornerRadius = 16
+    }
+    
     func collectionView(_ collectionView: UICollectionView,
                         willDisplay cell: UICollectionViewCell,
                         forItemAt indexPath: IndexPath) {
         self.pageControl.currentPage = indexPath.section
     }
+    
+    func setupCellData(session: SessionsData) {
+        userName.text = session.schedule?.contributor?.ssoUser?.fullName
+        
+        userDepartment.text = session.schedule?.contributor?.subject?.title
+        if(session.type == 1) {
+            userDepartment.textColor = UIColor(asset: Asset.ColorPalette.steelBlue)
+
+        } else if(session.type == 2) {
+            userDepartment.textColor = UIColor(asset: Asset.ColorPalette.mantis)
+
+        } else {
+            userDepartment.textColor = UIColor(asset: Asset.ColorPalette.persianOrange)
+        }
+        userRating.rating = Double(session.schedule?.contributor?.rating ?? 0)
+        userRating.text = String(format: "%.1f", session.schedule?.contributor?.rating ?? 0)
+
+        userImage.setImage(urlString: session.schedule?.contributor?.file?.path,
+                           placeholder: UIImage(named: "ic_avatar"))
+        if(session.schedule?.communicationWay == 1) {
+            wayOfCommunication.text = Strings.online
+            
+        } else {
+            wayOfCommunication.text = Strings.office
+//            officeName.text = session.office
+        }
+        date.text = formateDateToArabic(timeResult: session.schedule?.startDate ?? 0)
+    }
+    
+    func formateDateToArabic(timeResult: Int) -> String {
+        
+        let formatter = DateFormatter()
+        let date = Date(timeIntervalSince1970: TimeInterval(timeResult))
+        formatter.locale = NSLocale(localeIdentifier: "ar_DZ") as Locale
+        formatter.dateFormat = "EEEE, d, MMMM"
+        return formatter.string(from: date)
+    }
+}
+
+private extension CardCollectionViewCell {
+    
+    enum Strings {
+        static let online = "Online"
+        static let office = "In Office"
+    }
+
 }

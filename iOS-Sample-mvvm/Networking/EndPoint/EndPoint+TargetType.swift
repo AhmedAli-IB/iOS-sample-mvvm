@@ -11,17 +11,17 @@ import Moya
 extension AppEndPoint: TargetType {
     
     var baseURL: URL { return Environment.rootURL }
-    
+
     var path: String {
         switch self {
-        case .getSomeEndpoint:
-            return "/some/path"
+        case .getSessions:
+            return "/api/schedule/sme/sessions"
         }
     }
     
     var method: Moya.Method {
        switch self {
-       case .getSomeEndpoint:
+       case .getSessions:
         return .get
         
        }
@@ -29,7 +29,7 @@ extension AppEndPoint: TargetType {
     
     var task: Task {
         switch self {
-        case .getSomeEndpoint:
+        case .getSessions:
             return .requestParameters(parameters: [:], encoding: URLEncoding.default)
         }
     }
@@ -37,7 +37,8 @@ extension AppEndPoint: TargetType {
     var sampleData: Data { return Data() }  // We just need to return something here to fully implement the protocol
     
     var headers: [String: String]? {
-        return [KeyConstants.Headers.contentType: KeyConstants.Headers.contentTypeValue]
+        return [KeyConstants.Headers.contentType: KeyConstants.Headers.contentTypeValue,
+                KeyConstants.Headers.authorization: KeyConstants.token]
     }
 
 }

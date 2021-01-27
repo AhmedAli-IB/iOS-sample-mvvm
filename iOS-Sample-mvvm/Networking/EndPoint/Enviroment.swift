@@ -34,7 +34,6 @@ public enum Environment {
         guard let url = URL(string: baseUrl ) else {
             fatalError("Root URL is invalid")
         }
-        print("url version", url.absoluteString )
         return url
     }()
     /// api key

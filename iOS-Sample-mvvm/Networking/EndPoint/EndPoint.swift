@@ -9,7 +9,6 @@ import Foundation
 
 enum AppEndPoint {
     
-    // placeholder
-    case getSomeEndpoint
+    case getSessions
     
 }

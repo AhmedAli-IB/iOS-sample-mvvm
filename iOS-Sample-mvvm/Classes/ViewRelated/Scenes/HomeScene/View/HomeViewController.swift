@@ -7,33 +7,53 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: BaseViewController {
 
     @IBOutlet private weak var upcommingSessionLogo: UILabel!
     @IBOutlet private weak var tableView: UITableView!
     
+    private let viewModel: HomeViewModel = HomeViewModel()
+    private let staticData = StaticSessionsData()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UINib(nibName: Strings.tableViewCellId, bundle: nil),
-                           forCellReuseIdentifier: Strings.tableViewCellId)
-        configureView()
         
+        configureHeaderView()
+        configureTableView()
+        bindLoadingState(to: viewModel)
+        bindErrorState(to: viewModel)
+        configureViewModel()
+        viewModel.getSessions()
     }
 
     @IBAction func searchTapped(_ sender: Any) {
     }
 }
 
-// MARK: - Configuration
-//
 private extension HomeViewController {
     
-    /// Configure View
-    ///
-    func configureView() {
-        configureHeaderView()
+//    func configureView() {
+//        configureHeaderView()
+//    }
+    
+    func configureTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        registerCells()
     }
-   
+    
+    func registerCells() {
+        tableView.register(UINib(nibName: Strings.tableViewCellId, bundle: nil),
+                           forCellReuseIdentifier: Strings.tableViewCellId)
+        
+    }
+    
+    func configureViewModel() {
+        viewModel.onReload = { [weak self] in
+            guard  let self = self else { return }
+            self.tableView.reloadData()
+        }
+    }
 }
 
 private extension HomeViewController {
@@ -76,15 +96,12 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
 //                                        multiplier: 1,
 //                                        constant: 18)
 
-            
 //        pageControl.addConstraint(<#T##constraint: NSLayoutConstraint##NSLayoutConstraint#>)
 //        pageControl.numberOfPages = 3
 //        pageControl.currentPage = 0
 //        pageControl.tintColor = .red
 //        pageControl.pageIndicatorTintColor = .black
 //        pageControl.currentPageIndicatorTintColor = .gray
-        
-        
         
         headerView.backgroundColor = .clear
         headerView.isPagingEnabled = true
@@ -117,7 +134,12 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
 
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
-        return 5
+        if viewModel.numberOfRows > 5 {
+            return 5
+        }
+        print("viewModel.numberOfRows \(viewModel.numberOfRows)")
+        return viewModel.numberOfRows
+//        return 5
     }
     
 //    func collectionView(_ collectionView: UICollectionView,
@@ -129,8 +151,12 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Strings.collectionViewCellId,
-                                                      for: indexPath) as! CardCollectionViewCell
-        return cell
+                                                      for: indexPath) as? CardCollectionViewCell
+        guard let cardCell = cell else {
+            fatalError("Unexpected cell sent to \(#function)")
+        }
+        cardCell.setupCellData(session: viewModel.getCurrentObject(for: indexPath))
+        return cardCell
     }
     
     // MARK: UICollectionViewDelegateFlowLayout
@@ -162,7 +188,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Strings.tableViewCellId,
-                                                 for: indexPath) as! SessionTableViewCell
-        return cell
+                                                 for: indexPath) as? SessionTableViewCell
+        guard let sessionCell = cell else {
+            fatalError("Unexpected cell sent to \(#function)")
+        }
+        sessionCell.setupCellData(staticSession: staticData.arr[indexPath.row])
+        return sessionCell
     }
 }
