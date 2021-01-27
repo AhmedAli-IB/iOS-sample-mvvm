@@ -14,6 +14,8 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.register(UINib(nibName: Strings.tableViewCellId, bundle: nil),
+                           forCellReuseIdentifier: Strings.tableViewCellId)
         configureView()
         
     }
@@ -30,10 +32,6 @@ private extension HomeViewController {
     ///
     func configureView() {
         configureHeaderView()
-        func registerCell() {
-            tableView.register(UINib(nibName: Strings.tableViewCellId, bundle: nil),
-                               forCellReuseIdentifier: Strings.tableViewCellId)
-          }
     }
    
 }
@@ -43,6 +41,7 @@ private extension HomeViewController {
     enum Strings {
         static let collectionViewCellId = "CardCollectionViewCell"
         static let tableViewCellId = "SessionTableViewCell"
+        static let headerView = "headerView"
     }
     
     enum Constants {
@@ -57,13 +56,37 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-
+//        let pageControl =  UIPageControl(frame: .zero)
         let headerView = UICollectionView(frame: CGRect(x: 0,
                                                         y: 0,
                                                         width: 345,
-                                                        height: 211),
+                                                        height: 264),
                                           collectionViewLayout: layout)
-        headerView.backgroundColor = .blue
+        
+//        pageControl.numberOfPages = 5
+//        pageControl.translatesAutoresizingMaskIntoConstraints = false
+//        pageControl.currentPageIndicatorTintColor = .blue
+//        pageControl.pageIndicatorTintColor = UIColor.lightGray.withAlphaComponent(0.8)
+        
+//        let bottom = NSLayoutConstraint(item: pageControl,
+//                                        attribute: .bottom,
+//                                        relatedBy: .equal,
+//                                        toItem: headerView,
+//                                        attribute: .bottom,
+//                                        multiplier: 1,
+//                                        constant: 18)
+
+            
+//        pageControl.addConstraint(<#T##constraint: NSLayoutConstraint##NSLayoutConstraint#>)
+//        pageControl.numberOfPages = 3
+//        pageControl.currentPage = 0
+//        pageControl.tintColor = .red
+//        pageControl.pageIndicatorTintColor = .black
+//        pageControl.currentPageIndicatorTintColor = .gray
+        
+        
+        
+        headerView.backgroundColor = .clear
         headerView.isPagingEnabled = true
         headerView.isUserInteractionEnabled = true
 
@@ -73,36 +96,53 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
                                   bundle: nil),
                             forCellWithReuseIdentifier: Strings.collectionViewCellId)
         
-        headerView.showsHorizontalScrollIndicator = true
+        headerView.showsHorizontalScrollIndicator = false
+        
+//        headerView.insertSubview(pageControl, at: 0)
+//        headerView.bringSubviewToFront(pageControl)
+//        headerView.addConstraints([bottom])
+        
+//        headerView.addSubview(pageControl)
         tableView.tableHeaderView = headerView
     }
 
+    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
+        return 3
+    }
+    
     // MARK: UICollectionViewDataSource
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
 
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int {
         return 5
     }
-
+    
+//    func collectionView(_ collectionView: UICollectionView,
+//                        willDisplay cell: UICollectionViewCell,
+//                        forItemAt indexPath: IndexPath) {
+//        self.
+//    }
+    
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Strings.collectionViewCellId,
                                                       for: indexPath) as! CardCollectionViewCell
         return cell
     }
-
+    
     // MARK: UICollectionViewDelegateFlowLayout
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
+
         return CGSize(width: 345, height: 211)
     }
 }
 
-extension HomeViewController: UITableViewDelegate {
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             
@@ -111,18 +151,18 @@ extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 144.0
     }
-}
-
-extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 8
+        return 3
     }
+    
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//           return 264
+//    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Strings.tableViewCellId,
                                                  for: indexPath) as! SessionTableViewCell
         return cell
     }
-
 }

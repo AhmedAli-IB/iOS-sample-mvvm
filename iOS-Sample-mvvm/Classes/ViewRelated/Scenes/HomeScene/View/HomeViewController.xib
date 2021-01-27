@@ -44,10 +44,14 @@
                     <color key="textColor" name="Glitter"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bFx-w2-QUT">
-                    <rect key="frame" x="15" y="173.5" width="384" height="588.5"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bFx-w2-QUT">
+                    <rect key="frame" x="15" y="173.5" width="384" height="670.5"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="sectionIndexBackgroundColor" name="White smoke"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="0If-qy-yda"/>
+                        <outlet property="delegate" destination="-1" id="fx0-Uc-w36"/>
+                    </connections>
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
@@ -62,7 +66,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="kJI-8V-tTA" secondAttribute="trailing" constant="16" id="HVY-pd-EdA"/>
                 <constraint firstItem="bFx-w2-QUT" firstAttribute="top" secondItem="Tij-EL-5vc" secondAttribute="bottom" constant="15" id="ZHp-zZ-CcT"/>
                 <constraint firstItem="0kq-fn-DkC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="sJh-ru-78g"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="bFx-w2-QUT" secondAttribute="bottom" constant="100" id="vn6-xh-eTm"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="bFx-w2-QUT" secondAttribute="bottom" constant="18" id="vn6-xh-eTm"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bFx-w2-QUT" secondAttribute="trailing" constant="15" id="yE8-3a-s7L"/>
             </constraints>
             <point key="canvasLocation" x="-213.04347826086959" y="69.642857142857139"/>

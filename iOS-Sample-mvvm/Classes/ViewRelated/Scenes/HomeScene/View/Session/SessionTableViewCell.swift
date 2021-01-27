@@ -12,10 +12,15 @@ class SessionTableViewCell: UITableViewCell {
     @IBOutlet private weak var cellDescription: UILabel!
     @IBOutlet private weak var cellTitle: UILabel!
     @IBOutlet private weak var cellIcon: UIImageView!
-    @IBOutlet private weak var rootView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 5, left: 0, bottom: 5, right: 0))
     }
     
     func setupLabelFonts() {

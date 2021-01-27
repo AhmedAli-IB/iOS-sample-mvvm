@@ -17,11 +17,12 @@ class CardCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var userDepartment: UILabel!
     @IBOutlet private weak var userName: UILabel!
     @IBOutlet private weak var userImage: UIImageView!
-    @IBOutlet private weak var rootView: UIView!
+    @IBOutlet weak var pageControl: UIPageControl!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setupLabelFonts()
+
+//        setupLabelFonts()
     }
     
     @IBAction func cancelAppointment(_ sender: UIButton) {
@@ -33,5 +34,11 @@ class CardCollectionViewCell: UICollectionViewCell {
         date.font = UIFont(font: FontFamily._29LTAzer.regular, size: 16)
         wayOfCommunication.font = UIFont(font: FontFamily._29LTAzer.regular, size: 13)
         cancel.titleLabel?.font = UIFont(font: FontFamily._29LTAzer.medium, size: 15)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        willDisplay cell: UICollectionViewCell,
+                        forItemAt indexPath: IndexPath) {
+        self.pageControl.currentPage = indexPath.section
     }
 }

@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SessionTableViewCell" rowHeight="144" id="GGi-zi-SS8" customClass="SessionTableViewCell" customModule="iOS_Sample_mvvm" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SessionTableViewCell" rowHeight="144" id="GGi-zi-SS8" customClass="SessionTableViewCell" customModule="iOS_Sample_mvvm" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="344" height="144"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GGi-zi-SS8" id="s4x-yw-2tx">
@@ -36,6 +36,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="KvO-sH-V8R" firstAttribute="top" secondItem="5dd-tX-ExC" secondAttribute="bottom" constant="3" id="1dq-6e-qYT"/>
                     <constraint firstAttribute="trailing" secondItem="KvO-sH-V8R" secondAttribute="trailing" constant="13" id="5f2-ES-yKR"/>
@@ -53,11 +54,12 @@
                     </userDefinedRuntimeAttribute>
                 </userDefinedRuntimeAttributes>
             </tableViewCellContentView>
+            <color key="backgroundColor" name="White smoke"/>
+            <accessibility key="accessibilityConfiguration" identifier="SessionTableViewCell"/>
             <connections>
                 <outlet property="cellDescription" destination="KvO-sH-V8R" id="PnY-D5-04p"/>
                 <outlet property="cellIcon" destination="C0g-Oz-pB0" id="GqB-6B-uUS"/>
                 <outlet property="cellTitle" destination="5dd-tX-ExC" id="e9v-mg-1IB"/>
-                <outlet property="rootView" destination="s4x-yw-2tx" id="pwb-Ju-3uL"/>
             </connections>
             <point key="canvasLocation" x="-226.08695652173915" y="84.375"/>
         </tableViewCell>
@@ -66,6 +68,9 @@
         <image name="main-icon_ic_Consultancy" width="61" height="64"/>
         <namedColor name="13">
             <color red="0.47058823529411764" green="0.53725490196078429" blue="0.58431372549019611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="White smoke">
+            <color red="0.95294117647058818" green="0.95686274509803926" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
