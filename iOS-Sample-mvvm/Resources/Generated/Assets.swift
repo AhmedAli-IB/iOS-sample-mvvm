@@ -179,6 +179,7 @@ internal enum Asset {
     internal static let red70 = ColorAsset(name: "Red70")
     internal static let red80 = ColorAsset(name: "Red80")
     internal static let red90 = ColorAsset(name: "Red90")
+    internal static let seaBlue = ColorAsset(name: "Sea blue")
     internal static let steelBlue = ColorAsset(name: "Steel blue")
     internal static let whiteSmoke = ColorAsset(name: "White smoke")
     internal static let yellow0 = ColorAsset(name: "Yellow0")

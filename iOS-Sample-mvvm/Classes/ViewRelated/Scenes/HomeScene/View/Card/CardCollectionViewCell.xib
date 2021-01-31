@@ -12,17 +12,17 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CardCollectionViewCell" id="PtM-i2-Xsc" customClass="CardCollectionViewCell" customModule="iOS_Sample_mvvm" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="345" height="211"/>
+            <rect key="frame" x="0.0" y="0.0" width="346" height="264"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Xxi-dS-b58">
-                <rect key="frame" x="0.0" y="0.0" width="345" height="211"/>
+                <rect key="frame" x="0.0" y="0.0" width="346" height="264"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="op2-pD-zG0">
-                        <rect key="frame" x="0.0" y="0.0" width="345" height="211"/>
+                        <rect key="frame" x="0.0" y="0.0" width="346" height="264"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8fg-D8-u7w">
-                                <rect key="frame" x="21" y="90" width="304" height="1"/>
+                                <rect key="frame" x="21" y="90" width="305" height="1"/>
                                 <color key="backgroundColor" name="Gray5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="oAG-2i-iCh"/>
@@ -35,7 +35,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iji-GG-ECt">
-                                <rect key="frame" x="21" y="166" width="304" height="1"/>
+                                <rect key="frame" x="21" y="166" width="305" height="1"/>
                                 <color key="backgroundColor" name="Gray5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="cX0-JC-ecH"/>
@@ -49,7 +49,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E0f-R3-rEL">
-                                <rect key="frame" x="121.5" y="181.5" width="102" height="22"/>
+                                <rect key="frame" x="122" y="181.5" width="102" height="22"/>
                                 <state key="normal" title="إلغاء الموعد" image="button:E0f-R3-rEL:image">
                                     <color key="titleColor" name="Cool grey"/>
                                 </state>
@@ -77,7 +77,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3jT-da-lZ9" customClass="CosmosView" customModule="Cosmos">
-                                <rect key="frame" x="296" y="21" width="26" height="14"/>
+                                <rect key="frame" x="297" y="21" width="26" height="14"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="14" id="WKh-eL-agc"/>
@@ -90,14 +90,22 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
                                         <integer key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                        <real key="value" value="11"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5S-NU-al2">
-                                <rect key="frame" x="329" y="136" width="0.0" height="21"/>
+                                <rect key="frame" x="330" y="136" width="0.0" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="ZDV-qs-Avz">
+                                <rect key="frame" x="112" y="228" width="123" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -146,18 +154,19 @@
                 </userDefinedRuntimeAttributes>
             </collectionViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-            <size key="customSize" width="345" height="211"/>
+            <size key="customSize" width="346" height="264"/>
             <connections>
                 <outlet property="cancel" destination="E0f-R3-rEL" id="EF5-tS-pym"/>
                 <outlet property="date" destination="uoT-IU-1YW" id="lSU-CI-Ea5"/>
                 <outlet property="officeName" destination="O5S-NU-al2" id="4Lv-x2-ZYh"/>
+                <outlet property="pageControl" destination="ZDV-qs-Avz" id="2au-1Y-dEx"/>
                 <outlet property="userDepartment" destination="Sxs-cs-aoH" id="GKz-YQ-5h0"/>
                 <outlet property="userImage" destination="whR-KL-oM9" id="GUT-3j-HFz"/>
                 <outlet property="userName" destination="Ail-ao-oC8" id="7eb-U2-RHV"/>
                 <outlet property="userRating" destination="3jT-da-lZ9" id="hNB-pi-bKg"/>
                 <outlet property="wayOfCommunication" destination="NQz-7z-9I6" id="Krs-bm-CVh"/>
             </connections>
-            <point key="canvasLocation" x="169" y="21"/>
+            <point key="canvasLocation" x="169.56521739130437" y="38.169642857142854"/>
         </collectionViewCell>
     </objects>
     <resources>

@@ -32,6 +32,6 @@ class SessionTableViewCell: UITableViewCell {
         cellTitle.text = staticSession["title"]
         cellDescription.text = staticSession["description"]
         cellIcon.image = UIImage(named: staticSession["icon"] ?? "")
-        cellTitle.textColor = UIColor(named: staticSession["color"] ?? "gray")
+        cellTitle.textColor = UIColor(named: staticSession["color"] ?? "")
     }
 }

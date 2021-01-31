@@ -17,16 +17,26 @@ class CardCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var userDepartment: UILabel!
     @IBOutlet private weak var userName: UILabel!
     @IBOutlet private weak var userImage: UIImageView!
-    @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet private weak var pageControl: UIPageControl!
+    @IBOutlet private weak var officeName: UILabel!
     
-    @IBOutlet weak var officeName: UILabel!
+    var thisWidth:CGFloat = 0
+
     override func awakeFromNib() {
         super.awakeFromNib()
+        thisWidth = CGFloat(self.frame.width)
+
         setupLabelFonts()
         setupImageView()
     }
     
     @IBAction func cancelAppointment(_ sender: UIButton) {
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        willDisplay cell: UICollectionViewCell,
+                        forItemAt indexPath: IndexPath) {
+        self.pageControl.currentPage = indexPath.section
     }
     
     func setupLabelFonts() {
@@ -42,12 +52,6 @@ class CardCollectionViewCell: UICollectionViewCell {
         userImage.layer.borderWidth = 3
         userImage.layer.borderColor = UIColor(asset: Asset.ColorPalette.platinum)?.cgColor
         userImage.layer.cornerRadius = 16
-    }
-    
-    func collectionView(_ collectionView: UICollectionView,
-                        willDisplay cell: UICollectionViewCell,
-                        forItemAt indexPath: IndexPath) {
-        self.pageControl.currentPage = indexPath.section
     }
     
     func setupCellData(session: SessionsData) {

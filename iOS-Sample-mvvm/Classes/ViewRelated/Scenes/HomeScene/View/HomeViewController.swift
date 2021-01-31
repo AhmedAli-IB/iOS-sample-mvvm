@@ -12,14 +12,18 @@ class HomeViewController: BaseViewController {
     @IBOutlet private weak var upcommingSessionLogo: UILabel!
     @IBOutlet private weak var tableView: UITableView!
     
+    @IBOutlet private weak var tableViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var collectionView: UICollectionView!
+    @IBOutlet private weak var pageControl: UIPageControl!
     private let viewModel: HomeViewModel = HomeViewModel()
     private let staticData = StaticSessionsData()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        configureHeaderView()
+
+//        configureHeaderView()
         configureTableView()
+        configureAppearance()
         bindLoadingState(to: viewModel)
         bindErrorState(to: viewModel)
         configureViewModel()
@@ -32,26 +36,40 @@ class HomeViewController: BaseViewController {
 
 private extension HomeViewController {
     
-//    func configureView() {
-//        configureHeaderView()
-//    }
+    func configureAppearance() {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(),
+                                                                    for: .any, barMetrics: .default)
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+    }
     
     func configureTableView() {
+
         tableView.delegate = self
         tableView.dataSource = self
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+        pageControl.hidesForSinglePage = true
+        pageControl.numberOfPages = viewModel.numberOfRows
+        
         registerCells()
     }
     
     func registerCells() {
         tableView.register(UINib(nibName: Strings.tableViewCellId, bundle: nil),
                            forCellReuseIdentifier: Strings.tableViewCellId)
-        
+        collectionView.register(UINib(nibName: Strings.collectionViewCellId, bundle: nil),
+                                forCellWithReuseIdentifier: Strings.collectionViewCellId)
     }
     
     func configureViewModel() {
         viewModel.onReload = { [weak self] in
             guard  let self = self else { return }
+            self.tableViewHeightConstraint.constant = self.tableView.contentSize.height
             self.tableView.reloadData()
+            self.collectionView.reloadData()
         }
     }
 }
@@ -61,7 +79,6 @@ private extension HomeViewController {
     enum Strings {
         static let collectionViewCellId = "CardCollectionViewCell"
         static let tableViewCellId = "SessionTableViewCell"
-        static let headerView = "headerView"
     }
     
     enum Constants {
@@ -70,83 +87,32 @@ private extension HomeViewController {
 }
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
-    func configureHeaderView() {
-        
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-//        let pageControl =  UIPageControl(frame: .zero)
-        let headerView = UICollectionView(frame: CGRect(x: 0,
-                                                        y: 0,
-                                                        width: 345,
-                                                        height: 264),
-                                          collectionViewLayout: layout)
-        
-//        pageControl.numberOfPages = 5
-//        pageControl.translatesAutoresizingMaskIntoConstraints = false
-//        pageControl.currentPageIndicatorTintColor = .blue
-//        pageControl.pageIndicatorTintColor = UIColor.lightGray.withAlphaComponent(0.8)
-        
-//        let bottom = NSLayoutConstraint(item: pageControl,
-//                                        attribute: .bottom,
-//                                        relatedBy: .equal,
-//                                        toItem: headerView,
-//                                        attribute: .bottom,
-//                                        multiplier: 1,
-//                                        constant: 18)
-
-//        pageControl.addConstraint(<#T##constraint: NSLayoutConstraint##NSLayoutConstraint#>)
-//        pageControl.numberOfPages = 3
-//        pageControl.currentPage = 0
-//        pageControl.tintColor = .red
-//        pageControl.pageIndicatorTintColor = .black
-//        pageControl.currentPageIndicatorTintColor = .gray
-        
-        headerView.backgroundColor = .clear
-        headerView.isPagingEnabled = true
-        headerView.isUserInteractionEnabled = true
-
-        headerView.dataSource = self
-        headerView.delegate = self
-        headerView.register(UINib(nibName: Strings.collectionViewCellId,
-                                  bundle: nil),
-                            forCellWithReuseIdentifier: Strings.collectionViewCellId)
-        
-        headerView.showsHorizontalScrollIndicator = false
-        
-//        headerView.insertSubview(pageControl, at: 0)
-//        headerView.bringSubviewToFront(pageControl)
-//        headerView.addConstraints([bottom])
-        
-//        headerView.addSubview(pageControl)
-        tableView.tableHeaderView = headerView
-    }
 
     func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
-        return 3
+        return 5
     }
     
     // MARK: UICollectionViewDataSource
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+                if viewModel.numberOfRows > 5 {
+                    return 5
+                }
+                print("viewModel.numberOfRows \(viewModel.numberOfRows)")
+                return viewModel.numberOfRows
+//        return 5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        willDisplay cell: UICollectionViewCell,
+                        forItemAt indexPath: IndexPath) {
+        self.pageControl.currentPage = indexPath.section
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
-        if viewModel.numberOfRows > 5 {
-            return 5
-        }
-        print("viewModel.numberOfRows \(viewModel.numberOfRows)")
-        return viewModel.numberOfRows
-//        return 5
+
+        return 1
     }
-    
-//    func collectionView(_ collectionView: UICollectionView,
-//                        willDisplay cell: UICollectionViewCell,
-//                        forItemAt indexPath: IndexPath) {
-//        self.
-//    }
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -179,12 +145,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return staticData.arr.count
     }
-    
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//           return 264
-//    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Strings.tableViewCellId,
