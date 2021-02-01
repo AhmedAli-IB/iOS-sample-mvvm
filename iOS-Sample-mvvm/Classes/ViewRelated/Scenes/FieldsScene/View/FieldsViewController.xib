@@ -20,9 +20,9 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="67l-1Q-qfM">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="16" y="44" width="382" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Eyt-TX-EJo">
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Eyt-TX-EJo">
                         <size key="itemSize" width="128" height="128"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -34,9 +34,9 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="67l-1Q-qfM" secondAttribute="bottom" id="12R-pG-Des"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="67l-1Q-qfM" secondAttribute="trailing" id="RG9-Hf-ysr"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="67l-1Q-qfM" secondAttribute="trailing" constant="16" id="RG9-Hf-ysr"/>
                 <constraint firstItem="67l-1Q-qfM" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="yVR-KS-Nmt"/>
-                <constraint firstItem="67l-1Q-qfM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ysn-xm-iiX"/>
+                <constraint firstItem="67l-1Q-qfM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="ysn-xm-iiX"/>
             </constraints>
             <point key="canvasLocation" x="-9" y="71"/>
         </view>
