@@ -22,8 +22,6 @@ struct Contributor: Codable {
     case subscribersCount = "subscribers_count"
     case onlineEnabled = "online_enabled"
     case subject
-//    case interests Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvc21lYS1wYy5pYnRpa2FyLnNhXC9hcGlcL2F1dGhlbnRpY2F0aW9uXC9zbWVcL2xvZ2luIiwiaWF0IjoxNjA5ODYwMjQzLCJleHAiOjE3Njc2NjAyNDMsIm5iZiI6MTYwOTg2MDI0MywianRpIjoiYkhSVGVPaExhN0hVanRWeSIsInN1YiI6IjY3ODhmOTQ3LWZmZWItNDQ5My1iMmMyLTMwZWJlODM0MmNmMyIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.IY-ZqTYso27L7w58bH2sT5xSCVZvkdNw0Y2lIroRI94
-    case bsa
     case zoom
     case chatStatus = "chat_status"
     case isSubscribed = "is_subscribed"
@@ -43,7 +41,6 @@ struct Contributor: Codable {
   var onlineEnabled: Bool?
   var subject: Subject?
 //  var interests: Any?
-  var bsa: Bsa?
   var zoom: Zoom?
   var chatStatus: Bool?
   var isSubscribed: Bool?
@@ -64,7 +61,6 @@ struct Contributor: Codable {
     onlineEnabled = try container.decodeIfPresent(Bool.self, forKey: .onlineEnabled)
     subject = try container.decodeIfPresent(Subject.self, forKey: .subject)
 //    interests = try container.decodeIfPresent([].self, forKey: .interests)
-    bsa = try container.decodeIfPresent(Bsa.self, forKey: .bsa)
     zoom = try container.decodeIfPresent(Zoom.self, forKey: .zoom)
     chatStatus = try container.decodeIfPresent(Bool.self, forKey: .chatStatus)
     isSubscribed = try container.decodeIfPresent(Bool.self, forKey: .isSubscribed)

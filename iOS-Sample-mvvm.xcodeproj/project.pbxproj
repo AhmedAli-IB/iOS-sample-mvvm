@@ -62,7 +62,6 @@
 		E0FAB43625C1413900A940E6 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FAB42C25C1413800A940E6 /* File.swift */; };
 		E0FAB43725C1413900A940E6 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FAB42D25C1413800A940E6 /* Schedule.swift */; };
 		E0FAB43825C1413900A940E6 /* Contributor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FAB42E25C1413900A940E6 /* Contributor.swift */; };
-		E0FAB43925C1413900A940E6 /* Bsa.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FAB42F25C1413900A940E6 /* Bsa.swift */; };
 		E0FAB43A25C1413900A940E6 /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FAB43025C1413900A940E6 /* Subject.swift */; };
 		E0FAB43B25C1413900A940E6 /* SessionsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FAB43125C1413900A940E6 /* SessionsData.swift */; };
 		E0FAB43C25C1413900A940E6 /* SsoUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FAB43225C1413900A940E6 /* SsoUser.swift */; };
@@ -179,7 +178,6 @@
 		E0FAB42C25C1413800A940E6 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		E0FAB42D25C1413800A940E6 /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		E0FAB42E25C1413900A940E6 /* Contributor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contributor.swift; sourceTree = "<group>"; };
-		E0FAB42F25C1413900A940E6 /* Bsa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bsa.swift; sourceTree = "<group>"; };
 		E0FAB43025C1413900A940E6 /* Subject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
 		E0FAB43125C1413900A940E6 /* SessionsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionsData.swift; sourceTree = "<group>"; };
 		E0FAB43225C1413900A940E6 /* SsoUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SsoUser.swift; sourceTree = "<group>"; };
@@ -647,7 +645,6 @@
 		E0FAB44625C146FB00A940E6 /* Response */ = {
 			isa = PBXGroup;
 			children = (
-				E0FAB42F25C1413900A940E6 /* Bsa.swift */,
 				E0FAB42E25C1413900A940E6 /* Contributor.swift */,
 				E0FAB42C25C1413800A940E6 /* File.swift */,
 				E0FAB42D25C1413800A940E6 /* Schedule.swift */,
@@ -919,7 +916,6 @@
 				E08C032825BD615D0034E887 /* CardCollectionViewCell.swift in Sources */,
 				E0FAB43A25C1413900A940E6 /* Subject.swift in Sources */,
 				60D3219B25B99D7E0030E5FA /* HomeCoordinator.swift in Sources */,
-				E0FAB43925C1413900A940E6 /* Bsa.swift in Sources */,
 				6040780F25B46AF500C8972F /* Observable.swift in Sources */,
 				604077D225B462B800C8972F /* ServiceLocator.swift in Sources */,
 				60D321BE25B9AAFB0030E5FA /* AccountViewController.swift in Sources */,
