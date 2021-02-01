@@ -38,6 +38,8 @@
 		6076E48225C7FE3D0026CB4E /* SubjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6076E48125C7FE3D0026CB4E /* SubjectModel.swift */; };
 		6076E48625C7FE880026CB4E /* SubjectModel+Representable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6076E48525C7FE880026CB4E /* SubjectModel+Representable.swift */; };
 		6076E48C25C819920026CB4E /* FieldsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6076E48B25C819920026CB4E /* FieldsViewModel.swift */; };
+		6076E49025C81AD40026CB4E /* FieldsServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6076E48F25C81AD40026CB4E /* FieldsServiceLocator.swift */; };
+		6076E49425C825970026CB4E /* SubjectsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6076E49325C825970026CB4E /* SubjectsResponse.swift */; };
 		60C3484625B5BCBE00BD03AC /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 60C3484525B5BCBE00BD03AC /* Moya */; };
 		60C3485425B5BE9C00BD03AC /* ImageRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C3485325B5BE9C00BD03AC /* ImageRepresentable.swift */; };
 		60C3485925B5BEC700BD03AC /* UIImage+LoadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C3485825B5BEC700BD03AC /* UIImage+LoadImage.swift */; };
@@ -166,6 +168,8 @@
 		6076E48125C7FE3D0026CB4E /* SubjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectModel.swift; sourceTree = "<group>"; };
 		6076E48525C7FE880026CB4E /* SubjectModel+Representable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SubjectModel+Representable.swift"; sourceTree = "<group>"; };
 		6076E48B25C819920026CB4E /* FieldsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldsViewModel.swift; sourceTree = "<group>"; };
+		6076E48F25C81AD40026CB4E /* FieldsServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldsServiceLocator.swift; sourceTree = "<group>"; };
+		6076E49325C825970026CB4E /* SubjectsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectsResponse.swift; sourceTree = "<group>"; };
 		60C3485325B5BE9C00BD03AC /* ImageRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepresentable.swift; sourceTree = "<group>"; };
 		60C3485825B5BEC700BD03AC /* UIImage+LoadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+LoadImage.swift"; sourceTree = "<group>"; };
 		60C3485E25B5BEFF00BD03AC /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
@@ -531,6 +535,7 @@
 		6076E46325C7F00C0026CB4E /* ServiceLocator */ = {
 			isa = PBXGroup;
 			children = (
+				6076E48F25C81AD40026CB4E /* FieldsServiceLocator.swift */,
 			);
 			path = ServiceLocator;
 			sourceTree = "<group>";
@@ -787,6 +792,7 @@
 			isa = PBXGroup;
 			children = (
 				60F785CC25BED080008978D5 /* ContributorsResponse.swift */,
+				6076E49325C825970026CB4E /* SubjectsResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -1053,10 +1059,12 @@
 				60D321D525B9B6F70030E5FA /* TabBarItem + ImageOnly.swift in Sources */,
 				60D321F325BD6AC00030E5FA /* BaseVeiwModel.swift in Sources */,
 				6040775B25B45E1100C8972F /* SceneDelegate.swift in Sources */,
+				6076E49025C81AD40026CB4E /* FieldsServiceLocator.swift in Sources */,
 				60C3485425B5BE9C00BD03AC /* ImageRepresentable.swift in Sources */,
 				604077E625B469C300C8972F /* Variable.swift in Sources */,
 				60D321CE25B9ABE10030E5FA /* NotificationViewController.swift in Sources */,
 				60D3220D25BD70200030E5FA /* SearchPepoleViewController.swift in Sources */,
+				6076E49425C825970026CB4E /* SubjectsResponse.swift in Sources */,
 				60F785F525BF1FEB008978D5 /* ContributorRequest.swift in Sources */,
 				6076E46625C7F1200026CB4E /* FieldsViewController.swift in Sources */,
 				60F785BE25BEC151008978D5 /* SearchPepoleDataSource.swift in Sources */,

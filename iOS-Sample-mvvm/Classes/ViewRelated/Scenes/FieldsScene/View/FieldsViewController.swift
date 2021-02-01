@@ -10,23 +10,15 @@ import UIKit
 // MARK: - FieldsViewController
 /// `FieldsViewController`  responsible for filter contributors with fields
 //
-class FieldsViewController: UIViewController {
+class FieldsViewController: BaseViewController {
     
     // MARK: - IBOutlets
     //
     @IBOutlet private weak var collectionView: UICollectionView!
-    private let models: [SubjectModel] = [SubjectModel(subjectName: "التمويل و الاستثمار "),
-                                          SubjectModel(subjectName: "إدارة الجودة"),
-                                          SubjectModel(subjectName: "دراسات الجدوى و خطط الأعمال"),
-                                          SubjectModel(subjectName: "إدارة الجودة"),
-                                          SubjectModel(subjectName: "التمويل و الاستثمار "),
-                                          SubjectModel(subjectName: "القانونية"),
-                                          SubjectModel(subjectName: "إدارة الجودة"),
-                                          SubjectModel(subjectName: "التمويل و الاستثمار "),
-                                          SubjectModel(subjectName: "التمويل و الاستثمار "),
-                                          SubjectModel(subjectName: "التمويل و الاستثمار "),
-                                          SubjectModel(subjectName: "التمويل و الاستثمار "),
-                                          SubjectModel(subjectName: "التمويل و الاستثمار ")]
+    
+    // MARK: - Properties
+    //
+    let viewModel = FieldsViewModel()
     
     // MARK: - Lifecycle
     //
@@ -34,6 +26,7 @@ class FieldsViewController: UIViewController {
         super.viewDidLoad()
         registerCells()
         setupCollectionView()
+        configureViewModel()
     }
     
 }
@@ -52,6 +45,18 @@ private extension FieldsViewController {
         collectionView.dataSource = self
         collectionView.allowsMultipleSelection = true
     }
+    
+    func configureViewModel() {
+        bindLoadingState(to: viewModel)
+        bindErrorState(to: viewModel)
+        viewModel.onReloadNeeded.subscribe { [weak self] _ in
+            self?.reloadSectionsAndData()
+        }
+        viewModel.viewDidLoad()
+    }
+    func reloadSectionsAndData() {
+        collectionView.reloadData()
+    }
 }
 
 // MARK: - UICollectionViewDelegate && UICollectionViewDataSource
@@ -61,7 +66,7 @@ extension FieldsViewController: UICollectionViewDelegate,
                                 UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        models.count
+        viewModel.numberOfItms
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -69,14 +74,14 @@ extension FieldsViewController: UICollectionViewDelegate,
         let reuseIdentifier  = FieldsCollectionViewCell.reuseIdentifier
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
             as? FieldsCollectionViewCell
-        cell?.viewModel = models[indexPath.item]
+        cell?.viewModel = viewModel.getSubjectItem(indexPath: indexPath)
         return cell ?? UICollectionViewCell()
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let item =  models[indexPath.row]
+        let item =  viewModel.getSubjectItem(indexPath: indexPath)
         return CGSize(width: calculateItemWidth(item: item), height: Constants.collectionItemHeight)
     }
     
@@ -110,7 +115,7 @@ private extension FieldsViewController {
 //
 private extension FieldsViewController {
     enum Constants {
-        static let staticWidth = CGFloat(24)
+        static let staticWidth = CGFloat(32)
         static let collectionItemHeight = CGFloat(60)
         static let itemFontSize = CGFloat(17)
     }

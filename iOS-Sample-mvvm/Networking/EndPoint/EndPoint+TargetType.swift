@@ -16,6 +16,8 @@ extension AppEndPoint: TargetType {
         switch self {
         case .getContributors:
             return "/api/profile/contributors"
+        case .getSubjects:
+            return "/api/dashboard/mobile/subjects"
         }
     }
     
@@ -24,6 +26,8 @@ extension AppEndPoint: TargetType {
        case .getContributors:
         return .get
         
+       case .getSubjects:
+        return .get
        }
     }
     
@@ -32,6 +36,8 @@ extension AppEndPoint: TargetType {
         case .getContributors(let request):
             let parameters = (try? request.asDictionary()) ?? [:]
             return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
+        case .getSubjects:
+            return .requestPlain
         }
     }
     

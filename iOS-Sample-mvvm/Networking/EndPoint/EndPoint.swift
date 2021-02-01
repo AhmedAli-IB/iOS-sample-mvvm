@@ -12,5 +12,6 @@ enum AppEndPoint {
     // MARK: - Search
     //
     case getContributors(ContributorRequest)
+    case getSubjects
     
 }

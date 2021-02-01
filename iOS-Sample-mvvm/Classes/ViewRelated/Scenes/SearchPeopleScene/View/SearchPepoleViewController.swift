@@ -18,7 +18,7 @@ class SearchPepoleViewController: BaseViewController {
     
     // MARK: - Properties
     //
-    private let viewModel: SearchPepoleViewModel = SearchPepoleViewModel(serviceLocator: SearchServiceLocator())
+    private let viewModel: SearchPepoleViewModel = SearchPepoleViewModel()
     private var isOnline: Bool = false
     
     // MARK: - Life cycle

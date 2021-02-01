@@ -12,3 +12,16 @@ import Foundation
 struct SubjectModel {
     let subjectName: String
 }
+
+// MARK: - SubjectModel Init Helper
+//
+extension SubjectModel {
+    
+    init?(field data: SubjectResponse) {
+        guard
+            let subjectName = data.title else {
+            return nil
+        }
+        self.init(subjectName: subjectName)
+    }
+}

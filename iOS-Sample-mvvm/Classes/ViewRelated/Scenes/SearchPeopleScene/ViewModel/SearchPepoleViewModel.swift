@@ -34,7 +34,7 @@ class SearchPepoleViewModel: BaseViewModel {
     
     // MARK: - Init
     //
-    init(serviceLocator: SearchServiceLocatorProtocol) {
+    init(serviceLocator: SearchServiceLocatorProtocol = SearchServiceLocator()) {
         self.serviceLocator = serviceLocator
     }
     
