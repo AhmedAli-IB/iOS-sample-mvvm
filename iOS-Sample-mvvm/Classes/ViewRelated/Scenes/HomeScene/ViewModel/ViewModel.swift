@@ -10,7 +10,8 @@ import Foundation
 class HomeViewModel: BaseViewModel {
     
     var onReload: (() -> Void)?
-    
+    var onNetworkFailure: (() -> Void)?
+
     private let photoServiceLocator: HomeServiceLocatorProtocol
     private var sessions: [SessionsData] = []
     
@@ -32,6 +33,10 @@ extension HomeViewModel {
     
     func getSessions() {
         
+        if !InternetChecker.isConnectedToNetwork() {
+            self.onNetworkFailure?()
+        }
+        
         self.state.send(.loading)
         
         photoServiceLocator.getSessions { [weak self](result) in
@@ -40,9 +45,9 @@ extension HomeViewModel {
             switch result {
             case .success(let sessions):
                
-                    self.sessions = sessions
-                    self.onReload?()
-                    self.state.send(.success)
+                self.sessions = sessions
+                self.onReload?()
+                self.state.send(.success)
                 
             case .failure(let error):
                 self.state.send(.failure(error.localizedDescription))

@@ -10,9 +10,9 @@ import Cosmos
 
 class CardCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var displayAvaSessionsLabel: UILabel!
-    @IBOutlet weak var noSessionsLabel: UILabel!
-    @IBOutlet weak var emptyStateView: UIView!
+    @IBOutlet private weak var displayAvaSessionsLabel: UILabel!
+    @IBOutlet private weak var noSessionsLabel: UILabel!
+    @IBOutlet private weak var emptyStateView: UIView!
     @IBOutlet private weak var userRating: CosmosView!
     @IBOutlet private weak var cancel: UIButton!
     @IBOutlet private weak var wayOfCommunication: UILabel!
@@ -78,7 +78,7 @@ class CardCollectionViewCell: UICollectionViewCell {
         userRating.text = String(format: "%.1f", session.schedule?.contributor?.rating ?? 0)
 
         userImage.setImage(urlString: session.schedule?.contributor?.file?.path,
-                           placeholder: UIImage(named: "ic_avatar"))
+                           placeholder: #imageLiteral(resourceName: "Item_2_Copy"))
         if(session.schedule?.communicationWay == 1) {
             wayOfCommunication.text = Strings.online
             

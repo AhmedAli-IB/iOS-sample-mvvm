@@ -18,6 +18,8 @@ class HomeViewController: BaseViewController {
     private let viewModel: HomeViewModel = HomeViewModel()
     private let staticData = StaticSessionsData()
 
+    private lazy var noInternetView = NoInternet(with: self)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -70,6 +72,14 @@ private extension HomeViewController {
             self.tableView.reloadData()
             self.collectionView.reloadData()
         }
+        viewModel.onNetworkFailure = { [weak self] in
+            guard  let self = self else { return }
+            self.tableView.isHidden = true
+            self.collectionView.isHidden = true
+            self.pageControl.isHidden = true
+            self.tableView.backgroundView = self.noInternetView
+        }
+        
     }
 }
 
@@ -156,5 +166,13 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         }
         sessionCell.setupCellData(staticSession: staticData.arr[indexPath.row])
         return sessionCell
+    }
+}
+
+extension HomeViewController: NoInternetView {
+    
+    func tryAgain() {
+        print("in try")
+        viewModel.getSessions()
     }
 }

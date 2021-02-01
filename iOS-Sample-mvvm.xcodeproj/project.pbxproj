@@ -48,6 +48,8 @@
 		60D321CF25B9ABE10030E5FA /* NotificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60D321CD25B9ABE10030E5FA /* NotificationViewController.xib */; };
 		60D321D525B9B6F70030E5FA /* TabBarItem + ImageOnly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D321D425B9B6F70030E5FA /* TabBarItem + ImageOnly.swift */; };
 		60D321DC25B9B8EA0030E5FA /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D321DB25B9B8EA0030E5FA /* ApplicationCoordinator.swift */; };
+		E01600E825C82BCD006C7D6E /* InternetChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01600E725C82BCD006C7D6E /* InternetChecker.swift */; };
+		E01600ED25C82D58006C7D6E /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = E01600EC25C82D58006C7D6E /* Reachability */; };
 		E08C032825BD615D0034E887 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08C032725BD615D0034E887 /* CardCollectionViewCell.swift */; };
 		E08C032C25BD616F0034E887 /* CardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E08C032B25BD616F0034E887 /* CardCollectionViewCell.xib */; };
 		E08C033125BD77640034E887 /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = E08C033025BD77640034E887 /* Cosmos */; };
@@ -161,6 +163,7 @@
 		60D321CD25B9ABE10030E5FA /* NotificationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationViewController.xib; sourceTree = "<group>"; };
 		60D321D425B9B6F70030E5FA /* TabBarItem + ImageOnly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabBarItem + ImageOnly.swift"; sourceTree = "<group>"; };
 		60D321DB25B9B8EA0030E5FA /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
+		E01600E725C82BCD006C7D6E /* InternetChecker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternetChecker.swift; sourceTree = "<group>"; };
 		E01D614B25B6DE6B007E39FE /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 		E01D617B25B6EDE1007E39FE /* BaseProduction.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = BaseProduction.xcconfig; sourceTree = "<group>"; };
 		E01D617C25B6EDFC007E39FE /* BaseStaging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = BaseStaging.xcconfig; sourceTree = "<group>"; };
@@ -206,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E08C033125BD77640034E887 /* Cosmos in Frameworks */,
+				E01600ED25C82D58006C7D6E /* Reachability in Frameworks */,
 				60C3485F25B5BEFF00BD03AC /* Kingfisher.framework in Frameworks */,
 				60C3484625B5BCBE00BD03AC /* Moya in Frameworks */,
 			);
@@ -608,6 +612,7 @@
 		E0FAB41D25C01C8700A940E6 /* NoInternetScene */ = {
 			isa = PBXGroup;
 			children = (
+				E01600E725C82BCD006C7D6E /* InternetChecker.swift */,
 				E0FAB41F25C01CCA00A940E6 /* NoInternet.swift */,
 				E0FAB41E25C01CCA00A940E6 /* NoInternet.xib */,
 			);
@@ -730,6 +735,7 @@
 			packageProductDependencies = (
 				60C3484525B5BCBE00BD03AC /* Moya */,
 				E08C033025BD77640034E887 /* Cosmos */,
+				E01600EC25C82D58006C7D6E /* Reachability */,
 			);
 			productName = "iOS-Sample-mvvm";
 			productReference = 6040775525B45E1100C8972F /* iOS-Sample-mvvm.app */;
@@ -805,6 +811,7 @@
 			packageReferences = (
 				60C3484425B5BCBE00BD03AC /* XCRemoteSwiftPackageReference "Moya" */,
 				E08C032F25BD77640034E887 /* XCRemoteSwiftPackageReference "Cosmos" */,
+				E01600EB25C82D58006C7D6E /* XCRemoteSwiftPackageReference "Reachability" */,
 			);
 			productRefGroup = 6040775625B45E1100C8972F /* Products */;
 			projectDirPath = "";
@@ -918,6 +925,7 @@
 				60D321BE25B9AAFB0030E5FA /* AccountViewController.swift in Sources */,
 				E0FAB45625C15DFD00A940E6 /* BaseViewController.swift in Sources */,
 				60D321D525B9B6F70030E5FA /* TabBarItem + ImageOnly.swift in Sources */,
+				E01600E825C82BCD006C7D6E /* InternetChecker.swift in Sources */,
 				6040775B25B45E1100C8972F /* SceneDelegate.swift in Sources */,
 				60C3485425B5BE9C00BD03AC /* ImageRepresentable.swift in Sources */,
 				604077E625B469C300C8972F /* Variable.swift in Sources */,
@@ -1809,6 +1817,14 @@
 				minimumVersion = 14.0.0;
 			};
 		};
+		E01600EB25C82D58006C7D6E /* XCRemoteSwiftPackageReference "Reachability" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ashleymills/Reachability.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
 		E08C032F25BD77640034E887 /* XCRemoteSwiftPackageReference "Cosmos" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/evgenyneu/Cosmos.git";
@@ -1824,6 +1840,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 60C3484425B5BCBE00BD03AC /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
+		};
+		E01600EC25C82D58006C7D6E /* Reachability */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E01600EB25C82D58006C7D6E /* XCRemoteSwiftPackageReference "Reachability" */;
+			productName = Reachability;
 		};
 		E08C033025BD77640034E887 /* Cosmos */ = {
 			isa = XCSwiftPackageProductDependency;
