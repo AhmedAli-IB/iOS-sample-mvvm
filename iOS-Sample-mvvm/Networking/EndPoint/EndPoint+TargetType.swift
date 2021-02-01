@@ -18,6 +18,8 @@ extension AppEndPoint: TargetType {
             return "/api/profile/contributors"
         case .getSubjects:
             return "/api/dashboard/mobile/subjects"
+        case .getCenters:
+            return "/api/center/centers"
         }
     }
     
@@ -28,6 +30,9 @@ extension AppEndPoint: TargetType {
         
        case .getSubjects:
         return .get
+        
+       case .getCenters:
+        return .get
        }
     }
     
@@ -37,6 +42,9 @@ extension AppEndPoint: TargetType {
             let parameters = (try? request.asDictionary()) ?? [:]
             return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
         case .getSubjects:
+            return .requestPlain
+            
+        case .getCenters:
             return .requestPlain
         }
     }
