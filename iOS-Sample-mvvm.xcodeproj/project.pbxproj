@@ -40,6 +40,10 @@
 		6076E48C25C819920026CB4E /* FieldsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6076E48B25C819920026CB4E /* FieldsViewModel.swift */; };
 		6076E49025C81AD40026CB4E /* FieldsServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6076E48F25C81AD40026CB4E /* FieldsServiceLocator.swift */; };
 		6076E49425C825970026CB4E /* SubjectsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6076E49325C825970026CB4E /* SubjectsResponse.swift */; };
+		6076E49D25C8321E0026CB4E /* CentersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6076E49B25C8321E0026CB4E /* CentersViewController.swift */; };
+		6076E49E25C8321E0026CB4E /* CentersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6076E49C25C8321E0026CB4E /* CentersViewController.xib */; };
+		6076E4A425C8322B0026CB4E /* CentersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6076E4A325C8322B0026CB4E /* CentersViewModel.swift */; };
+		6076E4A825C832330026CB4E /* CentersServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6076E4A725C832330026CB4E /* CentersServiceLocator.swift */; };
 		60C3484625B5BCBE00BD03AC /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 60C3484525B5BCBE00BD03AC /* Moya */; };
 		60C3485425B5BE9C00BD03AC /* ImageRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C3485325B5BE9C00BD03AC /* ImageRepresentable.swift */; };
 		60C3485925B5BEC700BD03AC /* UIImage+LoadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C3485825B5BEC700BD03AC /* UIImage+LoadImage.swift */; };
@@ -170,6 +174,10 @@
 		6076E48B25C819920026CB4E /* FieldsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldsViewModel.swift; sourceTree = "<group>"; };
 		6076E48F25C81AD40026CB4E /* FieldsServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldsServiceLocator.swift; sourceTree = "<group>"; };
 		6076E49325C825970026CB4E /* SubjectsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectsResponse.swift; sourceTree = "<group>"; };
+		6076E49B25C8321E0026CB4E /* CentersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentersViewController.swift; sourceTree = "<group>"; };
+		6076E49C25C8321E0026CB4E /* CentersViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CentersViewController.xib; sourceTree = "<group>"; };
+		6076E4A325C8322B0026CB4E /* CentersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentersViewModel.swift; sourceTree = "<group>"; };
+		6076E4A725C832330026CB4E /* CentersServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentersServiceLocator.swift; sourceTree = "<group>"; };
 		60C3485325B5BE9C00BD03AC /* ImageRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepresentable.swift; sourceTree = "<group>"; };
 		60C3485825B5BEC700BD03AC /* UIImage+LoadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+LoadImage.swift"; sourceTree = "<group>"; };
 		60C3485E25B5BEFF00BD03AC /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
@@ -425,6 +433,7 @@
 		6040779E25B45F4700C8972F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				6076E49725C831B70026CB4E /* CentersScene */,
 				6076E46025C7EFA10026CB4E /* FieldsScene */,
 				60D3221325BD729C0030E5FA /* SearchCoordinator */,
 				60D3220625BD6C9F0030E5FA /* SearchPeopleScene */,
@@ -565,6 +574,41 @@
 				6076E48525C7FE880026CB4E /* SubjectModel+Representable.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		6076E49725C831B70026CB4E /* CentersScene */ = {
+			isa = PBXGroup;
+			children = (
+				6076E49A25C831FA0026CB4E /* View */,
+				6076E49925C831F30026CB4E /* ViewModel */,
+				6076E49825C831EB0026CB4E /* ServiceLocator */,
+			);
+			path = CentersScene;
+			sourceTree = "<group>";
+		};
+		6076E49825C831EB0026CB4E /* ServiceLocator */ = {
+			isa = PBXGroup;
+			children = (
+				6076E4A725C832330026CB4E /* CentersServiceLocator.swift */,
+			);
+			path = ServiceLocator;
+			sourceTree = "<group>";
+		};
+		6076E49925C831F30026CB4E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6076E4A325C8322B0026CB4E /* CentersViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6076E49A25C831FA0026CB4E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6076E49B25C8321E0026CB4E /* CentersViewController.swift */,
+				6076E49C25C8321E0026CB4E /* CentersViewController.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		60C3485D25B5BEFF00BD03AC /* Frameworks */ = {
@@ -972,6 +1016,7 @@
 				60D3220E25BD70200030E5FA /* SearchPepoleViewController.xib in Resources */,
 				60D321C825B9AB850030E5FA /* ChatViewController.xib in Resources */,
 				6076E46725C7F1200026CB4E /* FieldsViewController.xib in Resources */,
+				6076E49E25C8321E0026CB4E /* CentersViewController.xib in Resources */,
 				6040776525B45E1200C8972F /* LaunchScreen.storyboard in Resources */,
 				6040776225B45E1200C8972F /* Assets.xcassets in Resources */,
 				E0FC1C1625B56FE700EDAE4E /* Staging.xcconfig in Resources */,
@@ -1058,6 +1103,7 @@
 				60D321BE25B9AAFB0030E5FA /* AccountViewController.swift in Sources */,
 				60D321D525B9B6F70030E5FA /* TabBarItem + ImageOnly.swift in Sources */,
 				60D321F325BD6AC00030E5FA /* BaseVeiwModel.swift in Sources */,
+				6076E4A425C8322B0026CB4E /* CentersViewModel.swift in Sources */,
 				6040775B25B45E1100C8972F /* SceneDelegate.swift in Sources */,
 				6076E49025C81AD40026CB4E /* FieldsServiceLocator.swift in Sources */,
 				60C3485425B5BE9C00BD03AC /* ImageRepresentable.swift in Sources */,
@@ -1088,6 +1134,7 @@
 				60F785EF25BF1927008978D5 /* SearchPepoleServiceLocator.swift in Sources */,
 				60D3221525BD72C20030E5FA /* SearchCoordinator.swift in Sources */,
 				604077A525B4600D00C8972F /* HomeViewController.swift in Sources */,
+				6076E4A825C832330026CB4E /* CentersServiceLocator.swift in Sources */,
 				E0FC1BDF25B55EF100EDAE4E /* Enviroment.swift in Sources */,
 				6076E47725C7FC0D0026CB4E /* FieldsCollectionViewCell.swift in Sources */,
 				E0FC1BF225B561D500EDAE4E /* KeyConstants.swift in Sources */,
@@ -1105,6 +1152,7 @@
 				60D3226125BDB29B0030E5FA /* FiltrationCellRepresentable.swift in Sources */,
 				E0FC1C0F25B56CCE00EDAE4E /* Encodable+Extention.swift in Sources */,
 				604077E525B469C300C8972F /* BehaviorSubject.swift in Sources */,
+				6076E49D25C8321E0026CB4E /* CentersViewController.swift in Sources */,
 				60D321AC25B9A0B20030E5FA /* AccountCoordinator.swift in Sources */,
 				604077C825B462A800C8972F /* BaseViewController.swift in Sources */,
 				6076E48225C7FE3D0026CB4E /* SubjectModel.swift in Sources */,
