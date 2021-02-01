@@ -9,6 +9,10 @@ import Foundation
 
 extension CenterModel: CenterCellRepresentable {
     
+    var isPicked: Bool {
+        return isSelected
+    }
+    
     var name: String {
         return centerName
     }

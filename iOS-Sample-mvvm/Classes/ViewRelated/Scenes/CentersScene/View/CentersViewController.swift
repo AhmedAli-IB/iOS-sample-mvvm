@@ -8,22 +8,31 @@
 import UIKit
 
 class CentersViewController: BaseViewController {
-
+    
     // MARK: - IBOutlets
     //
     @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var submitButton: UIButton!
     
     // MARK: - Properties
     //
     private let viewModel: CentersViewModel = CentersViewModel()
-
+    
     // MARK: - Lifecycel
     //
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
     }
+    
+}
 
+// MARK: - IBActions
+extension CentersViewController {
+    
+    @IBAction func submitButtonTapped(_ sender: Any) {
+        print(viewModel.getSelectedCenters())
+    }
 }
 // MARK: - Configure View
 //
@@ -32,6 +41,7 @@ private extension CentersViewController {
     /// Configure view
     ///
     func configureView() {
+        submitButton.layer.cornerRadius = Constants.buttonCornerRadius
         configureViewModel()
         registerCells()
         registerHeader()
@@ -80,8 +90,15 @@ extension CentersViewController: UITableViewDelegate {
         viewModel.dataSource.heightForHeaderInTableView(tableView, section: section)
     }
     
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        viewModel.dataSource.heightForRowInTableView(tableView, section: indexPath.section)
-//        
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.selectCenter(indexPath: indexPath)
+    }
+}
+
+// MARK: - Constants
+//
+private extension CentersViewController {
+    enum Constants {
+        static let buttonCornerRadius = CGFloat(12)
+    }
 }

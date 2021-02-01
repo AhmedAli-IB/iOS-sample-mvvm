@@ -11,6 +11,7 @@ import Foundation
 struct CenterModel {
     let centerName: String
     let centerAddress: String
+    var isSelected: Bool = false
 }
 
 // MARK: - CenterModel Init Helper

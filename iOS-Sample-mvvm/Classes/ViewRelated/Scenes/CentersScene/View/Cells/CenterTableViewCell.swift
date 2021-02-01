@@ -33,7 +33,6 @@ class CenterTableViewCell: UITableViewCell {
         
         // Configure the view for the selected state
     }
-    
 }
 
 // MARK: - Configurations
@@ -44,6 +43,7 @@ extension CenterTableViewCell {
     ///
     func configureCell() {
         centerNameLabel.text = viewModel?.name
-            centerAddressLabel.text = viewModel?.address
+        centerAddressLabel.text = viewModel?.address
+        viewModel?.isPicked ?? false ? (self.accessoryType = .checkmark) : (self.accessoryType = .none)
     }
 }

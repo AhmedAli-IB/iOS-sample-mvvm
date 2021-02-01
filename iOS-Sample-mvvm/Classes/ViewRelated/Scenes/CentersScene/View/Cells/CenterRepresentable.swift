@@ -10,4 +10,5 @@ import Foundation
 protocol CenterCellRepresentable {
     var name: String { get }
     var address: String { get }
+    var isPicked: Bool { get }
 }

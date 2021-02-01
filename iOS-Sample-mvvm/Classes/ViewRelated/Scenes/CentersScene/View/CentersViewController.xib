@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CentersViewController" customModule="iOS_Sample_mvvm" customModuleProvider="target">
             <connections>
+                <outlet property="submitButton" destination="EQ3-Wq-qSe" id="abB-JF-aGv"/>
                 <outlet property="tableView" destination="bmd-rf-NiZ" id="DPR-Xp-DrP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -20,17 +21,33 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="bmd-rf-NiZ">
-                    <rect key="frame" x="8" y="44" width="398" height="818"/>
+                    <rect key="frame" x="8" y="44" width="398" height="750"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EQ3-Wq-qSe">
+                    <rect key="frame" x="20" y="806" width="374" height="44"/>
+                    <color key="backgroundColor" red="0.23871827130000001" green="0.42906117440000002" blue="0.57649403809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="KGr-kd-Cdw"/>
+                    </constraints>
+                    <state key="normal" title="Submit">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="submitButtonTapped:" destination="-1" eventType="touchUpInside" id="TZS-OL-YI9"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="EQ3-Wq-qSe" secondAttribute="bottom" constant="12" id="70D-7L-ueD"/>
                 <constraint firstItem="bmd-rf-NiZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="Ij5-ZI-nqe"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="bmd-rf-NiZ" secondAttribute="bottom" id="ONx-sp-g2d"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="EQ3-Wq-qSe" secondAttribute="trailing" constant="20" id="PIm-B0-0hu"/>
+                <constraint firstItem="EQ3-Wq-qSe" firstAttribute="top" secondItem="bmd-rf-NiZ" secondAttribute="bottom" constant="12" id="Sou-2O-Jcb"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bmd-rf-NiZ" secondAttribute="trailing" constant="8" id="a3e-7t-0de"/>
                 <constraint firstItem="bmd-rf-NiZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="yFa-5J-wEA"/>
+                <constraint firstItem="EQ3-Wq-qSe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="yLJ-6u-aVI"/>
             </constraints>
             <point key="canvasLocation" x="-122" y="63"/>
         </view>

@@ -54,6 +54,17 @@ class CentersViewModel: BaseViewModel {
     func getCenterItem(indexPath: IndexPath) -> CenterModel {
         return centers[indexPath.row]
     }
+    /// User tab on item mark it selected or no selected
+    ///
+    func selectCenter(indexPath: IndexPath) {
+        centers[indexPath.row].isSelected =  !centers[indexPath.row].isSelected
+        dataSource.setCenters(centers)
+        self.onReloadNeededSubject.send(())
+    }
+    
+    func getSelectedCenters() -> [CenterModel] {
+        centers.filter { ($0.isSelected) }
+    }
 }
 
 // MARK: - handlers
