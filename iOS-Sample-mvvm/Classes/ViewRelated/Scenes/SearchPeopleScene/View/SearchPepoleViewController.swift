@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchPepoleViewController: UIViewController {
+class SearchPepoleViewController: BaseViewController {
     
     // MARK: - IBOutlets
     //
@@ -19,14 +19,12 @@ class SearchPepoleViewController: UIViewController {
     // MARK: - Properties
     //
     private let viewModel: SearchPepoleViewModel = SearchPepoleViewModel(serviceLocator: SearchServiceLocator())
+    private var isOnline: Bool = false
     
     // MARK: - Life cycle
     //
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        viewModel.viewDidLoad()
-        
         configureView()
     }
 }
@@ -39,8 +37,11 @@ private extension SearchPepoleViewController {
     ///
     func configureView() {
         searchBar.searchTextField.placeholder = Strings.searchBarBlaceholder
+        endEditting()
+        configureViewModel()
         registerCells()
         registerHeader()
+        setupSearchBar()
         setupCollectionView()
         setupTableView()
     }
@@ -59,17 +60,46 @@ private extension SearchPepoleViewController {
                            forHeaderFooterViewReuseIdentifier: ContributorsHeaderView.classNameWithoutNamespaces)
     }
     
+    func setupSearchBar() {
+        searchBar.delegate = self
+    }
+    
     func setupCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.allowsMultipleSelection = true
     }
     
     func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = viewModel.dataSource
     }
+    
+    func configureViewModel() {
+        bindLoadingState(to: viewModel)
+        bindErrorState(to: viewModel)
+        viewModel.onReloadNeeded.subscribe { [weak self] _ in
+            self?.reloadSectionsAndData()
+        }
+        viewModel.viewDidLoad()
+    }
+    func reloadSectionsAndData() {
+        viewModel.dataSource.reloadSections()
+        tableView.reloadData()
+    }
 }
-
+// MARK: - Handlers
+//
+private extension SearchPepoleViewController {
+    
+    /// Filter contributors
+    ///
+    func filterContributors(with online: Bool, searchText: String) {
+        let request = ContributorRequest(searchText: searchText)
+        viewModel.filterOnlineContributors = online
+        viewModel.getContributors(request: request)
+    }
+}
 // MARK: - Helpers
 //
 private extension SearchPepoleViewController {
@@ -112,6 +142,22 @@ extension SearchPepoleViewController: UICollectionViewDelegate,
         
         return CGSize(width: itemWidth, height: Constants.collectionItemHeight)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let item = viewModel.getFiltrationItem(indexPath: indexPath)
+        if item.filtrationType == .online {
+            viewModel.filterOnline()
+            isOnline = true
+        }
+    }
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        let item = viewModel.getFiltrationItem(indexPath: indexPath)
+        if item.filtrationType == .online {
+            viewModel.filterOnline(isOnline: false)
+            isOnline = false
+
+        }
+    }
 }
 
 // MARK: - UITableViewDelegate
@@ -124,6 +170,11 @@ extension SearchPepoleViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         viewModel.dataSource.heightForHeaderInTableView(tableView, section: section)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        viewModel.dataSource.heightForRowInTableView(tableView, section: indexPath.section)
+        
     }
 }
 
@@ -143,5 +194,20 @@ private extension SearchPepoleViewController {
         static let normalItemWidth = CGFloat(52)
         static let collectionItemHeight = CGFloat(40)
         static let itemFontSize = CGFloat(17)
+    }
+}
+
+// MARK: - UISearchBarDelegate
+//
+extension SearchPepoleViewController: UISearchBarDelegate {
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        guard let text = searchBar.searchTextField.text, !text.isEmpty else { return }
+        filterContributors(with: isOnline, searchText: text)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let text = searchBar.searchTextField.text, !text.isEmpty else { return }
+        filterContributors(with: isOnline, searchText: text)
     }
 }

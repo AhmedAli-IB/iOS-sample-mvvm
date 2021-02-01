@@ -13,5 +13,5 @@ import Foundation
 protocol ContributorCellRepresentable: ImageRepresentable {
     var fullName: String { get }
     var jobTitle: String { get }
-    var rating: Double { get }
+    var rating: String { get }
 }

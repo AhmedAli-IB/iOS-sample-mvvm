@@ -15,6 +15,7 @@ struct FiltrationModel {
     let selectedImageName: String
     let unSelectedImageName: String
     let expanded: Bool
+    let filtrationType: FiltrationModelType
 }
 // MARK: - Helpers
 //
@@ -25,16 +26,16 @@ extension FiltrationModel {
         let  firstItem = FiltrationModel(filterTitle: Strings.fields,
                                          selectedImageName: Asset.Assets.icFieldsCircle.name,
                                          unSelectedImageName: Asset.Assets.icFieldsCircle.name,
-                                         expanded: true)
+                                         expanded: true, filtrationType: .fields)
         
         let secoundItem = FiltrationModel(filterTitle: Strings.inCenter,
                                           selectedImageName: Asset.Assets.icLocationCircleSelected.name,
                                           unSelectedImageName: Asset.Assets.icLocationCircle.name,
-                                          expanded: true)
+                                          expanded: true, filtrationType: .location)
         let thirdItem = FiltrationModel(filterTitle: Strings.online,
                                         selectedImageName: Asset.Assets.icOnlineCricleSelected.name,
                                         unSelectedImageName: Asset.Assets.icOnlineCircleUnselected.name,
-                                        expanded: false)
+                                        expanded: false, filtrationType: .online)
         
         return [firstItem, secoundItem, thirdItem]
     }
@@ -48,4 +49,10 @@ private extension FiltrationModel {
         static let inCenter = "في المركز"
         static let fields = "مجالات"
     }
+}
+
+enum FiltrationModelType {
+    case online
+    case fields
+    case location
 }

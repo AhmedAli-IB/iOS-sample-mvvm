@@ -404,6 +404,7 @@
 		6040779E25B45F4700C8972F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				6076E46025C7EFA10026CB4E /* FieldsScene */,
 				60D3221325BD729C0030E5FA /* SearchCoordinator */,
 				60D3220625BD6C9F0030E5FA /* SearchPeopleScene */,
 				60D321A725B9A0790030E5FA /* AccountScene */,
@@ -480,6 +481,37 @@
 				6040781825B4724100C8972F /* 29LTAzer-Regular.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		6076E46025C7EFA10026CB4E /* FieldsScene */ = {
+			isa = PBXGroup;
+			children = (
+				6076E46225C7F0040026CB4E /* View */,
+				6076E46125C7EFF50026CB4E /* ViewModel */,
+				6076E46325C7F00C0026CB4E /* ServiceLocator */,
+			);
+			path = FieldsScene;
+			sourceTree = "<group>";
+		};
+		6076E46125C7EFF50026CB4E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6076E46225C7F0040026CB4E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6076E46325C7F00C0026CB4E /* ServiceLocator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ServiceLocator;
 			sourceTree = "<group>";
 		};
 		60C3485D25B5BEFF00BD03AC /* Frameworks */ = {

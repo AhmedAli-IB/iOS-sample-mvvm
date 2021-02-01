@@ -30,18 +30,20 @@ extension SearchPeopleDataSource {
 //
 extension SearchPeopleDataSource: UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        sections.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        sections[section].rows.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //        let row = sections[indexPath.section].rows[indexPath.row]
-        //        let cell = tableView.dequeueReusableCell(withIdentifier: row.reuseIdentifier, for: indexPath)
-        //        configureCell(cell, at: indexPath)
-        let cell = tableView.dequeueReusableCell(withIdentifier: ContributorTableViewCell.reuseIdentifier,
-                                                 for: indexPath) as? ContributorTableViewCell
+        let row = sections[indexPath.section].rows[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: row.reuseIdentifier, for: indexPath)
+        configureCell(cell, at: indexPath)
         
-        return cell ?? UITableViewCell()
+        return cell
     }
 }
 
@@ -61,31 +63,57 @@ extension SearchPeopleDataSource {
     /// Configure contributor cell
     ///
     func configureContributorCell(_ cell: ContributorTableViewCell, at indexPath: IndexPath) {
+        cell.viewModel = contributors[indexPath.row]
     }
 }
 
+// MARK: - Reload Sections
+//
+extension SearchPeopleDataSource {
+    
+    func reloadSections() {
+        self.sections = {
+            
+            let contributorsSection: Section? = {
+                
+                guard self.contributors.isEmpty == false else { return nil }
+                
+                var rows: [RowType] = []
+                
+                contributors.forEach {_ in
+                    rows.append(RowType.searchPeople)
+                }
+                
+                return Section(title: Strings.suggestions, rows: rows)
+            }()
+            return [contributorsSection].compactMap { $0 }
+        }()
+    }
+    
+}
+
 // MARK: - UITableViewDelegate
+//
 extension SearchPeopleDataSource {
     
     func viewForHeaderInSection(_ section: Int, in tableView: UITableView) -> UIView? {
-        
-//        let header = UILabel()
-//        header.text =
-//        header.textColor = Asset.ColorPalette.primaryColor.color
-//
-//        return header
+    
         guard let header = tableView.dequeueReusableHeaderFooterView(
                 withIdentifier: ContributorsHeaderView.classNameWithoutNamespaces)
                 as? ContributorsHeaderView else {
             fatalError("Unable to get header view")
         }
-        header.cinfigureView(title: "اقتراحات")
-//        header.headerTitleLabel.font = .boldSystemFont(ofSize: Constants.headerFontSize)
+        header.configure(title: sections[section].title ?? "")
         return header
     }
     
     func heightForHeaderInTableView(_ tableView: UITableView, section: Int) -> CGFloat {
-        return Constants.headerHeight
+        Constants.headerHeight
+    }
+    
+    func heightForRowInTableView(_ tableView: UITableView, section: Int) -> CGFloat {
+        Constants.rowHeight
+
     }
 }
 
@@ -97,6 +125,7 @@ private extension SearchPeopleDataSource {
     //
     enum Constants {
         static let headerHeight = CGFloat(48)
+        static let rowHeight = CGFloat(132)
     }
     
     // MARK: - Section

@@ -56,7 +56,7 @@ private extension ContributorTableViewCell {
         contributorNameLabel.text = viewModel?.fullName
         contributorJobTitleLabel.text = viewModel?.jobTitle
         contributorImageView.setImage(representable: viewModel)
-//        ratingLabel.text =
+        ratingLabel.text = viewModel?.rating
     }
 }
 

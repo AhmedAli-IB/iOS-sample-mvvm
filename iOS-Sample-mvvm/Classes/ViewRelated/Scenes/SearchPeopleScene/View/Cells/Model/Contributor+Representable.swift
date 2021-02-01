@@ -20,8 +20,8 @@ extension Contributor: ContributorCellRepresentable {
         contributorJobTitle
     }
     
-    var rating: Double {
-        contributorRating
+    var rating: String {
+        "\(contributorRating)"
     }
     
     var imageURL: String? {

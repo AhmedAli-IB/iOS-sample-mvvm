@@ -13,7 +13,7 @@ class ContributorsHeaderView: UITableViewHeaderFooterView {
     
     /// Configure view
     ///
-    func cinfigureView(title: String) {
+    func configure(title: String) {
         headerTitleLabel.text = title
     }
 }

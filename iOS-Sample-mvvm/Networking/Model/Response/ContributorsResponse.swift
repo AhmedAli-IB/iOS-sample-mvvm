@@ -73,7 +73,7 @@ struct Advisor: Codable {
 //
 struct Consultant: Codable {
     let id: String?
-    let createdAt: In?
+    let createdAt: Int?
 
     enum CodingKeys: String, CodingKey {
         case id

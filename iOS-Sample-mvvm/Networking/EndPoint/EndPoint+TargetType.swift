@@ -29,8 +29,9 @@ extension AppEndPoint: TargetType {
     
     var task: Task {
         switch self {
-        case .getContributors:
-            return .requestParameters(parameters: [:], encoding: URLEncoding.default)
+        case .getContributors(let request):
+            let parameters = (try? request.asDictionary()) ?? [:]
+            return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
         }
     }
     

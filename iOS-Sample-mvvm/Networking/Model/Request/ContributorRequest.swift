@@ -6,6 +6,20 @@
 //
 
 import Foundation
-struct ContributorRequest: Codable {
+
+// MARK: - ContributorRequest
+//
+struct ContributorRequest: Encodable {
     
+    let searchText: String
+    
+    // MARK: - Init
+    //
+    init(searchText: String = "") {
+        self.searchText = searchText
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case searchText = "q"
+    }
 }
