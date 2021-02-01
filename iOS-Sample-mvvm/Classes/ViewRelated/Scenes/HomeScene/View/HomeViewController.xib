@@ -36,6 +36,9 @@
                         <constraint firstAttribute="height" constant="21" id="JR0-8o-Ncb"/>
                     </constraints>
                     <state key="normal" image="ic_Search"/>
+                    <connections>
+                        <action selector="searchTapped:" destination="-1" eventType="touchUpInside" id="pAz-yq-fau"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الجلسات القادمة" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tnB-Vl-041">
                     <rect key="frame" x="15" y="94" width="111.5" height="20.5"/>
