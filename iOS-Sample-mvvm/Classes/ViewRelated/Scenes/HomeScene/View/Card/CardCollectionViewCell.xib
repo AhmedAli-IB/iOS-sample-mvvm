@@ -139,13 +139,55 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mgC-HL-AAW">
+                        <rect key="frame" x="0.0" y="0.0" width="346" height="264"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_empty-consultations" translatesAutoresizingMaskIntoConstraints="NO" id="5tU-bQ-vUR">
+                                <rect key="frame" x="144" y="49" width="58" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="D2V-SQ-wm6"/>
+                                    <constraint firstAttribute="width" constant="58" id="zFs-gs-5N4"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ليس لديك جلسات قادمة" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UjB-qs-sXe">
+                                <rect key="frame" x="90.5" y="126" width="165" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="Dark slate gray"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="عرض جلسات المتاحة" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nhm-2V-jl1">
+                                <rect key="frame" x="101" y="165" width="144" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="Steel blue"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nhm-2V-jl1" firstAttribute="top" secondItem="UjB-qs-sXe" secondAttribute="bottom" constant="18" id="5J3-SF-WUc"/>
+                            <constraint firstItem="5tU-bQ-vUR" firstAttribute="top" secondItem="mgC-HL-AAW" secondAttribute="top" constant="49" id="LPn-xj-fhd"/>
+                            <constraint firstItem="UjB-qs-sXe" firstAttribute="centerX" secondItem="mgC-HL-AAW" secondAttribute="centerX" id="Sfj-dS-4aR"/>
+                            <constraint firstItem="5tU-bQ-vUR" firstAttribute="centerX" secondItem="mgC-HL-AAW" secondAttribute="centerX" id="bhk-du-cg4"/>
+                            <constraint firstItem="UjB-qs-sXe" firstAttribute="top" secondItem="5tU-bQ-vUR" secondAttribute="bottom" constant="10" id="q56-oH-No9"/>
+                            <constraint firstItem="nhm-2V-jl1" firstAttribute="centerX" secondItem="mgC-HL-AAW" secondAttribute="centerX" id="wgF-7u-qkj"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="16"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
+                    <constraint firstAttribute="bottom" secondItem="mgC-HL-AAW" secondAttribute="bottom" id="1Qs-Ui-HGM"/>
                     <constraint firstAttribute="bottom" secondItem="op2-pD-zG0" secondAttribute="bottom" id="2am-0G-2Eo"/>
                     <constraint firstItem="op2-pD-zG0" firstAttribute="top" secondItem="Xxi-dS-b58" secondAttribute="top" id="TCW-II-joc"/>
+                    <constraint firstItem="mgC-HL-AAW" firstAttribute="leading" secondItem="Xxi-dS-b58" secondAttribute="leading" id="VYC-TP-fHE"/>
                     <constraint firstAttribute="trailing" secondItem="op2-pD-zG0" secondAttribute="trailing" id="bUQ-uM-1fM"/>
                     <constraint firstItem="op2-pD-zG0" firstAttribute="leading" secondItem="Xxi-dS-b58" secondAttribute="leading" id="kdg-Od-Jwj"/>
+                    <constraint firstItem="mgC-HL-AAW" firstAttribute="top" secondItem="Xxi-dS-b58" secondAttribute="top" id="nqa-Md-ni8"/>
+                    <constraint firstAttribute="trailing" secondItem="mgC-HL-AAW" secondAttribute="trailing" id="p2o-6h-gxa"/>
                 </constraints>
                 <userDefinedRuntimeAttributes>
                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -158,6 +200,9 @@
             <connections>
                 <outlet property="cancel" destination="E0f-R3-rEL" id="EF5-tS-pym"/>
                 <outlet property="date" destination="uoT-IU-1YW" id="lSU-CI-Ea5"/>
+                <outlet property="displayAvaSessionsLabel" destination="nhm-2V-jl1" id="p9Z-Ww-Ufx"/>
+                <outlet property="emptyStateView" destination="mgC-HL-AAW" id="rsA-uw-qPd"/>
+                <outlet property="noSessionsLabel" destination="UjB-qs-sXe" id="UoO-s4-sPV"/>
                 <outlet property="officeName" destination="O5S-NU-al2" id="4Lv-x2-ZYh"/>
                 <outlet property="pageControl" destination="ZDV-qs-Avz" id="2au-1Y-dEx"/>
                 <outlet property="userDepartment" destination="Sxs-cs-aoH" id="GKz-YQ-5h0"/>
@@ -960,6 +1005,7 @@ pSSlJqUopSq2yrbPtty237bstvG2+bb8twG3CQAAAAAAAAIBAAAAAAAAAGgAAAAAAAAAAAAAAAAAALcM
 A
 </mutableData>
         </image>
+        <image name="ic_empty-consultations" width="58" height="67"/>
         <namedColor name="13">
             <color red="0.47058823529411764" green="0.53725490196078429" blue="0.58431372549019611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -977,6 +1023,9 @@ A
         </namedColor>
         <namedColor name="Mikado yellow">
             <color red="0.97254901960784312" green="0.80392156862745101" blue="0.10980392156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Steel blue">
+            <color red="0.18823529411764706" green="0.51764705882352946" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

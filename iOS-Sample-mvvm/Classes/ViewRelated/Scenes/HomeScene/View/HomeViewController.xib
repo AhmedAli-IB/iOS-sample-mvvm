@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -14,7 +13,7 @@
                 <outlet property="collectionView" destination="mA7-uc-VEh" id="FTQ-Q9-Zta"/>
                 <outlet property="pageControl" destination="c43-so-0eD" id="BB7-h5-ha9"/>
                 <outlet property="tableView" destination="HRw-8a-h6n" id="jOR-3w-FdS"/>
-                <outlet property="tableViewHeightConstraint" destination="WPo-K0-hxI" id="aHO-Cr-eEi"/>
+                <outlet property="tableViewHeightConstraint" destination="7GX-sa-6Ct" id="GOO-Uj-F7L"/>
                 <outlet property="upcommingSessionLogo" destination="tnB-Vl-041" id="8Vb-fj-CIx"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -74,15 +73,18 @@
                                         <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="c43-so-0eD">
                                             <rect key="frame" x="130.5" y="229" width="123" height="28"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="28" id="VTd-u3-Hx6"/>
+                                            </constraints>
                                             <color key="pageIndicatorTintColor" name="Pacific Blue"/>
                                             <color key="currentPageIndicatorTintColor" name="Sea blue"/>
                                         </pageControl>
-                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HRw-8a-h6n">
-                                            <rect key="frame" x="0.0" y="285" width="384" height="433"/>
+                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="114" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HRw-8a-h6n">
+                                            <rect key="frame" x="0.0" y="285" width="384" height="448"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="433" id="WPo-K0-hxI"/>
+                                                <constraint firstAttribute="height" constant="448" id="7GX-sa-6Ct"/>
                                             </constraints>
                                             <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="sectionIndexColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -97,7 +99,7 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="HRw-8a-h6n" secondAttribute="bottom" constant="15" id="6Oz-Rb-kXM"/>
+                                        <constraint firstAttribute="bottom" secondItem="HRw-8a-h6n" secondAttribute="bottom" id="6Oz-Rb-kXM"/>
                                         <constraint firstItem="mA7-uc-VEh" firstAttribute="top" secondItem="AdV-it-3JB" secondAttribute="top" id="7pH-KF-Pgv"/>
                                         <constraint firstItem="c43-so-0eD" firstAttribute="top" secondItem="mA7-uc-VEh" secondAttribute="bottom" constant="18" id="H8x-Ze-luR"/>
                                         <constraint firstAttribute="trailing" secondItem="HRw-8a-h6n" secondAttribute="trailing" id="OBb-vu-Ld4"/>
@@ -159,13 +161,6 @@
             </constraints>
             <point key="canvasLocation" x="-213.04347826086959" y="69.642857142857139"/>
         </view>
-        <view contentMode="scaleToFill" id="dyR-bX-R8q">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <viewLayoutGuide key="safeArea" id="bFl-5F-vMk"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="-683" y="81"/>
-        </view>
     </objects>
     <resources>
         <image name="bg_header-shape" width="375" height="225"/>
@@ -182,8 +177,5 @@
         <namedColor name="White smoke">
             <color red="0.95294117647058818" green="0.95686274509803926" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

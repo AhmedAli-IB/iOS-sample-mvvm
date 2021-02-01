@@ -15,6 +15,7 @@ class SessionTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupLabelFonts()
     }
     
     override func layoutSubviews() {

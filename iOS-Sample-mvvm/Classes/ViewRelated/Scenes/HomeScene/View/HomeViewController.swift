@@ -21,7 +21,6 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        configureHeaderView()
         configureTableView()
         configureAppearance()
         bindLoadingState(to: viewModel)
@@ -88,17 +87,14 @@ private extension HomeViewController {
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
-    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
-        return 5
-    }
-    
     // MARK: UICollectionViewDataSource
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-                if viewModel.numberOfRows > 5 {
-                    return 5
-                }
-                print("viewModel.numberOfRows \(viewModel.numberOfRows)")
-                return viewModel.numberOfRows
+        if viewModel.numberOfRows > 5 {
+            return 5
+        } else if viewModel.numberOfRows == 0 {
+            return 1
+        }
+        return viewModel.numberOfRows
 //        return 5
     }
     
@@ -121,7 +117,11 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         guard let cardCell = cell else {
             fatalError("Unexpected cell sent to \(#function)")
         }
-        cardCell.setupCellData(session: viewModel.getCurrentObject(for: indexPath))
+        if viewModel.numberOfRows == 0 {
+            cardCell.setupEmptySessionView()
+        } else {
+            cardCell.setupCellData(session: viewModel.getCurrentObject(for: indexPath))
+        }
         return cardCell
     }
     
@@ -141,7 +141,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 144.0
+        return 114.0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

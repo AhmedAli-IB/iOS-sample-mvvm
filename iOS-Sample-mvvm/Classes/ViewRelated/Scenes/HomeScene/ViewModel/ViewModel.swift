@@ -25,6 +25,7 @@ class HomeViewModel: BaseViewModel {
     func getCurrentObject(for indexPath: IndexPath) -> SessionsData {
         return sessions[indexPath.row]
     }
+    
 }
 
 extension HomeViewModel {
@@ -38,9 +39,11 @@ extension HomeViewModel {
             guard let self = self else { return }
             switch result {
             case .success(let sessions):
-                self.sessions = sessions
-                self.onReload?()
-                self.state.send(.success)
+               
+                    self.sessions = sessions
+                    self.onReload?()
+                    self.state.send(.success)
+                
             case .failure(let error):
                 self.state.send(.failure(error.localizedDescription))
             }

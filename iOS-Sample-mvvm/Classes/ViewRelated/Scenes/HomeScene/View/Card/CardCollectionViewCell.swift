@@ -10,6 +10,9 @@ import Cosmos
 
 class CardCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var displayAvaSessionsLabel: UILabel!
+    @IBOutlet weak var noSessionsLabel: UILabel!
+    @IBOutlet weak var emptyStateView: UIView!
     @IBOutlet private weak var userRating: CosmosView!
     @IBOutlet private weak var cancel: UIButton!
     @IBOutlet private weak var wayOfCommunication: UILabel!
@@ -20,12 +23,9 @@ class CardCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var pageControl: UIPageControl!
     @IBOutlet private weak var officeName: UILabel!
     
-    var thisWidth:CGFloat = 0
-
     override func awakeFromNib() {
         super.awakeFromNib()
-        thisWidth = CGFloat(self.frame.width)
-
+        emptyStateView.isHidden = true
         setupLabelFonts()
         setupImageView()
     }
@@ -45,6 +45,9 @@ class CardCollectionViewCell: UICollectionViewCell {
         date.font = UIFont(font: FontFamily._29LTAzer.regular, size: 16)
         wayOfCommunication.font = UIFont(font: FontFamily._29LTAzer.regular, size: 13)
         cancel.titleLabel?.font = UIFont(font: FontFamily._29LTAzer.medium, size: 15)
+        noSessionsLabel.font = UIFont(font: FontFamily._29LTAzer.medium, size: 16)
+        displayAvaSessionsLabel.font = UIFont(font: FontFamily._29LTAzer.medium, size: 16)
+
     }
     
     func setupImageView() {
@@ -52,6 +55,10 @@ class CardCollectionViewCell: UICollectionViewCell {
         userImage.layer.borderWidth = 3
         userImage.layer.borderColor = UIColor(asset: Asset.ColorPalette.platinum)?.cgColor
         userImage.layer.cornerRadius = 16
+    }
+    
+    func setupEmptySessionView() {
+        emptyStateView.isHidden = false
     }
     
     func setupCellData(session: SessionsData) {
