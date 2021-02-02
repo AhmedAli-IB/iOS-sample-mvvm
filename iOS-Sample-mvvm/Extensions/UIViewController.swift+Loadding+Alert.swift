@@ -18,11 +18,14 @@ extension BaseViewController {
     }
     /// Show activity Indicator
     ///
-    func showActivityIndicator() {
+    func showActivityIndicator(containerView: UIView? = nil) {
         
         activityView.color = .black
         activityView.center = self.view.center
-        self.view.addSubview(activityView)
+        if let center = containerView?.center {
+            activityView.center =  center
+        }
+        containerView == nil ? self.view.addSubview(activityView) : containerView?.addSubview(activityView)
         activityView.startAnimating()
 
     }

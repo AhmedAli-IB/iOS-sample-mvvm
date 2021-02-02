@@ -13,11 +13,7 @@ class CentersViewModel: BaseViewModel {
     
     // MARK: - Properties
     //
-    private var centers: [CenterModel] = [] {
-        didSet {
-            dataSource.setCenters(centers)
-        }
-    }
+    private var centers: [CenterModel] = []
     
     private let serviceLocator: CentersServiceLocatorProtocol
     
@@ -35,8 +31,9 @@ class CentersViewModel: BaseViewModel {
     
     // MARK: - Init
     //
-    init(serviceLocator: CentersServiceLocatorProtocol = CentersServiceLocator()) {
+    init(serviceLocator: CentersServiceLocatorProtocol = CentersServiceLocator(), selectedCenters: [CenterModel]) {
         self.serviceLocator = serviceLocator
+        self.centers = selectedCenters
     }
     
     var numberOfItms: Int {
@@ -80,7 +77,13 @@ extension CentersViewModel {
             guard let self = self else { return }
             switch result {
             case .success(let centers):
-                self.centers = centers
+
+                centers.forEach({
+                    if self.centers.contains(obj: $0) == false {
+                        self.centers.append($0)
+                    }
+                })
+                self.dataSource.setCenters(self.centers)
                 self.state.send(.success)
                 self.onReloadNeededSubject.send(())
             case .failure(let error):

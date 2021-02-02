@@ -11,6 +11,7 @@ import Foundation
 //
 struct SubjectModel {
     let subjectName: String
+    var isSelected: Bool = false
 }
 
 // MARK: - SubjectModel Init Helper

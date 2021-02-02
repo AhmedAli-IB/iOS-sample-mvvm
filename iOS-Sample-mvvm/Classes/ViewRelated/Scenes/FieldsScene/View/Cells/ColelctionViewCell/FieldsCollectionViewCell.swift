@@ -29,6 +29,19 @@ class FieldsCollectionViewCell: UICollectionViewCell {
     }
 }
 
+// MARK: - Helpers
+//
+extension FieldsCollectionViewCell {
+    
+    func makeSelected() {
+        containerView.backgroundColor = Asset.ColorPalette.selectedColor.color
+    }
+    
+    func makeUnSelected() {
+        containerView.backgroundColor = Asset.ColorPalette.unselectedColor.color
+    }
+}
+
 // MARK: - Configure
 //
 extension FieldsCollectionViewCell {
@@ -37,6 +50,7 @@ extension FieldsCollectionViewCell {
     ///
     func configureCell() {
         subjectNameLabel.text = viewModel?.fieldsSubjectName
+        viewModel?.isPicked ?? false ? makeSelected() : makeUnSelected()
     }
     /// ConfigureView
     ///

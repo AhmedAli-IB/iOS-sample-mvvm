@@ -9,6 +9,9 @@ import Foundation
 
 extension SubjectModel: FieldsCellRepresentable {
     
+    var isPicked: Bool {
+         isSelected
+    }
     var fieldsSubjectName: String {
         subjectName
     }

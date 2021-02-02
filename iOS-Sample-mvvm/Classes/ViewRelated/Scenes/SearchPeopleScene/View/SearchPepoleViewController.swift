@@ -99,6 +99,23 @@ private extension SearchPepoleViewController {
         viewModel.filterOnlineContributors = online
         viewModel.getContributors(request: request)
     }
+    
+    /// Show action sheet bottom card
+    ///
+    func showActionSheet(_ viewController: UIViewController & ActionSheetPresentable) {
+        
+        let cardVC = CardViewController(viewController: viewController)
+        
+        // set the modal presentation to full screen, in iOS 13, its no longer full screen by default
+        cardVC.modalPresentationStyle = .fullScreen
+        
+        // take a snapshot of current view and set it as backingImage
+        cardVC.backingImage = self.view.asImage()
+        
+        // present the view controller modally without animation
+        self.present(cardVC, animated: false, completion: nil)
+    }
+    
 }
 // MARK: - Helpers
 //
@@ -144,18 +161,33 @@ extension SearchPepoleViewController: UICollectionViewDelegate,
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         let item = viewModel.getFiltrationItem(indexPath: indexPath)
-        if item.filtrationType == .online {
+        
+        var actionSheetController: (UIViewController & ActionSheetPresentable)?
+        
+        switch item.filtrationType {
+        case .online:
             viewModel.filterOnline()
             isOnline = true
+        case .fields:
+                actionSheetController = FieldsViewController()
+        case .location:
+            let selectedCenters = viewModel.getSelectedCenters()
+            let centersViewController = CentersViewController(viewModel: CentersViewModel(
+                                                                selectedCenters: selectedCenters))
+            centersViewController.centerDelegate = self
+            actionSheetController = centersViewController
         }
+        guard let controller =  actionSheetController else { return }
+        showActionSheet(controller)
     }
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         let item = viewModel.getFiltrationItem(indexPath: indexPath)
         if item.filtrationType == .online {
             viewModel.filterOnline(isOnline: false)
             isOnline = false
-
+            
         }
     }
 }
@@ -209,5 +241,14 @@ extension SearchPepoleViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let text = searchBar.searchTextField.text, !text.isEmpty else { return }
         filterContributors(with: isOnline, searchText: text)
+    }
+}
+// MARK: - CentersProtocol
+/// Set and get filtered centers
+//
+extension SearchPepoleViewController: CentersProtocol {
+    func filteredCenters(centers: [CenterModel]) {
+        guard centers.isEmpty == false  else { return }
+        viewModel.setfiltredCenter(centers: centers)
     }
 }

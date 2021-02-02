@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol CentersProtocol: class {
+    func filteredCenters(centers: [CenterModel])
+}
+///
+///
 class CentersViewController: BaseViewController {
     
     // MARK: - IBOutlets
@@ -16,7 +21,20 @@ class CentersViewController: BaseViewController {
     
     // MARK: - Properties
     //
-    private let viewModel: CentersViewModel = CentersViewModel()
+    private let viewModel: CentersViewModel!
+    var shouldReload: (() -> Void)?
+    weak var centerDelegate: CentersProtocol?
+    
+    // MARK: - LifeCycle
+    //
+    required init(viewModel: CentersViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - Lifecycel
     //
@@ -31,21 +49,23 @@ class CentersViewController: BaseViewController {
 extension CentersViewController {
     
     @IBAction func submitButtonTapped(_ sender: Any) {
-        print(viewModel.getSelectedCenters())
+        centerDelegate?.filteredCenters(centers: viewModel.getSelectedCenters())
+        self.dismiss(animated: true)
     }
 }
 // MARK: - Configure View
 //
 private extension CentersViewController {
-    
+        
     /// Configure view
     ///
     func configureView() {
-        submitButton.layer.cornerRadius = Constants.buttonCornerRadius
-        configureViewModel()
+        setupSubmitButton()
         registerCells()
         registerHeader()
         setupTableView()
+        configureViewModel()
+
     }
     
     func registerCells() {
@@ -72,10 +92,17 @@ private extension CentersViewController {
         }
         viewModel.viewDidLoad()
     }
+    
     func reloadSectionsAndData() {
         viewModel.dataSource.reloadSections()
         tableView.reloadData()
+        shouldReloadContent?()
     }
+    
+    func setupSubmitButton() {
+       submitButton.layer.cornerRadius = Constants.buttonCornerRadius
+       submitButton.titleLabel?.text = Strings.submmitButtonTitle
+   }
 }
 
 // MARK: - UITableViewDelegate
@@ -100,5 +127,48 @@ extension CentersViewController: UITableViewDelegate {
 private extension CentersViewController {
     enum Constants {
         static let buttonCornerRadius = CGFloat(12)
+    }
+}
+
+// MARK: - Strings
+//
+private extension CentersViewController {
+    enum Strings {
+        static let  submmitButtonTitle = "موافق"
+    }
+}
+
+// MARK: - Conform PanModalPresentable
+//
+extension CentersViewController: ActionSheetPresentable {
+    
+    var shouldReloadContent: (() -> Void)? {
+        get {
+            shouldReload
+        }
+        set {
+            shouldReload = newValue
+        }
+    }
+    var contentFormHeight: CGFloat {
+
+        guard let scrollView = tableView else {
+            return .zero
+        }
+
+        // called once during presentation and stored
+        scrollView.layoutIfNeeded()
+        return scrollView.contentSize.height + 24 + 44
+    }
+    var panScrollable: UIScrollView? {
+        return tableView
+    }
+    
+    var dragIndicatorBackgroundColor: UIColor {
+        return .white
+    }
+    
+     var allowsTapToDismiss: Bool {
+        return true
     }
 }

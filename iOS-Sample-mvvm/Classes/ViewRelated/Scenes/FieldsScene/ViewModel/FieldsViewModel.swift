@@ -44,6 +44,19 @@ class FieldsViewModel: BaseViewModel {
     func getSubjectItem(indexPath: IndexPath) -> SubjectModel {
         return subjects[indexPath.row]
     }
+    
+    /// Change select state of item
+    ///
+    func selectItem(at index: IndexPath) {
+        subjects[index.item].isSelected = !subjects[index.item].isSelected
+        self.onReloadNeededSubject.send(())
+    }
+    
+    /// Get all selected subjects by user
+    ///
+    func getSelectedSubjects() -> [SubjectModel] {
+        subjects.filter({ $0.isSelected })
+    }
 }
 
 // MARK: - handlers

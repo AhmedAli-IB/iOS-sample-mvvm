@@ -9,4 +9,5 @@ import Foundation
 
 protocol FieldsCellRepresentable {
     var fieldsSubjectName: String { get }
+    var isPicked: Bool { get }
 }

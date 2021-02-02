@@ -15,7 +15,7 @@ class SearchPepoleViewModel: BaseViewModel {
     //
     private var filtrationItems: [FiltrationModel] = []
     private var contributors: [Contributor] = []
-    
+    private var filtredCenters: [CenterModel] = []
     private let serviceLocator: SearchServiceLocatorProtocol
     
     /// SearchPeopleDataSource
@@ -53,6 +53,16 @@ class SearchPepoleViewModel: BaseViewModel {
     ///
     func getFiltrationItem(indexPath: IndexPath) -> FiltrationModel {
         return filtrationItems[indexPath.row]
+    }
+    
+    /// Set filtred centers
+    ///
+    func setfiltredCenter(centers: [CenterModel]) {
+        self.filtredCenters = centers
+    }
+    
+    func getSelectedCenters() -> [CenterModel] {
+        filtredCenters
     }
 }
 

@@ -30,6 +30,7 @@
 		6040784525B4776800C8972F /* 29LTAzer-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6040781625B4724100C8972F /* 29LTAzer-Bold.otf */; };
 		6040784625B4776800C8972F /* 29LTAzer-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6040781725B4724100C8972F /* 29LTAzer-Medium.otf */; };
 		6040784725B4776800C8972F /* 29LTAzer-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6040781825B4724100C8972F /* 29LTAzer-Regular.otf */; };
+		606BAF9125C9751700E6FE93 /* Array+Contains.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606BAF9025C9751700E6FE93 /* Array+Contains.swift */; };
 		6076E46625C7F1200026CB4E /* FieldsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6076E46425C7F1200026CB4E /* FieldsViewController.swift */; };
 		6076E46725C7F1200026CB4E /* FieldsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6076E46525C7F1200026CB4E /* FieldsViewController.xib */; };
 		6076E47725C7FC0D0026CB4E /* FieldsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6076E47525C7FC0D0026CB4E /* FieldsCollectionViewCell.swift */; };
@@ -51,6 +52,11 @@
 		6076E4BE25C83BD40026CB4E /* CenterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6076E4BD25C83BD40026CB4E /* CenterModel.swift */; };
 		6091162B25C83E78000EE449 /* CenterRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6091162A25C83E78000EE449 /* CenterRepresentable.swift */; };
 		6091163025C83EB2000EE449 /* Center+Representable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6091162F25C83EB2000EE449 /* Center+Representable.swift */; };
+		6091163F25C87689000EE449 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6091163C25C87689000EE449 /* CardViewController.swift */; };
+		6091164025C87689000EE449 /* UIView+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6091163D25C87689000EE449 /* UIView+Snapshot.swift */; };
+		6091164125C87689000EE449 /* CardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6091163E25C87689000EE449 /* CardViewController.xib */; };
+		6091164725C87699000EE449 /* ActionSheetPresentable+Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6091164525C87699000EE449 /* ActionSheetPresentable+Defaults.swift */; };
+		6091164825C87699000EE449 /* ActionSheetPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6091164625C87699000EE449 /* ActionSheetPresentable.swift */; };
 		60C3484625B5BCBE00BD03AC /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 60C3484525B5BCBE00BD03AC /* Moya */; };
 		60C3485425B5BE9C00BD03AC /* ImageRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C3485325B5BE9C00BD03AC /* ImageRepresentable.swift */; };
 		60C3485925B5BEC700BD03AC /* UIImage+LoadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C3485825B5BEC700BD03AC /* UIImage+LoadImage.swift */; };
@@ -171,6 +177,7 @@
 		6040782625B4730C00C8972F /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		6040782725B4730C00C8972F /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		6040783725B473B700C8972F /* ColorPalette.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorPalette.xcassets; sourceTree = "<group>"; };
+		606BAF9025C9751700E6FE93 /* Array+Contains.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Contains.swift"; sourceTree = "<group>"; };
 		6076E46425C7F1200026CB4E /* FieldsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldsViewController.swift; sourceTree = "<group>"; };
 		6076E46525C7F1200026CB4E /* FieldsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FieldsViewController.xib; sourceTree = "<group>"; };
 		6076E47525C7FC0D0026CB4E /* FieldsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldsCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -192,6 +199,11 @@
 		6076E4BD25C83BD40026CB4E /* CenterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterModel.swift; sourceTree = "<group>"; };
 		6091162A25C83E78000EE449 /* CenterRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterRepresentable.swift; sourceTree = "<group>"; };
 		6091162F25C83EB2000EE449 /* Center+Representable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Center+Representable.swift"; sourceTree = "<group>"; };
+		6091163C25C87689000EE449 /* CardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
+		6091163D25C87689000EE449 /* UIView+Snapshot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Snapshot.swift"; sourceTree = "<group>"; };
+		6091163E25C87689000EE449 /* CardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardViewController.xib; sourceTree = "<group>"; };
+		6091164525C87699000EE449 /* ActionSheetPresentable+Defaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ActionSheetPresentable+Defaults.swift"; sourceTree = "<group>"; };
+		6091164625C87699000EE449 /* ActionSheetPresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionSheetPresentable.swift; sourceTree = "<group>"; };
 		60C3485325B5BE9C00BD03AC /* ImageRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepresentable.swift; sourceTree = "<group>"; };
 		60C3485825B5BEC700BD03AC /* UIImage+LoadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+LoadImage.swift"; sourceTree = "<group>"; };
 		60C3485E25B5BEFF00BD03AC /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
@@ -367,6 +379,7 @@
 				60D321FE25BD6B5B0030E5FA /* UIView+Helpers.swift */,
 				60D3222E25BD8CA40030E5FA /* UITableViewCell + Helpers.swift */,
 				60D3223225BD8D150030E5FA /* UICollectionViewCell + Helpers.swift */,
+				606BAF9025C9751700E6FE93 /* Array+Contains.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -647,6 +660,26 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		6091163525C87659000EE449 /* ActionSheet */ = {
+			isa = PBXGroup;
+			children = (
+				6091164425C8768D000EE449 /* Presentable */,
+				6091163C25C87689000EE449 /* CardViewController.swift */,
+				6091163E25C87689000EE449 /* CardViewController.xib */,
+				6091163D25C87689000EE449 /* UIView+Snapshot.swift */,
+			);
+			path = ActionSheet;
+			sourceTree = "<group>";
+		};
+		6091164425C8768D000EE449 /* Presentable */ = {
+			isa = PBXGroup;
+			children = (
+				6091164625C87699000EE449 /* ActionSheetPresentable.swift */,
+				6091164525C87699000EE449 /* ActionSheetPresentable+Defaults.swift */,
+			);
+			path = Presentable;
+			sourceTree = "<group>";
+		};
 		60C3485D25B5BEFF00BD03AC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -807,6 +840,7 @@
 		60D3221E25BD78980030E5FA /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				6091163525C87659000EE449 /* ActionSheet */,
 				60D3221F25BD78B80030E5FA /* SMESearchBar.swift */,
 			);
 			path = CustomViews;
@@ -1054,6 +1088,7 @@
 				60D321C825B9AB850030E5FA /* ChatViewController.xib in Resources */,
 				6076E46725C7F1200026CB4E /* FieldsViewController.xib in Resources */,
 				6076E49E25C8321E0026CB4E /* CentersViewController.xib in Resources */,
+				6091164125C87689000EE449 /* CardViewController.xib in Resources */,
 				6040776525B45E1200C8972F /* LaunchScreen.storyboard in Resources */,
 				6040776225B45E1200C8972F /* Assets.xcassets in Resources */,
 				E0FC1C1625B56FE700EDAE4E /* Staging.xcconfig in Resources */,
@@ -1143,6 +1178,7 @@
 				60D321D525B9B6F70030E5FA /* TabBarItem + ImageOnly.swift in Sources */,
 				60D321F325BD6AC00030E5FA /* BaseVeiwModel.swift in Sources */,
 				6076E4A425C8322B0026CB4E /* CentersViewModel.swift in Sources */,
+				6091164725C87699000EE449 /* ActionSheetPresentable+Defaults.swift in Sources */,
 				6040775B25B45E1100C8972F /* SceneDelegate.swift in Sources */,
 				6076E49025C81AD40026CB4E /* FieldsServiceLocator.swift in Sources */,
 				60C3485425B5BE9C00BD03AC /* ImageRepresentable.swift in Sources */,
@@ -1153,6 +1189,7 @@
 				60F785F525BF1FEB008978D5 /* ContributorRequest.swift in Sources */,
 				6076E46625C7F1200026CB4E /* FieldsViewController.swift in Sources */,
 				60F785BE25BEC151008978D5 /* SearchPepoleDataSource.swift in Sources */,
+				6091163F25C87689000EE449 /* CardViewController.swift in Sources */,
 				60D3222025BD78B80030E5FA /* SMESearchBar.swift in Sources */,
 				60D3219625B99CA00030E5FA /* MainTabBarController.swift in Sources */,
 				60D321B625B9A0CF0030E5FA /* NotificationCoordinator.swift in Sources */,
@@ -1168,6 +1205,7 @@
 				6076E48625C7FE880026CB4E /* SubjectModel+Representable.swift in Sources */,
 				60D3222F25BD8CA40030E5FA /* UITableViewCell + Helpers.swift in Sources */,
 				6076E4B725C836470026CB4E /* CenterTableViewCell.swift in Sources */,
+				606BAF9125C9751700E6FE93 /* Array+Contains.swift in Sources */,
 				6076E4BE25C83BD40026CB4E /* CenterModel.swift in Sources */,
 				60D3221B25BD74610030E5FA /* BaseNavigationController.swift in Sources */,
 				6091162B25C83E78000EE449 /* CenterRepresentable.swift in Sources */,
@@ -1188,10 +1226,12 @@
 				604077C325B462A100C8972F /* Protocols.swift in Sources */,
 				604077D725B462C100C8972F /* FiltrationModel.swift in Sources */,
 				60C3485925B5BEC700BD03AC /* UIImage+LoadImage.swift in Sources */,
+				6091164825C87699000EE449 /* ActionSheetPresentable.swift in Sources */,
 				60D321ED25BD6A4B0030E5FA /* State.swift in Sources */,
 				604077E425B469C300C8972F /* PublishSubject.swift in Sources */,
 				E0FC1BF925B5632F00EDAE4E /* NetworkManger.swift in Sources */,
 				60F785D825BED382008978D5 /* ContributorTableViewCell.swift in Sources */,
+				6091164025C87689000EE449 /* UIView+Snapshot.swift in Sources */,
 				60D3226125BDB29B0030E5FA /* FiltrationCellRepresentable.swift in Sources */,
 				E0FC1C0F25B56CCE00EDAE4E /* Encodable+Extention.swift in Sources */,
 				604077E525B469C300C8972F /* BehaviorSubject.swift in Sources */,

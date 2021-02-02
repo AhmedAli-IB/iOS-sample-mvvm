@@ -27,7 +27,7 @@ final class SearchCoordinator: Coordinator {
     /// Show search flow
     ///
     private func showHomeViewController() {
-        let searchC = CentersViewController()
+        let searchC = SearchPepoleViewController()
         self.navigationController.setViewControllers([searchC], animated: false)
     }
 }
