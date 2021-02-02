@@ -40,6 +40,7 @@ internal enum Asset {
     internal static let icHomeActive = ImageAsset(name: "ic_home-active")
     internal static let icHomeDot = ImageAsset(name: "ic_home_dot")
     internal static let icInactiveProfile = ImageAsset(name: "ic_inactive-profile")
+    internal static let icNoInternet = ImageAsset(name: "ic_no-internet")
     internal static let icNotBooked = ImageAsset(name: "ic_not-booked")
     internal static let icNotificationActiveRed = ImageAsset(name: "ic_notification-active-red")
     internal static let icNotificationActive = ImageAsset(name: "ic_notification-active")
