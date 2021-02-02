@@ -29,10 +29,17 @@ class SessionTableViewCell: UITableViewCell {
         cellDescription.font = UIFont(font: FontFamily._29LTAzer.regular, size: 15)
     }
     
-    func setupCellData(staticSession: [String: String]) {
-        cellTitle.text = staticSession["title"]
-        cellDescription.text = staticSession["description"]
-        cellIcon.image = UIImage(named: staticSession["icon"] ?? "")
-        cellTitle.textColor = UIColor(named: staticSession["color"] ?? "")
+    func setupCellData(staticSession: StaticSession) {
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(staticSession) {
+            
+            let decoder = JSONDecoder()
+            if let decodedSession = try? decoder.decode(StaticSession.self, from: encoded) {
+                cellTitle.text = decodedSession.title
+                cellDescription.text = decodedSession.description
+                cellIcon.image = UIImage(named: decodedSession.icon)
+                cellTitle.textColor = UIColor(named: decodedSession.color)
+            }
+        }
     }
 }
