@@ -9,6 +9,7 @@ import UIKit
 
 class HomeViewController: BaseViewController {
 
+    @IBOutlet private weak var superView: UIView!
     @IBOutlet private weak var upcommingSessionLogo: UILabel!
     @IBOutlet private weak var tableView: UITableView!
     
@@ -16,7 +17,7 @@ class HomeViewController: BaseViewController {
     @IBOutlet private weak var collectionView: UICollectionView!
     @IBOutlet private weak var pageControl: UIPageControl!
     private let viewModel: HomeViewModel = HomeViewModel()
-    private let staticData = StaticSessionsData()
+    private var staticData = StaticSessionsData()
 
     private lazy var noInternetView = NoInternet(with: self)
     
@@ -66,18 +67,33 @@ private extension HomeViewController {
     }
     
     func configureViewModel() {
+        
         viewModel.onReload = { [weak self] in
             guard  let self = self else { return }
             self.tableViewHeightConstraint.constant = self.tableView.contentSize.height
+            self.collectionView.isHidden = false
+            self.tableView.isHidden = false
+            self.noInternetView.removeFromSuperview()
             self.tableView.reloadData()
             self.collectionView.reloadData()
         }
         viewModel.onNetworkFailure = { [weak self] in
             guard  let self = self else { return }
-            self.tableView.isHidden = true
             self.collectionView.isHidden = true
-            self.pageControl.isHidden = true
-            self.tableView.backgroundView = self.noInternetView
+            self.tableView.isHidden = true
+            self.superView.addSubview(self.noInternetView)
+            configureNoInternetView()
+        }
+        
+        func configureNoInternetView() {
+            self.noInternetView.translatesAutoresizingMaskIntoConstraints = false
+            self.noInternetView.topAnchor.constraint(equalTo: self.superView.topAnchor,
+                                                     constant: CGFloat(Constants.noInternetViewTopConstraint))
+                .isActive = true
+            self.noInternetView.bottomAnchor.constraint(equalTo: self.superView.bottomAnchor,
+                                                        constant: 0).isActive = true
+            self.noInternetView.centerYAnchor.constraint(equalTo: self.superView.centerYAnchor,
+                                                         constant: 0).isActive = true
         }
         
     }
@@ -91,7 +107,8 @@ private extension HomeViewController {
     }
     
     enum Constants {
-       
+        static let noInternetViewTopConstraint = 100.0
+        static let numberOfCardsPreBussiness = 5
     }
 }
 
@@ -99,13 +116,12 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
 
     // MARK: UICollectionViewDataSource
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        if viewModel.numberOfRows > 5 {
-            return 5
+        if viewModel.numberOfRows > Constants.numberOfCardsPreBussiness {
+            return Constants.numberOfCardsPreBussiness
         } else if viewModel.numberOfRows == 0 {
             return 1
         }
         return viewModel.numberOfRows
-//        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView,

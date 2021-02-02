@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="collectionView" destination="mA7-uc-VEh" id="FTQ-Q9-Zta"/>
                 <outlet property="pageControl" destination="c43-so-0eD" id="BB7-h5-ha9"/>
+                <outlet property="superView" destination="oGO-Ur-pAe" id="Ndd-Xh-op0"/>
                 <outlet property="tableView" destination="HRw-8a-h6n" id="jOR-3w-FdS"/>
                 <outlet property="tableViewHeightConstraint" destination="7GX-sa-6Ct" id="GOO-Uj-F7L"/>
                 <outlet property="upcommingSessionLogo" destination="tnB-Vl-041" id="8Vb-fj-CIx"/>
