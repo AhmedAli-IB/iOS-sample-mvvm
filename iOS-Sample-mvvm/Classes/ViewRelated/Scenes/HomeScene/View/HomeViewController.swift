@@ -12,7 +12,6 @@ class HomeViewController: BaseViewController {
     @IBOutlet private weak var superView: UIView!
     @IBOutlet private weak var upcommingSessionLogo: UILabel!
     @IBOutlet private weak var tableView: UITableView!
-    
     @IBOutlet private weak var tableViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet private weak var collectionView: UICollectionView!
     @IBOutlet private weak var pageControl: UIPageControl!
@@ -33,6 +32,7 @@ class HomeViewController: BaseViewController {
     }
 
     @IBAction func searchTapped(_ sender: Any) {
+        
     }
 }
 
@@ -77,6 +77,7 @@ private extension HomeViewController {
             self.tableView.reloadData()
             self.collectionView.reloadData()
         }
+        
         viewModel.onNetworkFailure = { [weak self] in
             guard  let self = self else { return }
             self.collectionView.isHidden = true
@@ -188,7 +189,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 extension HomeViewController: NoInternetView {
     
     func tryAgain() {
-        print("in try")
         viewModel.getSessions()
     }
 }

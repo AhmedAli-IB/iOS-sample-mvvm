@@ -33,11 +33,11 @@ extension HomeViewModel {
     
     func getSessions() {
         
+        self.state.send(.loading)
+        
         if !InternetChecker.isConnectedToNetwork() {
             self.onNetworkFailure?()
         }
-        
-        self.state.send(.loading)
         
         photoServiceLocator.getSessions { [weak self](result) in
             
