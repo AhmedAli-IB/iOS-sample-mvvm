@@ -86,6 +86,7 @@ private extension SearchPepoleViewController {
     func reloadSectionsAndData() {
         viewModel.dataSource.reloadSections()
         tableView.reloadData()
+        collectionView.reloadData()
     }
 }
 // MARK: - Handlers
@@ -166,30 +167,33 @@ extension SearchPepoleViewController: UICollectionViewDelegate,
         
         var actionSheetController: (UIViewController & ActionSheetPresentable)?
         
-        switch item.filtrationType {
-        case .online:
-            viewModel.filterOnline()
-            isOnline = true
-        case .fields:
-                actionSheetController = FieldsViewController()
-        case .location:
-            let selectedCenters = viewModel.getSelectedCenters()
-            let centersViewController = CentersViewController(viewModel: CentersViewModel(
-                                                                selectedCenters: selectedCenters))
-            centersViewController.centerDelegate = self
-            actionSheetController = centersViewController
-        }
-        guard let controller =  actionSheetController else { return }
-        showActionSheet(controller)
+            switch item.filtrationType {
+            case .online:
+                viewModel.filterOnline()
+                isOnline = true
+                viewModel.selectFiltrationItem(at: indexPath)
+
+            case .fields:
+                    actionSheetController = FieldsViewController()
+            case .location:
+                let selectedCenters = viewModel.getSelectedCenters()
+                let centersViewController = CentersViewController(viewModel: CentersViewModel(
+                                                                    selectedCenters: selectedCenters))
+                centersViewController.centerDelegate = self
+                actionSheetController = centersViewController
+            }
+        
+            guard let controller =  actionSheetController else { return }
+            showActionSheet(controller)
+    
     }
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        let item = viewModel.getFiltrationItem(indexPath: indexPath)
-        if item.filtrationType == .online {
-            viewModel.filterOnline(isOnline: false)
-            isOnline = false
-            
-        }
-    }
+//    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+//        let item = viewModel.getFiltrationItem(indexPath: indexPath)
+//        if item.filtrationType == .online {
+//            viewModel.filterOnline(isOnline: false)
+//            isOnline = false
+//        }
+//    }
 }
 
 // MARK: - UITableViewDelegate
@@ -248,7 +252,6 @@ extension SearchPepoleViewController: UISearchBarDelegate {
 //
 extension SearchPepoleViewController: CentersProtocol {
     func filteredCenters(centers: [CenterModel]) {
-        guard centers.isEmpty == false  else { return }
         viewModel.setfiltredCenter(centers: centers)
     }
 }

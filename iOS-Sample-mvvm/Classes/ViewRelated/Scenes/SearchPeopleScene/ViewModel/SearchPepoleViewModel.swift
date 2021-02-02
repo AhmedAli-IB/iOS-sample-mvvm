@@ -30,7 +30,8 @@ class SearchPepoleViewModel: BaseViewModel {
     
     /// Called when data is updated and reload is needed.
     ///
-    private var onReloadNeededSubject = PublishSubject<Void>()
+    private var onReloadNeededItems = PublishSubject<Void>()
+
     
     // MARK: - Init
     //
@@ -55,10 +56,22 @@ class SearchPepoleViewModel: BaseViewModel {
         return filtrationItems[indexPath.row]
     }
     
+    /// Change select state of item
+    ///
+    func selectFiltrationItem(at index: IndexPath) {
+        filtrationItems[index.item].isSelected = !filtrationItems[index.item].isSelected
+        self.onReloadNeededItems.send(())
+    }
+    
     /// Set filtred centers
     ///
     func setfiltredCenter(centers: [CenterModel]) {
+        
         self.filtredCenters = centers
+        let index = filtrationItems.firstIndex(where: { $0.filtrationType == .location })
+        guard let locationIndex = index else { return }
+        filtrationItems[locationIndex].isSelected = !centers.isEmpty
+        self.onReloadNeededItems.send(())
     }
     
     func getSelectedCenters() -> [CenterModel] {
@@ -86,7 +99,7 @@ extension SearchPepoleViewModel {
                     self.dataSource.setContributors(contributors)
                 }
                 self.state.send(.success)
-                self.onReloadNeededSubject.send(())
+                self.onReloadNeededItems.send(())
             case .failure(let error):
                 self.state.send(.failure(error.localizedDescription))
             }
@@ -102,7 +115,7 @@ extension SearchPepoleViewModel {
         } else {
             dataSource.setContributors(contributors)
         }
-            self.onReloadNeededSubject.send(())
+        self.onReloadNeededItems.send(())
     }
 }
 // MARK: - Helpers
@@ -112,6 +125,6 @@ extension SearchPepoleViewModel {
     /// Provide access to `onReloadNeededSubject`
     ///
     var onReloadNeeded: Observable<Void> {
-        return onReloadNeededSubject
+        return onReloadNeededItems
     }
 }

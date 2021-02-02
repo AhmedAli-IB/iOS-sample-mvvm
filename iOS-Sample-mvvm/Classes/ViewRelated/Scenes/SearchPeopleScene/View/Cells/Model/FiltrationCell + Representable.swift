@@ -10,7 +10,11 @@ import Foundation
 // MARK: - Filtration Cell Representable
 //
 extension FiltrationModel: FiltrationCellRepresentable {
-
+    
+    var isPicked: Bool {
+        isSelected
+    }
+    
     var filtrationTitle: String {
         return filterTitle
     }

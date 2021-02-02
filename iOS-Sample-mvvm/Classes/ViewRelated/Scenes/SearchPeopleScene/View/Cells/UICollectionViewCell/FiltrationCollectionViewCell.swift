@@ -23,15 +23,15 @@ class FiltrationCollectionViewCell: UICollectionViewCell {
         configureView()
     }
     
-    override var isSelected: Bool {
-        get {
-            return super.isSelected
-        }
-        set {
-            super.isSelected = newValue
-            updateViewForSelectedState()
-        }
-    }
+//    override var isSelected: Bool {
+//        get {
+//            return super.isSelected
+//        }
+//        set {
+//            super.isSelected = newValue
+//            updateViewForSelectedState()
+//        }
+//    }
     
     // MARK: - ViewModel
     //
@@ -59,6 +59,7 @@ private extension FiltrationCollectionViewCell {
         titleLabel.text = viewModel?.filtrationTitle
         filtrationImageView.image = UIImage(named: viewModel?.filtrationUnselectedImageName ?? "placeholder")
         viewModel?.isExpanded ?? false ? showSelectionView() : hideSelectionView()
+        viewModel?.isPicked ?? false ? makeSelected() : makeUnSelected()
     }
     
     /// Hide selection \view
