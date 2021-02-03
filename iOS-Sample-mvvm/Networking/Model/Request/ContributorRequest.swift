@@ -11,12 +11,20 @@ import Foundation
 //
 struct ContributorRequest: Encodable {
     
-    let searchText: String
-    
+    var searchText: String
+    var centers: String
+    var subjects: String
+    var availability: Int?
     // MARK: - Init
     //
-    init(searchText: String = "") {
+    init(searchText: String = "",
+         centers: String = "",
+         subjects: String = "",
+         availability: Int? = nil) {
         self.searchText = searchText
+        self.subjects = subjects
+        self.centers = centers
+        self.availability = availability
     }
     
     enum CodingKeys: String, CodingKey {

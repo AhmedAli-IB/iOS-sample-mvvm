@@ -15,7 +15,7 @@ class FiltrationCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak private var containerView: UIView!
     @IBOutlet weak private var titleLabel: UILabel!
     @IBOutlet weak private var filtrationImageView: UIImageView!
-    @IBOutlet weak var separationVeiw: UIView!
+    @IBOutlet weak private var separationVeiw: UIView!
     
     // MARK: - Init
     //

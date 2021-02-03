@@ -19,7 +19,7 @@ class SearchPepoleViewController: BaseViewController {
     // MARK: - Properties
     //
     private let viewModel: SearchPepoleViewModel = SearchPepoleViewModel()
-    private var isOnline: Bool = false
+//    private var isOnline: Bool = false
     
     // MARK: - Life cycle
     //
@@ -93,13 +93,13 @@ private extension SearchPepoleViewController {
 //
 private extension SearchPepoleViewController {
     
-    /// Filter contributors
-    ///
-    func filterContributors(with online: Bool, searchText: String) {
-        let request = ContributorRequest(searchText: searchText)
-        viewModel.filterOnlineContributors = online
-        viewModel.getContributors(request: request)
-    }
+//    /// Filter contributors
+//    ///
+//    func filterContributors(with online: Bool, searchText: String) {
+//        let request = ContributorRequest(searchText: searchText)
+//        viewModel.filterOnlineContributors = online
+//        viewModel.getContributors(request: request)
+//    }
     
     /// Show action sheet bottom card
     ///
@@ -169,10 +169,7 @@ extension SearchPepoleViewController: UICollectionViewDelegate,
         
             switch item.filtrationType {
             case .online:
-                viewModel.filterOnline()
-                isOnline = true
-                viewModel.selectFiltrationItem(at: indexPath)
-
+                viewModel.selectOnlineFiltration(at: indexPath)
             case .fields:
                 
                 let selectedFields = viewModel.getSelectedSubjects()
@@ -193,13 +190,7 @@ extension SearchPepoleViewController: UICollectionViewDelegate,
             showActionSheet(controller)
     
     }
-//    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-//        let item = viewModel.getFiltrationItem(indexPath: indexPath)
-//        if item.filtrationType == .online {
-//            viewModel.filterOnline(isOnline: false)
-//            isOnline = false
-//        }
-//    }
+
 }
 
 // MARK: - UITableViewDelegate
@@ -236,6 +227,8 @@ private extension SearchPepoleViewController {
         static let normalItemWidth = CGFloat(52)
         static let collectionItemHeight = CGFloat(40)
         static let itemFontSize = CGFloat(14)
+        // Online case in business
+        static let availability = 1
     }
 }
 
@@ -244,13 +237,13 @@ private extension SearchPepoleViewController {
 extension SearchPepoleViewController: UISearchBarDelegate {
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        guard let text = searchBar.searchTextField.text, !text.isEmpty else { return }
-        filterContributors(with: isOnline, searchText: text)
+        guard let text = searchBar.searchTextField.text else { return }
+        viewModel.search(with: text)
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let text = searchBar.searchTextField.text, !text.isEmpty else { return }
-        filterContributors(with: isOnline, searchText: text)
+        guard let text = searchBar.searchTextField.text else { return }
+        viewModel.search(with: text)
     }
 }
 // MARK: - CentersProtocol

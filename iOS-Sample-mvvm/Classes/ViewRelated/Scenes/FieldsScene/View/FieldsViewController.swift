@@ -157,6 +157,10 @@ private extension FieldsViewController {
         static let collectionItemHeight = CGFloat(60)
         static let itemFontSize = CGFloat(17)
         static let buttonCornerRadius = CGFloat(20)
+        static let buttonCornerFontSize = CGFloat(17)
+        static let actionSheetCornerRedius = CGFloat(25)
+        static let staticAdditionalHieghtForActionSheet = CGFloat(100)
+
     }
 }
 // MARK: - Strings
@@ -187,7 +191,7 @@ extension FieldsViewController: ActionSheetPresentable {
 
         // called once during presentation and stored
         scrollView.layoutIfNeeded()
-        return scrollView.contentSize.height + 48 + 44 
+        return scrollView.contentSize.height + Constants.staticAdditionalHieghtForActionSheet
     }
     var panScrollable: UIScrollView? {
         return collectionView
@@ -199,5 +203,9 @@ extension FieldsViewController: ActionSheetPresentable {
     
      var allowsTapToDismiss: Bool {
         return true
+    }
+    
+    var cornerRadius: CGFloat {
+        return Constants.actionSheetCornerRedius
     }
 }

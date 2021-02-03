@@ -19,6 +19,9 @@ class SearchPepoleViewModel: BaseViewModel {
     private var filtredCenters: [CenterModel] = []
     private var filtredSubjects: [SubjectModel] = []
     
+    private var request: ContributorRequest = ContributorRequest()
+    
+    
     private let serviceLocator: SearchServiceLocatorProtocol
     
     /// SearchPeopleDataSource
@@ -34,7 +37,7 @@ class SearchPepoleViewModel: BaseViewModel {
     /// Called when data is updated and reload is needed.
     ///
     private var onReloadNeededItems = PublishSubject<Void>()
-
+    
     // MARK: - Init
     //
     init(serviceLocator: SearchServiceLocatorProtocol = SearchServiceLocator()) {
@@ -49,7 +52,7 @@ class SearchPepoleViewModel: BaseViewModel {
     //
     func viewDidLoad() {
         filtrationItems = FiltrationModel.createFiltrationModels()
-        getContributors(request: ContributorRequest())
+        getContributors(request: request)
     }
     
     /// Get Filtration Item for specific
@@ -57,14 +60,27 @@ class SearchPepoleViewModel: BaseViewModel {
     func getFiltrationItem(indexPath: IndexPath) -> FiltrationModel {
         return filtrationItems[indexPath.row]
     }
+        
+    /// get current selected centers
+    ///
+    func getSelectedCenters() -> [CenterModel] {
+        filtredCenters
+    }
+    
+    /// get current selected subjects
+    ///
+    func getSelectedSubjects() -> [SubjectModel] {
+        filtredSubjects
+    }
     
     /// Change select state of item
     ///
-    func selectFiltrationItem(at index: IndexPath) {
+    func selectOnlineFiltration(at index: IndexPath) {
         filtrationItems[index.item].isSelected = !filtrationItems[index.item].isSelected
+        request.availability == nil ? (request.availability = 1) : (request.availability = nil)
         self.onReloadNeededItems.send(())
+        getContributors(request: request)
     }
-    
     /// Set filtred centers
     ///
     func setfiltredCenter(centers: [CenterModel]) {
@@ -74,12 +90,11 @@ class SearchPepoleViewModel: BaseViewModel {
         guard let locationIndex = index else { return }
         filtrationItems[locationIndex].isSelected = !centers.isEmpty
         self.onReloadNeededItems.send(())
+        request.centers = filtredCenters.map({ $0.centerName }).joined(separator: ",")
+        getContributors(request: request)
+
     }
-    /// get current selected centers
-    ///
-    func getSelectedCenters() -> [CenterModel] {
-        filtredCenters
-    }
+    
     /// Set filtred centers
     ///
     func setfiltredSubject(subjects: [SubjectModel]) {
@@ -89,39 +104,45 @@ class SearchPepoleViewModel: BaseViewModel {
         guard let locationIndex = index else { return }
         filtrationItems[locationIndex].isSelected = !subjects.isEmpty
         self.onReloadNeededItems.send(())
+        request.subjects = filtredSubjects.map({ $0.subjectName }).joined(separator: ",")
+        getContributors(request: request)
     }
-    /// get current selected subjects
+    
+    /// Search with text
     ///
-    func getSelectedSubjects() -> [SubjectModel] {
-        filtredSubjects
+    func search(with text: String) {
+        request.searchText = text
+        getContributors(request: request)
     }
 }
 
 // MARK: - handlers
 //
-extension SearchPepoleViewModel {
-    
+private extension SearchPepoleViewModel {
+        
     /// Get contributors from service locator
     ///
     func getContributors(request: ContributorRequest) {
-        state.send(.loading)
-        serviceLocator.getContributors(contributorRequest: request) { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .success(let contributors):
-                self.contributors = contributors
-                
-                if self.filterOnlineContributors {
-                    self.filterOnline()
-                } else {
-                    self.dataSource.setContributors(contributors)
-                }
-                self.state.send(.success)
-                self.onReloadNeededItems.send(())
-            case .failure(let error):
-                self.state.send(.failure(error.localizedDescription))
-            }
-        }
+        
+        print("rquest == \(request)")
+//        state.send(.loading)
+//        serviceLocator.getContributors(contributorRequest: request) { [weak self] result in
+//            guard let self = self else { return }
+//            switch result {
+//            case .success(let contributors):
+//                self.contributors = contributors
+//                
+//                if self.filterOnlineContributors {
+//                    self.filterOnline()
+//                } else {
+//                    self.dataSource.setContributors(contributors)
+//                }
+//                self.state.send(.success)
+//                self.onReloadNeededItems.send(())
+//            case .failure(let error):
+//                self.state.send(.failure(error.localizedDescription))
+//            }
+//        }
     }
     
     /// Show only online contibutors
