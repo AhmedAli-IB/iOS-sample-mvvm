@@ -125,24 +125,24 @@ private extension SearchPepoleViewModel {
     func getContributors(request: ContributorRequest) {
         
         print("rquest == \(request)")
-//        state.send(.loading)
-//        serviceLocator.getContributors(contributorRequest: request) { [weak self] result in
-//            guard let self = self else { return }
-//            switch result {
-//            case .success(let contributors):
-//                self.contributors = contributors
-//                
-//                if self.filterOnlineContributors {
-//                    self.filterOnline()
-//                } else {
-//                    self.dataSource.setContributors(contributors)
-//                }
-//                self.state.send(.success)
-//                self.onReloadNeededItems.send(())
-//            case .failure(let error):
-//                self.state.send(.failure(error.localizedDescription))
-//            }
-//        }
+        state.send(.loading)
+        serviceLocator.getContributors(contributorRequest: request) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let contributors):
+                self.contributors = contributors
+                
+                if self.filterOnlineContributors {
+                    self.filterOnline()
+                } else {
+                    self.dataSource.setContributors(contributors)
+                }
+                self.state.send(.success)
+                self.onReloadNeededItems.send(())
+            case .failure(let error):
+                self.state.send(.failure(error.localizedDescription))
+            }
+        }
     }
     
     /// Show only online contibutors
