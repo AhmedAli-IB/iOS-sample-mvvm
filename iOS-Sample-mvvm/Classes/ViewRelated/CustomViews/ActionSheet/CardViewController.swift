@@ -279,7 +279,7 @@ private extension CardViewController {
             return
         }
         if isFirstAppear {
-            cardTopConstraint.constant =  (safeAreaHeight + bottomPadding) / 3.0
+            cardTopConstraint.constant =  (safeAreaHeight + bottomPadding) / 2.0
             isFirstAppear = false
             return
         }

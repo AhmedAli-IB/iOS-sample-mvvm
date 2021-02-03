@@ -7,6 +7,8 @@
 
 import UIKit
 
+/// `CentersProtocol` responsable for send selected filters
+///
 protocol CentersProtocol: class {
     func filteredCenters(centers: [CenterModel])
 }

@@ -174,7 +174,13 @@ extension SearchPepoleViewController: UICollectionViewDelegate,
                 viewModel.selectFiltrationItem(at: indexPath)
 
             case .fields:
-                    actionSheetController = FieldsViewController()
+                
+                let selectedFields = viewModel.getSelectedSubjects()
+                let fieldsViewController = FieldsViewController(viewModel: FieldsViewModel(
+                                                                    selectedFields: selectedFields))
+                fieldsViewController.delegate = self
+                actionSheetController = fieldsViewController
+                
             case .location:
                 let selectedCenters = viewModel.getSelectedCenters()
                 let centersViewController = CentersViewController(viewModel: CentersViewModel(
@@ -248,10 +254,20 @@ extension SearchPepoleViewController: UISearchBarDelegate {
     }
 }
 // MARK: - CentersProtocol
-/// Set and get filtered centers
+/// Set  filtered centers
 //
 extension SearchPepoleViewController: CentersProtocol {
     func filteredCenters(centers: [CenterModel]) {
         viewModel.setfiltredCenter(centers: centers)
+    }
+}
+
+// MARK: - CentersProtocol
+/// Set  filtered centers
+//
+extension SearchPepoleViewController: FieldsProtocol {
+    
+    func filteredFields(fields: [SubjectModel]) {
+        viewModel.setfiltredSubject(subjects: fields)
     }
 }

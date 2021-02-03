@@ -10,7 +10,7 @@ import UIKit
 // MARK: - Loading
 //
 extension BaseViewController {
-
+    
     func shouldShowProgressView(_ show: Bool) {
         DispatchQueue.main.async {
             show ? self.showActivityIndicator() : self.hideActivityIndicator()
@@ -18,16 +18,20 @@ extension BaseViewController {
     }
     /// Show activity Indicator
     ///
-    func showActivityIndicator(containerView: UIView? = nil) {
+    func showActivityIndicator() {
         
         activityView.color = .black
         activityView.center = self.view.center
-        if let center = containerView?.center {
-            activityView.center =  center
-        }
-        containerView == nil ? self.view.addSubview(activityView) : containerView?.addSubview(activityView)
+        activityView.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.view.addSubview(activityView)
+        let xAnchor =  self.view.centerXAnchor
+        let yAnchor =  self.view.centerYAnchor
+    
+        activityView.centerXAnchor.constraint(equalTo: xAnchor).isActive = true
+        activityView.centerYAnchor.constraint(equalTo: yAnchor).isActive = true
         activityView.startAnimating()
-
+        
     }
     /// Hide activity indicator
     ///

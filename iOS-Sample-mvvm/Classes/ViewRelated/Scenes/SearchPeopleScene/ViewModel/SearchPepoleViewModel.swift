@@ -15,7 +15,10 @@ class SearchPepoleViewModel: BaseViewModel {
     //
     private var filtrationItems: [FiltrationModel] = []
     private var contributors: [Contributor] = []
+    
     private var filtredCenters: [CenterModel] = []
+    private var filtredSubjects: [SubjectModel] = []
+    
     private let serviceLocator: SearchServiceLocatorProtocol
     
     /// SearchPeopleDataSource
@@ -32,7 +35,6 @@ class SearchPepoleViewModel: BaseViewModel {
     ///
     private var onReloadNeededItems = PublishSubject<Void>()
 
-    
     // MARK: - Init
     //
     init(serviceLocator: SearchServiceLocatorProtocol = SearchServiceLocator()) {
@@ -73,9 +75,25 @@ class SearchPepoleViewModel: BaseViewModel {
         filtrationItems[locationIndex].isSelected = !centers.isEmpty
         self.onReloadNeededItems.send(())
     }
-    
+    /// get current selected centers
+    ///
     func getSelectedCenters() -> [CenterModel] {
         filtredCenters
+    }
+    /// Set filtred centers
+    ///
+    func setfiltredSubject(subjects: [SubjectModel]) {
+        
+        self.filtredSubjects = subjects
+        let index = filtrationItems.firstIndex(where: { $0.filtrationType == .fields })
+        guard let locationIndex = index else { return }
+        filtrationItems[locationIndex].isSelected = !subjects.isEmpty
+        self.onReloadNeededItems.send(())
+    }
+    /// get current selected subjects
+    ///
+    func getSelectedSubjects() -> [SubjectModel] {
+        filtredSubjects
     }
 }
 

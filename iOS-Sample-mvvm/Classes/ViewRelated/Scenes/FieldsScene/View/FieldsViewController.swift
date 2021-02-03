@@ -7,6 +7,12 @@
 
 import UIKit
 
+
+/// `FieldsProtocol` responsable for send selected filters
+///
+protocol FieldsProtocol: class {
+    func filteredFields(fields: [SubjectModel])
+}
 // MARK: - FieldsViewController
 /// `FieldsViewController`  responsible for filter contributors with fields
 //
@@ -19,9 +25,22 @@ class FieldsViewController: BaseViewController {
     @IBOutlet private weak var submitButton: UIButton!
     // MARK: - Properties
     //
-    let viewModel = FieldsViewModel()
+    let viewModel: FieldsViewModel!
     var shouldReload: (() -> Void)?
+    weak var delegate: FieldsProtocol?
     
+    // MARK: - LifeCycle
+    //
+    required init(viewModel: FieldsViewModel) {
+        self.viewModel = viewModel
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     // MARK: - Lifecycle
     //
     override func viewDidLoad() {
@@ -36,7 +55,8 @@ class FieldsViewController: BaseViewController {
 extension FieldsViewController {
     
     @IBAction func submitButtonTapped(_ sender: Any) {
-        print(viewModel.getSelectedSubjects())
+        delegate?.filteredFields(fields: viewModel.getSelectedSubjects())
+        self.dismiss(animated: true)
     }
 }
 // MARK: - Configure View

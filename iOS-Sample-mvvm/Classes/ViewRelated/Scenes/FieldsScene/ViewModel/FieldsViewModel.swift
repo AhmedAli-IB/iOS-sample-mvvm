@@ -25,8 +25,9 @@ class FieldsViewModel: BaseViewModel {
     
     // MARK: - Init
     //
-    init(serviceLocator: FieldsServiceLocatorProtocol = FieldsServiceLocator()) {
+    init(serviceLocator: FieldsServiceLocatorProtocol = FieldsServiceLocator(), selectedFields: [SubjectModel]) {
         self.serviceLocator = serviceLocator
+        self.subjects = selectedFields
     }
     
     var numberOfItms: Int {
@@ -74,7 +75,12 @@ private extension FieldsViewModel {
             switch result {
             
             case .success(let subjects):
-                self.subjects = subjects
+                subjects.forEach({
+                    if self.subjects.contains(obj: $0) == false {
+                        self.subjects.append($0)
+                    }
+                })
+//                self.subjects = subjects
                 self.state.send(.success)
                 self.onReloadNeededSubject.send(())
             case .failure(let error):
