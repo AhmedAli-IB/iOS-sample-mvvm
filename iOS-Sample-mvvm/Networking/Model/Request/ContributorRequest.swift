@@ -29,5 +29,8 @@ struct ContributorRequest: Encodable {
     
     enum CodingKeys: String, CodingKey {
         case searchText = "q"
+        case availability = "availability"
+        case centers = "centers"
+        case subjects = "subjects"
     }
 }

@@ -76,7 +76,7 @@ class SearchPepoleViewModel: BaseViewModel {
     ///
     func selectOnlineFiltration(at index: IndexPath) {
         filtrationItems[index.item].isSelected = !filtrationItems[index.item].isSelected
-        request.availability == nil ? (request.availability = 1) : (request.availability = nil)
+        request.availability == nil ? (request.availability = Constants.availability) : (request.availability = nil)
         self.onReloadNeededItems.send(())
         getContributors(request: request)
     }
@@ -89,7 +89,7 @@ class SearchPepoleViewModel: BaseViewModel {
         guard let locationIndex = index else { return }
         filtrationItems[locationIndex].isSelected = !centers.isEmpty
         self.onReloadNeededItems.send(())
-        request.centers = filtredCenters.map({ $0.centerName }).joined(separator: ",")
+        request.centers = filtredCenters.map({ $0.id }).joined(separator: ",")
         getContributors(request: request)
         
     }
@@ -103,7 +103,7 @@ class SearchPepoleViewModel: BaseViewModel {
         guard let locationIndex = index else { return }
         filtrationItems[locationIndex].isSelected = !subjects.isEmpty
         self.onReloadNeededItems.send(())
-        request.subjects = filtredSubjects.map({ $0.subjectName }).joined(separator: ",")
+        request.subjects = filtredSubjects.map({ $0.id }).joined(separator: ",")
         getContributors(request: request)
     }
     
@@ -159,5 +159,14 @@ extension SearchPepoleViewModel {
     ///
     var onReloadNeeded: Observable<Void> {
         return onReloadNeededItems
+    }
+}
+
+// MARK: - Constants
+//
+private extension SearchPepoleViewModel {
+    enum Constants {
+        // Online case in business
+        static let availability = 2
     }
 }

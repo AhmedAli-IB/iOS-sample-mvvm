@@ -227,8 +227,7 @@ private extension SearchPepoleViewController {
         static let normalItemWidth = CGFloat(52)
         static let collectionItemHeight = CGFloat(40)
         static let itemFontSize = CGFloat(14)
-        // Online case in business
-        static let availability = 1
+
     }
 }
 

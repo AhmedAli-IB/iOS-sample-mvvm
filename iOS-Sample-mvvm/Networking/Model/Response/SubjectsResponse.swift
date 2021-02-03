@@ -19,28 +19,8 @@ struct SubjectsMainResponse: Codable {
 struct SubjectResponse: Codable {
     let id, title: String?
     let type: Int?
-    let file: FileResponse?
-    let interests: [InterestResponse]?
+    let file: File?
+    let interests: [Interest]?
 }
 
-// MARK: - FileResponse
-struct FileResponse: Codable {
-    let id, path: String?
-    let createdAt: Int?
 
-    enum CodingKeys: String, CodingKey {
-        case id, path
-        case createdAt = "created_at"
-    }
-}
-
-// MARK: - Interest
-struct InterestResponse: Codable {
-    let id, name: String?
-    let createdAt: Int?
-
-    enum CodingKeys: String, CodingKey {
-        case id, name
-        case createdAt = "created_at"
-    }
-}

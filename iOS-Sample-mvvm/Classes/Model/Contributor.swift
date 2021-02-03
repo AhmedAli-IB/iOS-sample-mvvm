@@ -11,10 +11,11 @@ import Foundation
 //
 struct Contributor {
     let contributorName: String
-    let contributorImage: String = ""
+    let contributorImage: String
     let contributorJobTitle: String
     let contributorRating: Double
     let online: Bool
+    let avaliablity: Int
 }
 
 // MARK: - Contributor Init Helper
@@ -26,11 +27,13 @@ extension Contributor {
             let contributorName = data.ssoUser?.fullName,
             let contributorJobTitle = data.subject?.title,
             let contributorRating = data.rating,
+            let avaliablity = data.availability,
             let online = data.isOnline else {
             return nil
         }
         self.init(contributorName: contributorName,
+                  contributorImage: data.file?.path ?? "",
                   contributorJobTitle: contributorJobTitle,
-                  contributorRating: contributorRating, online: online)
+                  contributorRating: contributorRating, online: online, avaliablity: avaliablity)
     }
 }

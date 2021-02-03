@@ -25,7 +25,7 @@ extension Contributor: ContributorCellRepresentable {
     }
     
     var imageURL: String? {
-        contributorImage
+        Environment.rootURLString.appending(contributorImage) 
     }
     
     var placeholderImage: UIImage? {
