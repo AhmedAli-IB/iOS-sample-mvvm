@@ -21,16 +21,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="bmd-rf-NiZ">
-                    <rect key="frame" x="8" y="44" width="398" height="750"/>
+                    <rect key="frame" x="8" y="44" width="398" height="742"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EQ3-Wq-qSe">
-                    <rect key="frame" x="20" y="806" width="374" height="44"/>
+                    <rect key="frame" x="20" y="798" width="374" height="52"/>
                     <color key="backgroundColor" red="0.23871827130000001" green="0.42906117440000002" blue="0.57649403809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="44" id="KGr-kd-Cdw"/>
+                        <constraint firstAttribute="height" constant="52" id="KGr-kd-Cdw"/>
                     </constraints>
-                    <state key="normal" title="Submit">
+                    <state key="normal" title="موافق">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>

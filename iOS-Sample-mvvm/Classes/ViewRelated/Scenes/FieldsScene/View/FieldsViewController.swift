@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 /// `FieldsProtocol` responsable for send selected filters
 ///
 protocol FieldsProtocol: class {

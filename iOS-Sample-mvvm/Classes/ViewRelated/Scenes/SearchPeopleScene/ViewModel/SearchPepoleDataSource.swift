@@ -126,6 +126,7 @@ private extension SearchPeopleDataSource {
     enum Constants {
         static let headerHeight = CGFloat(48)
         static let rowHeight = CGFloat(132)
+        static let headerFountSize = CGFloat(18)
     }
     
     // MARK: - Section

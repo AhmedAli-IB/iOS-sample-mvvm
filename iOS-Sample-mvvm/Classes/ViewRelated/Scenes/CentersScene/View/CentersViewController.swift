@@ -104,6 +104,7 @@ private extension CentersViewController {
     func setupSubmitButton() {
        submitButton.layer.cornerRadius = Constants.buttonCornerRadius
        submitButton.titleLabel?.text = Strings.submmitButtonTitle
+      submitButton.titleLabel?.font = FontFamily._29LTAzer.bold.font(size: Constants.buttonCornerFontSize)
    }
 }
 
@@ -121,22 +122,6 @@ extension CentersViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.selectCenter(indexPath: indexPath)
-    }
-}
-
-// MARK: - Constants
-//
-private extension CentersViewController {
-    enum Constants {
-        static let buttonCornerRadius = CGFloat(12)
-    }
-}
-
-// MARK: - Strings
-//
-private extension CentersViewController {
-    enum Strings {
-        static let  submmitButtonTitle = "موافق"
     }
 }
 
@@ -160,7 +145,7 @@ extension CentersViewController: ActionSheetPresentable {
 
         // called once during presentation and stored
         scrollView.layoutIfNeeded()
-        return scrollView.contentSize.height + 24 + 44
+        return scrollView.contentSize.height + Constants.staticAdditionalHieghtForActionSheet
     }
     var panScrollable: UIScrollView? {
         return tableView
@@ -172,5 +157,28 @@ extension CentersViewController: ActionSheetPresentable {
     
      var allowsTapToDismiss: Bool {
         return true
+    }
+    
+    var cornerRadius: CGFloat {
+        return CGFloat(Constants.actionSheetCornerRedius)
+    }
+}
+
+// MARK: - Constants
+//
+private extension CentersViewController {
+    enum Constants {
+        static let buttonCornerRadius = CGFloat(20)
+        static let actionSheetCornerRedius = CGFloat(25)
+        static let staticAdditionalHieghtForActionSheet = CGFloat(74)
+        static let buttonCornerFontSize = CGFloat(17)
+    }
+}
+
+// MARK: - Strings
+//
+private extension CentersViewController {
+    enum Strings {
+        static let submmitButtonTitle = "موافق"
     }
 }

@@ -25,7 +25,7 @@ class CardViewController: BaseViewController {
     var backingImage: UIImage?
     
     private var isFirstAppear: Bool = true
-
+    
     private var cardViewState: CardViewState = .normal
     // to store the card view top constraint value before the dragging start
     // default is 30 pt from safe area top
@@ -207,7 +207,8 @@ private extension CardViewController {
         dimmerView.isUserInteractionEnabled = true
     }
     
-    @objc func dimmerViewTapped(_ tapRecognizer: UITapGestureRecognizer) {
+    @objc
+    func dimmerViewTapped(_ tapRecognizer: UITapGestureRecognizer) {
         
         if childViewController.allowsTapToDismiss {
             hideCardAndGoBack()
@@ -227,7 +228,8 @@ private extension CardViewController {
     }
     
     // this function will be called when user pan/drag the view
-    @objc func viewPanned(_ panRecognizer: UIPanGestureRecognizer) {
+    @objc
+    func viewPanned(_ panRecognizer: UIPanGestureRecognizer) {
         // how much distance has user dragged the card view
         // positive number means user dragged downward
         // negative number means user dragged upward
@@ -270,7 +272,7 @@ private extension CardViewController {
     /// Calculate card  content size
     ///
     func calculateCardIntialHeight() {
-    
+        
         let contentHeight = childViewController.contentFormHeight
         let maxHeight = safeAreaHeight + bottomPadding - childViewController.topOffset
         

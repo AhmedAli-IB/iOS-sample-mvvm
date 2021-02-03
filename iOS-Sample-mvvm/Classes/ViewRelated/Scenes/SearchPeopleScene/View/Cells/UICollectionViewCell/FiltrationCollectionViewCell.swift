@@ -15,6 +15,7 @@ class FiltrationCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak private var containerView: UIView!
     @IBOutlet weak private var titleLabel: UILabel!
     @IBOutlet weak private var filtrationImageView: UIImageView!
+    @IBOutlet weak var separationVeiw: UIView!
     
     // MARK: - Init
     //
@@ -51,6 +52,8 @@ private extension FiltrationCollectionViewCell {
     func configureView() {
         containerView.layer.cornerRadius = Constants.containerCornerRadius
         containerView.backgroundColor = Asset.ColorPalette.unselectedColor.color
+        titleLabel.textColor = Asset.ColorPalette.smeGray.color
+        titleLabel.font = FontFamily._29LTAzer.medium.font(size: Constants.titleLabelFontSize)
     }
     
     /// Configure cell data
@@ -83,12 +86,16 @@ private extension FiltrationCollectionViewCell {
     func makeSelected() {
         containerView.backgroundColor = Asset.ColorPalette.selectedColor.color
         filtrationImageView.image = UIImage(named: viewModel?.filtrationSelectedImageName ?? "placeholder")
+        titleLabel.textColor = .white
+        separationVeiw.backgroundColor = .white
+
     }
     
     func makeUnSelected() {
         containerView.backgroundColor = Asset.ColorPalette.unselectedColor.color
         filtrationImageView.image = UIImage(named: viewModel?.filtrationUnselectedImageName ?? "placeholder")
-        
+        titleLabel.textColor = Asset.ColorPalette.smeGray.color
+        separationVeiw.backgroundColor = Asset.ColorPalette.smeGray.color
     }
     
 }
@@ -99,5 +106,7 @@ private extension FiltrationCollectionViewCell {
     
     enum Constants {
         static let containerCornerRadius = CGFloat(16)
+        static let titleLabelFontSize = CGFloat(14)
+
     }
 }

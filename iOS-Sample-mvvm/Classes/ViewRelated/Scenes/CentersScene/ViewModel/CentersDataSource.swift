@@ -102,7 +102,8 @@ extension CentersDataSource {
                 as? ContributorsHeaderView else {
             fatalError("Unable to get header view")
         }
-        header.configure(title: sections[section].title ?? "")
+        header.configure(title: sections[section].title ?? "",
+                         color: Asset.ColorPalette.titleColor.color)
         
         return header
     }

@@ -107,6 +107,7 @@
                 <outlet property="containerView" destination="iKf-BS-Z1e" id="dt0-D4-DRz"/>
                 <outlet property="filtrationImageView" destination="ZLx-Hn-Xq0" id="NhF-wD-DZ0"/>
                 <outlet property="selectionView" destination="ST6-hu-bxB" id="baK-lv-oBV"/>
+                <outlet property="separationVeiw" destination="58f-BC-oE0" id="mhG-jq-1uu"/>
                 <outlet property="titleLabel" destination="4yO-R9-SKP" id="OWO-Xh-pmG"/>
             </connections>
             <point key="canvasLocation" x="-814" y="-149"/>

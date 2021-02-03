@@ -38,12 +38,28 @@ class CenterTableViewCell: UITableViewCell {
 // MARK: - Configurations
 //
 extension CenterTableViewCell {
-    
+
     /// Configure cell
     ///
     func configureCell() {
         centerNameLabel.text = viewModel?.name
+        centerNameLabel.textColor = Asset.ColorPalette.smeBlack.color
+        centerNameLabel.font = FontFamily._29LTAzer.medium.font(size: Constants.centerNameLabelFontSize)
+        centerAddressLabel.textColor = Asset.ColorPalette.smeLightGray.color
+        centerNameLabel.font = FontFamily._29LTAzer.regular.font(size: Constants.centerAddressLabelFontSize)
         centerAddressLabel.text = viewModel?.address
         viewModel?.isPicked ?? false ? (self.accessoryType = .checkmark) : (self.accessoryType = .none)
+    }
+}
+
+// MARK: - Constants
+//
+private extension CenterTableViewCell {
+    
+    // MARK: - Constants
+    //
+    enum Constants {
+        static let centerNameLabelFontSize = CGFloat(17)
+        static let centerAddressLabelFontSize = CGFloat(16)
     }
 }

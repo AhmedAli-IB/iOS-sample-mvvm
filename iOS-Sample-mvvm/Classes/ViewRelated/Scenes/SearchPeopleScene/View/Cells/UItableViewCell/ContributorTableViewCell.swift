@@ -48,6 +48,14 @@ private extension ContributorTableViewCell {
         containerView.makeCardView( cornerRadius: CGFloat(Constants.containerCornerRadius))
         contributorImageView.layer.cornerRadius = Constants.imageCornerRadius
         imageContainerView.layer.cornerRadius = Constants.imageCornerRadius
+        contributorNameLabel.textColor = Asset.ColorPalette.titleColor.color
+        contributorNameLabel.font = FontFamily._29LTAzer.medium.font(size: Constants.contributorNameLabelFontSize)
+        contributorJobTitleLabel.font = FontFamily._29LTAzer.regular.font(size: Constants.contributorJobLabelFontSize)
+        durationLabel.font = FontFamily._29LTAzer.regular.font(size: Constants.durationLabelFontSize)
+        durationLabel.textColor = Asset.ColorPalette.smeLightGray.color
+        contributorJobTitleLabel.textColor = Asset.ColorPalette.smeLightGray.color
+        ratingLabel.textColor = Asset.ColorPalette.primaryColor.color
+        ratingLabel.font = FontFamily._29LTAzer.medium.font(size: Constants.ratingLabelFontSize)
     }
     
     /// Configure cell data
@@ -68,6 +76,9 @@ private extension ContributorTableViewCell {
         static let rayingViewCornerRadius = CGFloat(12)
         static let imageCornerRadius = CGFloat(16)
         static let containerCornerRadius = CGFloat(20)
-
+        static let contributorNameLabelFontSize = CGFloat(20)
+        static let contributorJobLabelFontSize = CGFloat(13)
+        static let durationLabelFontSize = CGFloat(16)
+        static let ratingLabelFontSize = CGFloat(17.12)
     }
 }

@@ -127,7 +127,7 @@ private extension SearchPepoleViewController {
     func calculateItemWidth(item: FiltrationModel) -> CGFloat {
         var staticWidth: CGFloat = .zero
         item.expanded == true ? (staticWidth = Constants.expandedItemWidth) : (staticWidth = Constants.normalItemWidth)
-        let itemFont =  UIFont.systemFont(ofSize: Constants.itemFontSize)
+        let itemFont =  FontFamily._29LTAzer.medium.font(size: Constants.itemFontSize)
         let  itemTextWidth = item.filterTitle.size(withAttributes: [.font: itemFont])
         return CGFloat(itemTextWidth.width + staticWidth)
     }
@@ -235,7 +235,7 @@ private extension SearchPepoleViewController {
         static let expandedItemWidth = CGFloat(74)
         static let normalItemWidth = CGFloat(52)
         static let collectionItemHeight = CGFloat(40)
-        static let itemFontSize = CGFloat(17)
+        static let itemFontSize = CGFloat(14)
     }
 }
 

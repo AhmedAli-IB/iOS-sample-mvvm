@@ -14,6 +14,9 @@ class FieldsViewModel: BaseViewModel {
     // MARK: - Properties
     //
     private var subjects: [SubjectModel] = []
+    /// This subjects aleardy selected by the user.
+    ///
+    private var selectedSubjects: [SubjectModel] = []
     
     private let serviceLocator: FieldsServiceLocatorProtocol
     
@@ -27,7 +30,7 @@ class FieldsViewModel: BaseViewModel {
     //
     init(serviceLocator: FieldsServiceLocatorProtocol = FieldsServiceLocator(), selectedFields: [SubjectModel]) {
         self.serviceLocator = serviceLocator
-        self.subjects = selectedFields
+        self.selectedSubjects = selectedFields
     }
     
     var numberOfItms: Int {
@@ -75,12 +78,13 @@ private extension FieldsViewModel {
             switch result {
             
             case .success(let subjects):
+                
+                self.subjects.append(contentsOf: self.selectedSubjects)
                 subjects.forEach({
-                    if self.subjects.contains(obj: $0) == false {
+                    if self.selectedSubjects.contains(obj: $0) == false {
                         self.subjects.append($0)
                     }
                 })
-//                self.subjects = subjects
                 self.state.send(.success)
                 self.onReloadNeededSubject.send(())
             case .failure(let error):
