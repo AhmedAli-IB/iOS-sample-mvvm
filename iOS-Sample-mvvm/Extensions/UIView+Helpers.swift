@@ -30,4 +30,10 @@ extension UIView {
         layer.shadowRadius = shadowRadius
         layer.cornerRadius = cornerRadius
     }
+    
+    class func fromNib<T: UIView>() -> T {
+        // swiftlint:disable force_cast
+        return Bundle(for: T.self).loadNibNamed(String(describing: T.self), owner: nil, options: nil)?.first as! T
+    }
+
 }

@@ -155,6 +155,6 @@ private extension CentersDataSource {
 private extension CentersDataSource {
     
     enum Strings {
-        static var selectBlace: String = "اختار المركز"
+        static let selectBlace: String = "اختار المركز"
     }
 }

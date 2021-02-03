@@ -35,7 +35,8 @@ extension SearchPeopleDataSource: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        sections[section].rows.count
+        sections[section].rows.isEmpty ? setupEmptyView(tableView) : tableView.restore()
+        return sections[section].rows.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -44,6 +45,14 @@ extension SearchPeopleDataSource: UITableViewDataSource {
         configureCell(cell, at: indexPath)
         
         return cell
+    }
+}
+
+// MARK: - Helpers
+//
+extension SearchPeopleDataSource {
+    func setupEmptyView(_ tableView: UITableView) {
+        tableView.setEmptyView(image: Asset.Assets.icNoSearchResult.image, message: Strings.noSearchResult)
     }
 }
 
@@ -74,9 +83,9 @@ extension SearchPeopleDataSource {
     func reloadSections() {
         self.sections = {
             
-            let contributorsSection: Section? = {
+            let contributorsSection: Section = {
                 
-                guard self.contributors.isEmpty == false else { return nil }
+//                guard self.contributors.isEmpty == false else { return nil }
                 
                 var rows: [RowType] = []
                 
@@ -156,5 +165,7 @@ private extension SearchPeopleDataSource {
     
     enum Strings {
         static var suggestions: String = "اقتراحات"
+        static let noSearchResult: String = "لا يوجد نتائج"
+
     }
 }

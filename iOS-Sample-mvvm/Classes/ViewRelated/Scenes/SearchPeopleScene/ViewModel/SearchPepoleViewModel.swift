@@ -21,7 +21,6 @@ class SearchPepoleViewModel: BaseViewModel {
     
     private var request: ContributorRequest = ContributorRequest()
     
-    
     private let serviceLocator: SearchServiceLocatorProtocol
     
     /// SearchPeopleDataSource
@@ -60,7 +59,7 @@ class SearchPepoleViewModel: BaseViewModel {
     func getFiltrationItem(indexPath: IndexPath) -> FiltrationModel {
         return filtrationItems[indexPath.row]
     }
-        
+    
     /// get current selected centers
     ///
     func getSelectedCenters() -> [CenterModel] {
@@ -92,7 +91,7 @@ class SearchPepoleViewModel: BaseViewModel {
         self.onReloadNeededItems.send(())
         request.centers = filtredCenters.map({ $0.centerName }).joined(separator: ",")
         getContributors(request: request)
-
+        
     }
     
     /// Set filtred centers
@@ -119,7 +118,7 @@ class SearchPepoleViewModel: BaseViewModel {
 // MARK: - handlers
 //
 private extension SearchPepoleViewModel {
-        
+    
     /// Get contributors from service locator
     ///
     func getContributors(request: ContributorRequest) {
@@ -131,12 +130,7 @@ private extension SearchPepoleViewModel {
             switch result {
             case .success(let contributors):
                 self.contributors = contributors
-                
-                if self.filterOnlineContributors {
-                    self.filterOnline()
-                } else {
-                    self.dataSource.setContributors(contributors)
-                }
+                self.dataSource.setContributors(contributors)
                 self.state.send(.success)
                 self.onReloadNeededItems.send(())
             case .failure(let error):

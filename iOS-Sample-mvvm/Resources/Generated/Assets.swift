@@ -50,6 +50,7 @@ internal enum Asset {
     internal static let icLocationCircleSelected = ImageAsset(name: "ic_location-circle-selected")
     internal static let icLocationCircle = ImageAsset(name: "ic_location-circle")
     internal static let icLocation = ImageAsset(name: "ic_location")
+    internal static let icNoSearchResult = ImageAsset(name: "ic_no-searchResult")
     internal static let icNotBooked = ImageAsset(name: "ic_not-booked")
     internal static let icNotificationActiveRed = ImageAsset(name: "ic_notification-active-red")
     internal static let icNotificationActive = ImageAsset(name: "ic_notification-active")
