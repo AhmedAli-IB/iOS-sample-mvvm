@@ -69,10 +69,6 @@
 		E0FAB43E25C1413900A940E6 /* SessionsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FAB43425C1413900A940E6 /* SessionsResponse.swift */; };
 		E0FAB44825C1472500A940E6 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FAB44725C1472500A940E6 /* Model.swift */; };
 		E0FAB44D25C14D8D00A940E6 /* HomeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FAB44C25C14D8D00A940E6 /* HomeError.swift */; };
-		E0FAB45625C15DFD00A940E6 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FAB45425C15DFD00A940E6 /* BaseViewController.swift */; };
-		E0FAB45725C15DFD00A940E6 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FAB45525C15DFD00A940E6 /* BaseViewModel.swift */; };
-		E0FAB45D25C15F3800A940E6 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FAB45C25C15F3800A940E6 /* State.swift */; };
-		E0FAB46325C1717300A940E6 /* UIViewController.swift+Loadding+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FAB46225C1717300A940E6 /* UIViewController.swift+Loadding+Alert.swift */; };
 		E0FAB46C25C1788200A940E6 /* StaticSessionsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FAB46B25C1788200A940E6 /* StaticSessionsData.swift */; };
 		E0FC1BD525B55BFF00EDAE4E /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FC1BD425B55BFF00EDAE4E /* EndPoint.swift */; };
 		E0FC1BDA25B55C9500EDAE4E /* EndPoint+TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FC1BD925B55C9500EDAE4E /* EndPoint+TargetType.swift */; };
@@ -185,10 +181,6 @@
 		E0FAB43425C1413900A940E6 /* SessionsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionsResponse.swift; sourceTree = "<group>"; };
 		E0FAB44725C1472500A940E6 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		E0FAB44C25C14D8D00A940E6 /* HomeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeError.swift; sourceTree = "<group>"; };
-		E0FAB45425C15DFD00A940E6 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		E0FAB45525C15DFD00A940E6 /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
-		E0FAB45C25C15F3800A940E6 /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
-		E0FAB46225C1717300A940E6 /* UIViewController.swift+Loadding+Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController.swift+Loadding+Alert.swift"; sourceTree = "<group>"; };
 		E0FAB46B25C1788200A940E6 /* StaticSessionsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticSessionsData.swift; sourceTree = "<group>"; };
 		E0FC1BD425B55BFF00EDAE4E /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		E0FC1BD925B55C9500EDAE4E /* EndPoint+TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EndPoint+TargetType.swift"; sourceTree = "<group>"; };
@@ -313,7 +305,6 @@
 				60C3485825B5BEC700BD03AC /* UIImage+LoadImage.swift */,
 				60D321D425B9B6F70030E5FA /* TabBarItem + ImageOnly.swift */,
 				E0FAB42425C01EA400A940E6 /* UIView+Extention.swift */,
-				E0FAB46225C1717300A940E6 /* UIViewController.swift+Loadding+Alert.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -352,7 +343,6 @@
 				60D321DA25B9B8DB0030E5FA /* Landing */,
 				60D3219025B99B010030E5FA /* MainTabBar */,
 				6040779C25B45F1600C8972F /* Protocols */,
-				6040779D25B45F1B00C8972F /* BaseClasses */,
 				6040779E25B45F4700C8972F /* Scenes */,
 			);
 			path = ViewRelated;
@@ -376,15 +366,6 @@
 				60C3485325B5BE9C00BD03AC /* ImageRepresentable.swift */,
 			);
 			path = Protocols;
-			sourceTree = "<group>";
-		};
-		6040779D25B45F1B00C8972F /* BaseClasses */ = {
-			isa = PBXGroup;
-			children = (
-				E0FAB45425C15DFD00A940E6 /* BaseViewController.swift */,
-				E0FAB45525C15DFD00A940E6 /* BaseViewModel.swift */,
-			);
-			path = BaseClasses;
 			sourceTree = "<group>";
 		};
 		6040779E25B45F4700C8972F /* Scenes */ = {
@@ -499,7 +480,6 @@
 			isa = PBXGroup;
 			children = (
 				60D321A125B99D9B0030E5FA /* Coordinator.swift */,
-				E0FAB45C25C15F3800A940E6 /* State.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -908,8 +888,6 @@
 				E0FAB43725C1413900A940E6 /* Schedule.swift in Sources */,
 				6040775925B45E1100C8972F /* AppDelegate.swift in Sources */,
 				60D321A225B99D9B0030E5FA /* Coordinator.swift in Sources */,
-				E0FAB45D25C15F3800A940E6 /* State.swift in Sources */,
-				E0FAB45725C15DFD00A940E6 /* BaseViewModel.swift in Sources */,
 				60D321C725B9AB850030E5FA /* ChatViewController.swift in Sources */,
 				E0FC1BDA25B55C9500EDAE4E /* EndPoint+TargetType.swift in Sources */,
 				6040781025B46AF500C8972F /* Observer.swift in Sources */,
@@ -919,7 +897,6 @@
 				6040780F25B46AF500C8972F /* Observable.swift in Sources */,
 				604077D225B462B800C8972F /* ServiceLocator.swift in Sources */,
 				60D321BE25B9AAFB0030E5FA /* AccountViewController.swift in Sources */,
-				E0FAB45625C15DFD00A940E6 /* BaseViewController.swift in Sources */,
 				60D321D525B9B6F70030E5FA /* TabBarItem + ImageOnly.swift in Sources */,
 				E01600E825C82BCD006C7D6E /* InternetChecker.swift in Sources */,
 				6040775B25B45E1100C8972F /* SceneDelegate.swift in Sources */,
@@ -940,7 +917,6 @@
 				E0FAB43C25C1413900A940E6 /* SsoUser.swift in Sources */,
 				604077A525B4600D00C8972F /* HomeViewController.swift in Sources */,
 				E0FC1BDF25B55EF100EDAE4E /* Enviroment.swift in Sources */,
-				E0FAB46325C1717300A940E6 /* UIViewController.swift+Loadding+Alert.swift in Sources */,
 				E0FC1BF225B561D500EDAE4E /* KeyConstants.swift in Sources */,
 				E0FC1BD525B55BFF00EDAE4E /* EndPoint.swift in Sources */,
 				60D321B225B9A0BE0030E5FA /* ChatCoordinator.swift in Sources */,
