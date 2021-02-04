@@ -16,6 +16,12 @@ extension AppEndPoint: TargetType {
         switch self {
         case .getSessions:
             return "/api/schedule/sme/sessions"
+        case .getContributors:
+            return "/api/profile/contributors"
+        case .getSubjects:
+            return "/api/dashboard/mobile/subjects"
+        case .getCenters:
+            return "/api/center/centers"
         }
     }
     
@@ -23,7 +29,12 @@ extension AppEndPoint: TargetType {
        switch self {
        case .getSessions:
         return .get
-        
+       case .getContributors:
+        return .get
+       case .getSubjects:
+        return .get
+       case .getCenters:
+        return .get
        }
     }
     
@@ -31,6 +42,14 @@ extension AppEndPoint: TargetType {
         switch self {
         case .getSessions:
             return .requestParameters(parameters: [:], encoding: URLEncoding.default)
+        case .getContributors(let request):
+            let parameters = (try? request.asDictionary()) ?? [:]
+            return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
+        case .getSubjects:
+            return .requestPlain
+            
+        case .getCenters:
+            return .requestPlain
         }
     }
     

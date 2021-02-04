@@ -36,6 +36,13 @@ public enum Environment {
         }
         return url
     }()
+    
+    static let rootURLString: String = {
+        guard let rootURLstring = Environment.infoDictionary[PlistKeys.rootURL] as? String else {
+            fatalError("Root URL not set in plist for this environment \(#function)")
+        }
+        return "https://\(rootURLstring)"
+    }()
     /// api key
     ///
     static let apiKey: String = {
