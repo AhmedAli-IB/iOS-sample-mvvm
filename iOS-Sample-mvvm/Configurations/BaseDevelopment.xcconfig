@@ -7,6 +7,7 @@
 
 // Configuration settings file format documentation can be found at:
 // https://help.apple.com/xcode/#/dev745c5c974
+//#include "Pods/Target Support Files/FSCalendar/FSCalendar.release.xcconfig"
 SERVER_URL = smea-pc.ibtikar.sa
 APP_NAME = Dev
 APP_BUNDLE_IDENTIFIER = com.ibtikar.iOS-Sample-mvvm.dev

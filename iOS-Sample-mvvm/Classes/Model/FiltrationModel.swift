@@ -24,6 +24,11 @@ extension FiltrationModel {
     
     static func createFiltrationModels() -> [FiltrationModel] {
         
+        let datesItem = FiltrationModel(filterTitle: Strings.calendar,
+                                        selectedImageName: Asset.Assets.icCalendarCircle.name,
+                                        unSelectedImageName: Asset.Assets.icCalendarCircle.name,
+                                        expanded: true, filtrationType: .calendar, isSelected: false)
+        
         let  firstItem = FiltrationModel(filterTitle: Strings.fields,
                                          selectedImageName: Asset.Assets.icFieldsCircle.name,
                                          unSelectedImageName: Asset.Assets.icFieldsCircle.name,
@@ -38,7 +43,7 @@ extension FiltrationModel {
                                         unSelectedImageName: Asset.Assets.icOnlineCircleUnselected.name,
                                         expanded: false, filtrationType: .online, isSelected: false)
         
-        return [firstItem, secoundItem, thirdItem]
+        return [datesItem, firstItem, secoundItem, thirdItem]
     }
 }
 
@@ -49,6 +54,7 @@ private extension FiltrationModel {
         static let online = "آونلاين"
         static let inCenter = "في المركز"
         static let fields = "مجالات"
+        static let calendar = "التقويم"
     }
 }
 
@@ -56,4 +62,5 @@ enum FiltrationModelType {
     case online
     case fields
     case location
+    case calendar
 }

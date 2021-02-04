@@ -184,7 +184,11 @@ extension SearchPepoleViewController: UICollectionViewDelegate,
                                                                     selectedCenters: selectedCenters))
                 centersViewController.centerDelegate = self
                 actionSheetController = centersViewController
-            }
+            case .calendar:
+//                let selectedCenters = viewModel.getSelectedCenters()
+                let calendarViewController =  CalendarViewController()
+//                centersViewController.centerDelegate = self
+                actionSheetController = calendarViewController            }
         
             guard let controller =  actionSheetController else { return }
             showActionSheet(controller)

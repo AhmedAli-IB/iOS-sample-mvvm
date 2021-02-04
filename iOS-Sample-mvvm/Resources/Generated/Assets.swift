@@ -40,6 +40,8 @@ internal enum Asset {
     internal static let icAvatarBg = ImageAsset(name: "ic_avatar-bg")
     internal static let icAvatar = ImageAsset(name: "ic_avatar")
     internal static let icBackArrow = ImageAsset(name: "ic_back-arrow")
+    internal static let icCalendarCircle = ImageAsset(name: "ic_calendar-circle")
+    internal static let icCalender = ImageAsset(name: "ic_calender")
     internal static let icCancel = ImageAsset(name: "ic_cancel")
     internal static let icChat = ImageAsset(name: "ic_chat")
     internal static let icEmptyConsultations = ImageAsset(name: "ic_empty-consultations")
