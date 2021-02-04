@@ -7,7 +7,7 @@
 
 import Foundation
 
-// MARK: -  State
+// MARK: - State
 /// state enum show current state of request call success, faliure and loading
 ///
 public enum State<Success> {

@@ -14,23 +14,38 @@ extension AppEndPoint: TargetType {
     
     var path: String {
         switch self {
-        case .getSomeEndpoint:
-            return "/some/path"
+        case .getContributors:
+            return "/api/profile/contributors"
+        case .getSubjects:
+            return "/api/dashboard/mobile/subjects"
+        case .getCenters:
+            return "/api/center/centers"
         }
     }
     
     var method: Moya.Method {
        switch self {
-       case .getSomeEndpoint:
+       case .getContributors:
         return .get
         
+       case .getSubjects:
+        return .get
+        
+       case .getCenters:
+        return .get
        }
     }
     
     var task: Task {
         switch self {
-        case .getSomeEndpoint:
-            return .requestParameters(parameters: [:], encoding: URLEncoding.default)
+        case .getContributors(let request):
+            let parameters = (try? request.asDictionary()) ?? [:]
+            return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
+        case .getSubjects:
+            return .requestPlain
+            
+        case .getCenters:
+            return .requestPlain
         }
     }
     

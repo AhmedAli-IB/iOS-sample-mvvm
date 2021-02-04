@@ -36,6 +36,7 @@ class Observable<Element> {
     /// }
     /// ```
     ///
+    @discardableResult
     func subscribe(_ onNext: @escaping OnNext<Element>) -> ObservationToken {
         fatalError("Abstract method. This must be implemented by subclasses.")
     }

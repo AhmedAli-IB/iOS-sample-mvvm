@@ -10,7 +10,13 @@ import Moya
 
 class NetworkManager {
     
-    lazy private var provider = MoyaProvider<AppEndPoint>()
+    // MARK: - Properties
+    
+    /// Network provider
+    ///
+    lazy private var provider = MoyaProvider<AppEndPoint>(
+        plugins: [loggingPlugin]
+    )
     
     func request<T: Codable>(_ target: AppEndPoint, completion: @escaping (Result<T, Error>) -> Void) {
         
@@ -22,6 +28,7 @@ class NetworkManager {
                         let apiResponse = try JSONDecoder().decode(T.self, from: response.data)
                         completion(.success(apiResponse))
                     } catch {
+                        print(error)
                         completion(.failure(NetworkError.parseError))
                     }
                 } else {
@@ -39,5 +46,18 @@ class NetworkManager {
             }
             
         }
+    }
+}
+// MARK: - Helpers
+//
+private extension NetworkManager {
+    
+    // MARK: - Properties
+    /// logging for request and response body
+    ///
+    var loggingPlugin: NetworkLoggerPlugin {
+        NetworkLoggerPlugin(
+            configuration: .init(logOptions: .verbose)
+        )
     }
 }

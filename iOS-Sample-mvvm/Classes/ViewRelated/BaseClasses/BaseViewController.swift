@@ -32,5 +32,12 @@ class BaseViewController: UIViewController {
             }
         }
     }
-
+    
+    /// Dismiss Keyboard
+    ///
+    func endEditting() {
+        let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        tapGesture.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapGesture)
+    }
 }
