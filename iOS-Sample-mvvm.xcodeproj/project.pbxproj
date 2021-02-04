@@ -331,6 +331,7 @@
 		6040779825B45ECC00C8972F /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				E01600E725C82BCD006C7D6E /* InternetChecker.swift */,
 				60D321A025B99D910030E5FA /* Coordinator */,
 				604077EB25B469CF00C8972F /* Observers */,
 			);
@@ -429,8 +430,8 @@
 		604077A225B45F8700C8972F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E08C033D25BD94110034E887 /* Session */,
-				E08C033425BD86B70034E887 /* Card */,
+				E06357B325CAB35E009DFA73 /* CollectionviewCell */,
+				E06357B225CAB349009DFA73 /* TableViewCell */,
 				604077A325B4600D00C8972F /* HomeViewController.swift */,
 				604077A425B4600D00C8972F /* HomeViewController.xib */,
 			);
@@ -589,28 +590,27 @@
 			path = Landing;
 			sourceTree = "<group>";
 		};
-		E08C033425BD86B70034E887 /* Card */ = {
-			isa = PBXGroup;
-			children = (
-				E08C032725BD615D0034E887 /* CardCollectionViewCell.swift */,
-				E08C032B25BD616F0034E887 /* CardCollectionViewCell.xib */,
-			);
-			path = Card;
-			sourceTree = "<group>";
-		};
-		E08C033D25BD94110034E887 /* Session */ = {
+		E06357B225CAB349009DFA73 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
 				E08C034825BDB7160034E887 /* SessionTableViewCell.swift */,
 				E08C034C25BDB7240034E887 /* SessionTableViewCell.xib */,
 			);
-			path = Session;
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		E06357B325CAB35E009DFA73 /* CollectionviewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E08C032725BD615D0034E887 /* CardCollectionViewCell.swift */,
+				E08C032B25BD616F0034E887 /* CardCollectionViewCell.xib */,
+			);
+			path = CollectionviewCell;
 			sourceTree = "<group>";
 		};
 		E0FAB41D25C01C8700A940E6 /* NoInternetScene */ = {
 			isa = PBXGroup;
 			children = (
-				E01600E725C82BCD006C7D6E /* InternetChecker.swift */,
 				E0FAB41F25C01CCA00A940E6 /* NoInternet.swift */,
 				E0FAB41E25C01CCA00A940E6 /* NoInternet.xib */,
 			);

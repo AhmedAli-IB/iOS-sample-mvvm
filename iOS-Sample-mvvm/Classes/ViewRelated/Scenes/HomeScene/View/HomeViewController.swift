@@ -23,7 +23,7 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        configureTableView()
+        configureView()
         configureAppearance()
         bindLoadingState(to: viewModel)
         bindErrorState(to: viewModel)
@@ -46,7 +46,7 @@ private extension HomeViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
     }
     
-    func configureTableView() {
+    func configureView() {
 
         tableView.delegate = self
         tableView.dataSource = self
@@ -66,11 +66,15 @@ private extension HomeViewController {
                                 forCellWithReuseIdentifier: Strings.collectionViewCellId)
     }
     
+    /// Configure tableview and collectionview on viewmodel reload data and network failure
     func configureViewModel() {
         
         viewModel.onReload = { [weak self] in
             guard  let self = self else { return }
             self.tableViewHeightConstraint.constant = self.tableView.contentSize.height
+            self.tableView.estimatedRowHeight = CGFloat(Constants.tabelViewCellEstimatedHeight)
+            self.tableView.rowHeight = UITableView.automaticDimension
+
             self.collectionView.isHidden = false
             self.tableView.isHidden = false
             self.noInternetView.removeFromSuperview()
@@ -86,6 +90,7 @@ private extension HomeViewController {
             configureNoInternetView()
         }
         
+        /// Configure no internet view constraints and center in superview
         func configureNoInternetView() {
             self.noInternetView.translatesAutoresizingMaskIntoConstraints = false
             self.noInternetView.topAnchor.constraint(equalTo: self.superView.topAnchor,
@@ -110,6 +115,9 @@ private extension HomeViewController {
     enum Constants {
         static let noInternetViewTopConstraint = 100.0
         static let numberOfCardsPreBussiness = 5
+        static let tabelViewCellEstimatedHeight = 114.0
+        static let collectionViewCellHeight = 211.0
+        static let collectionViewCellWidth = 345.0
     }
 }
 
@@ -157,7 +165,8 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-        return CGSize(width: 345, height: 211)
+        return CGSize(width: Constants.collectionViewCellWidth,
+                      height: Constants.collectionViewCellHeight)
     }
 }
 
@@ -168,7 +177,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 114.0
+        return CGFloat(Constants.tabelViewCellEstimatedHeight)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
