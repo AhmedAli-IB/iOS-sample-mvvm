@@ -14,5 +14,6 @@ enum AppEndPoint {
     case getContributors(ContributorRequest)
     case getSubjects
     case getCenters
-    
+    case getSessions
+
 }
