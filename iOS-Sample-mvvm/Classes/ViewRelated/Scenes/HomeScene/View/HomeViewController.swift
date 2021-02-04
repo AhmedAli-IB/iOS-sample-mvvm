@@ -16,7 +16,6 @@ class HomeViewController: BaseViewController {
     @IBOutlet private weak var collectionView: UICollectionView!
     @IBOutlet private weak var pageControl: UIPageControl!
     private let viewModel: HomeViewModel = HomeViewModel()
-    private var staticData = StaticSessions()
 
     private lazy var noInternetView = NoInternet(with: self)
     
@@ -27,8 +26,10 @@ class HomeViewController: BaseViewController {
         configureAppearance()
         bindLoadingState(to: viewModel)
         bindErrorState(to: viewModel)
-        configureViewModel()
         viewModel.getSessions()
+        viewModel.getStaticSessionsData()
+        configureViewModel()
+
     }
 
     @IBAction func searchTapped(_ sender: Any) {
@@ -181,7 +182,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return staticData.staticSessionsArr.count
+        return viewModel.staticDataNumberOfRows
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -190,7 +191,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         guard let sessionCell = cell else {
             fatalError("Unexpected cell sent to \(#function)")
         }
-        sessionCell.setupCellData(staticSession: staticData.staticSessionsArr[indexPath.row])
+        sessionCell.setupCellData(staticSession: viewModel.getCurrentObject(for: indexPath))
         return sessionCell
     }
 }

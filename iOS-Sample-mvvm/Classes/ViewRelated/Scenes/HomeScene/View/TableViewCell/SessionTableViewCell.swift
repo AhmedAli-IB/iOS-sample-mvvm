@@ -29,12 +29,12 @@ class SessionTableViewCell: UITableViewCell {
         cellDescription.font = UIFont(font: FontFamily._29LTAzer.regular, size: 15)
     }
     
-    func setupCellData(staticSession: StaticSession) {
+    func setupCellData(staticSession: StaticSessionData) {
         let encoder = JSONEncoder()
         if let encoded = try? encoder.encode(staticSession) {
             
             let decoder = JSONDecoder()
-            if let decodedSession = try? decoder.decode(StaticSession.self, from: encoded) {
+            if let decodedSession = try? decoder.decode(StaticSessionData.self, from: encoded) {
                 cellTitle.text = decodedSession.title
                 cellDescription.text = decodedSession.description
                 cellIcon.image = UIImage(named: decodedSession.icon)

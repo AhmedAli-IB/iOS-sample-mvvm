@@ -11,13 +11,15 @@ struct KeyConstants {
     
     static let DeviceType = "iOS"
     
-    static let token = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9"
-        + ".eyJpc3MiOiJodHRwczpcL1wvc21lYS1wYy5pYnRpa2FyLnNhXC9hcGlcL2"
-        + "F1dGhlbnRpY2F0aW9uXC9zbWVcL2xvZ2luIiwiaWF0IjoxNjA5ODYwMjQzLCJleH"
-        + "AiOjE3Njc2NjAyNDMsIm5iZiI6MTYwOTg2MDI0MywianRpIjoiYkhSVGVPaExhN0"
-        + "hVanRWeSIsInN1YiI6IjY3ODhmOTQ3LWZmZWItNDQ5My1iMmMyLTMwZWJlODM0MmNmMyIs"
-        + "InBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEif"
-        + "Q.IY-ZqTYso27L7w58bH2sT5xSCVZvkdNw0Y2lIroRI94"
+    static let token = "Bearer " +
+        "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ" +
+        "9" +
+        ".eyJpc3MiOiJodHRwczpcL1wvZGVtby1zbWVhLmlidGlrYXIuc2F" +
+        "cL2FwaVwvYXV0aGVudGljYXRpb25cL3NtZVwvbG9naW4iLCJpYXQiOj" +
+        "E2MTIzNDUwOTMsImV4cCI6MTc3MDE0NTA5MywibmJmIjoxNjEyMzQ1MDkzL" +
+        "CJqdGkiOiJ0S0R4VURSSlpYMnpNMVEzIiwic3ViIjoiNTVjMjExMTgtZDdlYi00Ym" +
+        "I3LThjN2MtYTMwYzZiZjQ4OGVkIiwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVj" +
+        "OTcxNTNhMTRlMGIwNDc1NDZhYSJ9.x8l7VD1jx-pwNNtWse2y37NX2qPcyQo9HobsVRyiQC8"
     
     struct UserDefaults {
         static let userRunningAppFirstTime = "userRunningAppFirstTime"
