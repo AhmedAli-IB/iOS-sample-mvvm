@@ -22,5 +22,3 @@ struct SubjectResponse: Codable {
     let file: File?
     let interests: [Interest]?
 }
-
-
