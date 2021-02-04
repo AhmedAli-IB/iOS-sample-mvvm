@@ -11,12 +11,30 @@
         }
       },
       {
+        "package": "Cosmos",
+        "repositoryURL": "https://github.com/evgenyneu/Cosmos.git",
+        "state": {
+          "branch": null,
+          "revision": "cce521e734d0090494bd4afab5fd2e2f2465c1af",
+          "version": "23.0.0"
+        }
+      },
+      {
         "package": "Moya",
         "repositoryURL": "https://github.com/Moya/Moya.git",
         "state": {
           "branch": null,
           "revision": "b3e5a233e0d85fd4d69f561c80988590859c7dee",
           "version": "14.0.0"
+        }
+      },
+      {
+        "package": "Reachability",
+        "repositoryURL": "https://github.com/ashleymills/Reachability.swift",
+        "state": {
+          "branch": null,
+          "revision": "c01bbdf2d633cf049ae1ed1a68a2020a8bda32e2",
+          "version": "5.1.0"
         }
       },
       {
