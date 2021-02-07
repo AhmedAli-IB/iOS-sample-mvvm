@@ -169,6 +169,7 @@ extension SearchPepoleViewController: UICollectionViewDelegate,
         
             switch item.filtrationType {
             case .online:
+                viewModel.selectItem(at: indexPath)
                 viewModel.selectOnlineFiltration(at: indexPath)
             case .fields:
                 
@@ -185,9 +186,8 @@ extension SearchPepoleViewController: UICollectionViewDelegate,
                 centersViewController.centerDelegate = self
                 actionSheetController = centersViewController
             case .calendar:
-//                let selectedCenters = viewModel.getSelectedCenters()
+                viewModel.selectItem(at: indexPath)
                 let calendarViewController =  CalendarViewController()
-//                centersViewController.centerDelegate = self
                 actionSheetController = calendarViewController            }
         
             guard let controller =  actionSheetController else { return }

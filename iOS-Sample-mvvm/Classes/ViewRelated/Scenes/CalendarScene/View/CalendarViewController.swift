@@ -31,6 +31,15 @@ class CalendarViewController: BaseViewController {
     }
 }
 
+ // MARK: - IBActions
+ //
+private extension CalendarViewController {
+    
+    @IBAction func submitButtonTapped(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
+}
+
 // MARK: - Configuration
 //
 private extension CalendarViewController {
@@ -42,6 +51,7 @@ private extension CalendarViewController {
         calendar.appearance.selectionColor = Asset.ColorPalette.primaryColor.color
         calendar.appearance.headerTitleColor = Asset.ColorPalette.titleColor.color
         calendar.appearance.titleDefaultColor = Asset.ColorPalette.titleColor.color
+        calendar.appearance.weekdayTextColor = Asset.ColorPalette.weakDatTextColor.color
     }
     
     /// Configure view
@@ -59,9 +69,7 @@ private extension CalendarViewController {
 //
 extension CalendarViewController: ActionSheetPresentable {
     
-    var panScrollable: UIScrollView? {
-        nil
-    }
+    var panScrollable: UIScrollView? { nil }
     
     var shouldReloadContent: (() -> Void)? {
         get {

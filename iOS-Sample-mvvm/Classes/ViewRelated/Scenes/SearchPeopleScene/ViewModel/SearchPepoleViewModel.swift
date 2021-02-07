@@ -72,12 +72,16 @@ class SearchPepoleViewModel: BaseViewModel {
         filtredSubjects
     }
     
+    func selectItem(at index: IndexPath) {
+        filtrationItems[index.item].isSelected = !filtrationItems[index.item].isSelected
+        self.onReloadNeededItems.send(())
+
+    }
+    
     /// Change select state of item
     ///
     func selectOnlineFiltration(at index: IndexPath) {
-        filtrationItems[index.item].isSelected = !filtrationItems[index.item].isSelected
         request.availability == nil ? (request.availability = Constants.availability) : (request.availability = nil)
-        self.onReloadNeededItems.send(())
         getContributors(request: request)
     }
     /// Set filtred centers

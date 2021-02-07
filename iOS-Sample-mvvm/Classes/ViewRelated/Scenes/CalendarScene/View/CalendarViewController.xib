@@ -39,6 +39,9 @@
                             <state key="normal" title="موافق">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <connections>
+                                <action selector="submitButtonTapped:" destination="-1" eventType="touchUpInside" id="OCG-Wd-j6n"/>
+                            </connections>
                         </button>
                     </subviews>
                 </stackView>

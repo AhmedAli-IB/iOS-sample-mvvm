@@ -32,6 +32,7 @@
 		6040784525B4776800C8972F /* 29LTAzer-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6040781625B4724100C8972F /* 29LTAzer-Bold.otf */; };
 		6040784625B4776800C8972F /* 29LTAzer-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6040781725B4724100C8972F /* 29LTAzer-Medium.otf */; };
 		6040784725B4776800C8972F /* 29LTAzer-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6040781825B4724100C8972F /* 29LTAzer-Regular.otf */; };
+		6058ECE225CFDA11005474E4 /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 600C66AA25CA92EC00662215 /* EmptyView.xib */; };
 		606BAF9125C9751700E6FE93 /* Array+Contains.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606BAF9025C9751700E6FE93 /* Array+Contains.swift */; };
 		6076E46625C7F1200026CB4E /* FieldsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6076E46425C7F1200026CB4E /* FieldsViewController.swift */; };
 		6076E46725C7F1200026CB4E /* FieldsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6076E46525C7F1200026CB4E /* FieldsViewController.xib */; };
@@ -1362,6 +1363,7 @@
 				60D321CF25B9ABE10030E5FA /* NotificationViewController.xib in Resources */,
 				E02F0E8625CC126C002E61B4 /* SessionTableViewCell.xib in Resources */,
 				6076E4B825C836470026CB4E /* CenterTableViewCell.xib in Resources */,
+				6058ECE225CFDA11005474E4 /* EmptyView.xib in Resources */,
 				60F785EA25BF11B1008978D5 /* ContributorsHeaderView.xib in Resources */,
 				604077A625B4600D00C8972F /* HomeViewController.xib in Resources */,
 				6040783825B473B700C8972F /* ColorPalette.xcassets in Resources */,
