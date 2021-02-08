@@ -186,8 +186,8 @@ extension SearchPepoleViewController: UICollectionViewDelegate,
                 centersViewController.centerDelegate = self
                 actionSheetController = centersViewController
             case .calendar:
-                let selectedDates = viewModel.getSelectedDates()
-                let calendarViewModel = CalendarViewModel(selectedDates: selectedDates)
+//                let selectedDates = viewModel.getSelectedDates()
+                let calendarViewModel = CalendarViewModel(selectedDates: [])
                 let calendarViewController =  CalendarViewController(viewModel: calendarViewModel)
                 calendarViewController.delegate = self
                 actionSheetController = calendarViewController
