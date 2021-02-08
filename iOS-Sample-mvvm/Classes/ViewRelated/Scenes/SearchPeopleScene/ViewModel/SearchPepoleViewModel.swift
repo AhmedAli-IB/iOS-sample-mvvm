@@ -18,6 +18,7 @@ class SearchPepoleViewModel: BaseViewModel {
     
     private var filtredCenters: [CenterModel] = []
     private var filtredSubjects: [SubjectModel] = []
+    private var filtredDates: [TimeInterval] = []
     
     private var request: ContributorRequest = ContributorRequest()
     
@@ -71,6 +72,11 @@ class SearchPepoleViewModel: BaseViewModel {
     func getSelectedSubjects() -> [SubjectModel] {
         filtredSubjects
     }
+    /// get current selected dates
+    ///
+    func getSelectedDates() -> [TimeInterval] {
+        filtredDates
+    }
     
     func selectItem(at index: IndexPath) {
         filtrationItems[index.item].isSelected = !filtrationItems[index.item].isSelected
@@ -89,6 +95,7 @@ class SearchPepoleViewModel: BaseViewModel {
     func setfiltredCenter(centers: [CenterModel]) {
         
         self.filtredCenters = centers
+        // to change state of uicollection view to green
         let index = filtrationItems.firstIndex(where: { $0.filtrationType == .location })
         guard let locationIndex = index else { return }
         filtrationItems[locationIndex].isSelected = !centers.isEmpty
@@ -103,13 +110,25 @@ class SearchPepoleViewModel: BaseViewModel {
     func setfiltredSubject(subjects: [SubjectModel]) {
         
         self.filtredSubjects = subjects
+        // to change state of uicollection view to green
         let index = filtrationItems.firstIndex(where: { $0.filtrationType == .fields })
-        guard let locationIndex = index else { return }
-        filtrationItems[locationIndex].isSelected = !subjects.isEmpty
+        guard let subjectIndex = index else { return }
+        filtrationItems[subjectIndex].isSelected = !subjects.isEmpty
         self.onReloadNeededItems.send(())
+        
         request.subjects = filtredSubjects.map({ $0.id }).joined(separator: ",")
         getContributors(request: request)
     }
+    
+   func setFiltredDates(dates: [TimeInterval]) {
+    self.filtredDates = dates
+    // to change state of uicollection view to green
+    let index = filtrationItems.firstIndex(where: { $0.filtrationType == .calendar })
+    guard let calendarIndex = index else { return }
+    filtrationItems[calendarIndex].isSelected = !dates.isEmpty
+    self.onReloadNeededItems.send(())
+    
+ }
     
     /// Search with text
     ///

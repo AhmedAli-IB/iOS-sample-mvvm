@@ -8,18 +8,42 @@
 import UIKit
 import FSCalendar
 
+/// `CalendarProtocol` responsable for send selected filters of dates as timestamp
+///
+protocol CalendarProtocol: class {
+    func filteredDates(dates: [TimeInterval])
+}
+
+// MARK: - CalendarViewController
+/// App Installation Problem with carthage  #1275
+/// https://github.com/WenchaoD/FSCalendar/issues/1275
+///
 class CalendarViewController: BaseViewController {
     
-    // MARK: - Properties
+    // MARK: - IBOutlets
     //
     @IBOutlet private weak var submitButton: UIButton!
     @IBOutlet private weak var calendar: FSCalendar!
     
     // MARK: - Properties
-    var shouldReload: (() -> Void)?
-    
-    // MARK: - Lifecycle
     //
+    private let viewModel: CalendarViewModel!
+
+//    private var filteredDates: [TimeInterval] = []
+    private var shouldReload: (() -> Void)?
+    weak var delegate: CalendarProtocol?
+
+    // MARK: - LifeCycle
+    //
+    required init(viewModel: CalendarViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
@@ -31,12 +55,13 @@ class CalendarViewController: BaseViewController {
     }
 }
 
- // MARK: - IBActions
- //
+// MARK: - IBActions
+//
 private extension CalendarViewController {
     
     @IBAction func submitButtonTapped(_ sender: Any) {
         self.dismiss(animated: true)
+        delegate?.filteredDates(dates: viewModel.getSelectedDates())
     }
 }
 
@@ -44,10 +69,12 @@ private extension CalendarViewController {
 //
 private extension CalendarViewController {
     
-     func configureCalendar() {
+    func configureCalendar() {
         // swiftlint:disable explicit_init
         calendar.locale = Locale.init(identifier: Strings.arabicIdentifer)
         calendar.allowsMultipleSelection = true
+        calendar.delegate = self
+        calendar.dataSource = self
         calendar.appearance.selectionColor = Asset.ColorPalette.primaryColor.color
         calendar.appearance.headerTitleColor = Asset.ColorPalette.titleColor.color
         calendar.appearance.titleDefaultColor = Asset.ColorPalette.titleColor.color
@@ -59,8 +86,8 @@ private extension CalendarViewController {
     func configureView() {
         configureCalendar()
         submitButton.layer.cornerRadius = Constants.buttonCornerRadius
-                submitButton.titleLabel?.text = Strings.submmitButtonTitle
-       submitButton.titleLabel?.font = FontFamily._29LTAzer.bold.font(size: Constants.buttonCornerFontSize)
+        submitButton.titleLabel?.text = Strings.submmitButtonTitle
+        submitButton.titleLabel?.font = FontFamily._29LTAzer.bold.font(size: Constants.buttonCornerFontSize)
         
     }
 }
@@ -82,12 +109,12 @@ extension CalendarViewController: ActionSheetPresentable {
     var contentFormHeight: CGFloat {
         return  Constants.staticAdditionalHieghtForActionSheet
     }
-
+    
     var dragIndicatorBackgroundColor: UIColor {
         return .white
     }
     
-     var allowsTapToDismiss: Bool {
+    var allowsTapToDismiss: Bool {
         return true
     }
     
@@ -113,5 +140,25 @@ private extension CalendarViewController {
     enum Strings {
         static let submmitButtonTitle = "موافق"
         static let arabicIdentifer = "ar_AE"
+    }
+}
+
+// MARK: - FSCalendarDelegate
+//
+extension CalendarViewController: FSCalendarDelegate, FSCalendarDelegateAppearance, FSCalendarDataSource {
+    
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM-dd-YYYY at h:mm a"
+        let string = formatter.string(from: date)
+        print(string)
+        viewModel.setSelectedDate(date: date.timeIntervalSince1970)
+//        filteredDates.append(date.timeIntervalSince1970)
+    }
+    
+    func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
+//        filteredDates.removeAll { $0 == date.timeIntervalSince1970 }
+        viewModel.setSelectedDate(date: date.timeIntervalSince1970)
+
     }
 }

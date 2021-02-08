@@ -186,9 +186,12 @@ extension SearchPepoleViewController: UICollectionViewDelegate,
                 centersViewController.centerDelegate = self
                 actionSheetController = centersViewController
             case .calendar:
-                viewModel.selectItem(at: indexPath)
-                let calendarViewController =  CalendarViewController()
-                actionSheetController = calendarViewController            }
+                let selectedDates = viewModel.getSelectedDates()
+                let calendarViewModel = CalendarViewModel(selectedDates: selectedDates)
+                let calendarViewController =  CalendarViewController(viewModel: calendarViewModel)
+                calendarViewController.delegate = self
+                actionSheetController = calendarViewController
+            }
         
             guard let controller =  actionSheetController else { return }
             showActionSheet(controller)
@@ -265,5 +268,14 @@ extension SearchPepoleViewController: FieldsProtocol {
     
     func filteredFields(fields: [SubjectModel]) {
         viewModel.setfiltredSubject(subjects: fields)
+    }
+}
+
+// MARK: - CalendarProtocol
+/// Set  filtered dates
+//
+extension SearchPepoleViewController: CalendarProtocol {
+    func filteredDates(dates: [TimeInterval]) {
+        viewModel.setFiltredDates(dates: dates)
     }
 }
