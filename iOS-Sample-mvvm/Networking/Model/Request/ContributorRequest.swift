@@ -15,16 +15,19 @@ struct ContributorRequest: Encodable {
     var centers: String
     var subjects: String
     var availability: Int?
+    var dates: String
     // MARK: - Init
     //
     init(searchText: String = "",
          centers: String = "",
          subjects: String = "",
+         dates: String = "",
          availability: Int? = nil) {
         self.searchText = searchText
         self.subjects = subjects
         self.centers = centers
         self.availability = availability
+        self.dates = dates
     }
     
     enum CodingKeys: String, CodingKey {

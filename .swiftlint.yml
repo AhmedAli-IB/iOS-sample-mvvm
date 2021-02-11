@@ -41,11 +41,6 @@ opt_in_rules:
   - multiline_parameters
   - notification_center_detachment
 
-
-file_name:
-  excluded:
-    - main.swift
-
 force_cast: error
 force_try: error
 force_unwrapping: error
