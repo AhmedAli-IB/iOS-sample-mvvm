@@ -11,7 +11,7 @@ import FSCalendar
 /// `CalendarProtocol` responsable for send selected filters of dates as timestamp
 ///
 protocol CalendarProtocol: class {
-    func filteredDates(dates: [TimeInterval])
+    func filteredDates(dates: [Date])
 }
 
 // MARK: - CalendarViewController
@@ -29,8 +29,8 @@ class CalendarViewController: BaseViewController {
     //
     private let viewModel: CalendarViewModel!
 
-    private var filteredDates: [Date] = [Date(timeIntervalSinceReferenceDate: 636069600.0),
-                                         Date(timeIntervalSinceReferenceDate: 635896800.0)]
+//    private var filteredDates: [Date] = [Date(timeIntervalSinceReferenceDate: 636069600.0),
+//                                         Date(timeIntervalSinceReferenceDate: 635896800.0)]
     private var shouldReload: (() -> Void)?
     weak var delegate: CalendarProtocol?
 
@@ -74,11 +74,11 @@ private extension CalendarViewController {
         // swiftlint:disable explicit_init
         calendar.locale = Locale.init(identifier: Strings.arabicIdentifer)
 //        calendar.select(Date(timeIntervalSinceReferenceDate: 633996000.0))
-
-        filteredDates.forEach { (date) in
-            self.calendar.select(date, scrollToDate: false)
-        }
         calendar.allowsMultipleSelection = true
+
+        viewModel.getSelectedDates().forEach { (date) in
+            self.calendar.select(date)
+        }
         calendar.delegate = self
         calendar.dataSource = self
         calendar.appearance.selectionColor = Asset.ColorPalette.primaryColor.color
@@ -158,14 +158,14 @@ extension CalendarViewController: FSCalendarDelegate, FSCalendarDelegateAppearan
         formatter.dateFormat = "MM-dd-YYYY at h:mm a"
         let string = formatter.string(from: date)
         print(string)
-        viewModel.setSelectedDate(date: date.timeIntervalSince1970)
+        viewModel.setSelectedDate(date: date)
         print(date.timeIntervalSince1970)
 //        filteredDates.append(date.timeIntervalSince1970)
     }
     
     func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
 //        filteredDates.removeAll { $0 == date.timeIntervalSince1970 }
-        viewModel.setSelectedDate(date: date.timeIntervalSince1970)
+        viewModel.setSelectedDate(date: date)
 
     }
 }

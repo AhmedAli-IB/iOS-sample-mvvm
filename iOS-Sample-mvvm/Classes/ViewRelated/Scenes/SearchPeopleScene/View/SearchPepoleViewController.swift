@@ -275,7 +275,7 @@ extension SearchPepoleViewController: FieldsProtocol {
 /// Set  filtered dates
 //
 extension SearchPepoleViewController: CalendarProtocol {
-    func filteredDates(dates: [TimeInterval]) {
+    func filteredDates(dates: [Date]) {
         viewModel.setFiltredDates(dates: dates)
     }
 }

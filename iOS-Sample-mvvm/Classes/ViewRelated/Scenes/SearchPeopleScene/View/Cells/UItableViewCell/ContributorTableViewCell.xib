@@ -77,29 +77,33 @@
                                         <rect key="frame" x="266" y="0.0" width="61" height="30"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Gar-3I-2ab">
-                                                <rect key="frame" x="9.5" y="7" width="42" height="16"/>
+                                                <rect key="frame" x="-3.5" y="4" width="68" height="22.5"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_star" translatesAutoresizingMaskIntoConstraints="NO" id="fLK-yI-2b5">
-                                                        <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
+                                                        <rect key="frame" x="0.0" y="3" width="16" height="16"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="16" id="Jib-Vd-HQC"/>
                                                             <constraint firstAttribute="height" constant="16" id="ebh-iG-Sv1"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="t1b-6G-1k6">
-                                                        <rect key="frame" x="18" y="8" width="24" height="0.0"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rlT-bf-etO">
+                                                        <rect key="frame" x="18" y="0.0" width="50" height="22.5"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zaf-Zn-Lys">
-                                                                <rect key="frame" x="0.0" y="-20.5" width="24" height="20.5"/>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z9c-vB-68z">
+                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="2"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="2" id="VFH-q1-Xjv"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zaf-Zn-Lys">
+                                                                <rect key="frame" x="0.0" y="2" width="50" height="20.5"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" red="0.19215686269999999" green="0.30196078430000001" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
-                                                        <constraints>
-                                                            <constraint firstItem="Zaf-Zn-Lys" firstAttribute="top" secondItem="t1b-6G-1k6" secondAttribute="top" constant="4" id="SMk-37-DKJ"/>
-                                                        </constraints>
                                                     </stackView>
                                                 </subviews>
                                             </stackView>

@@ -18,7 +18,7 @@ class SearchPepoleViewModel: BaseViewModel {
     
     private var filtredCenters: [CenterModel] = []
     private var filtredSubjects: [SubjectModel] = []
-    private var filtredDates: [TimeInterval] = []
+    private var filtredDates: [Date] = []
     
     private var request: ContributorRequest = ContributorRequest()
     
@@ -74,7 +74,7 @@ class SearchPepoleViewModel: BaseViewModel {
     }
     /// get current selected dates
     ///
-    func getSelectedDates() -> [TimeInterval] {
+    func getSelectedDates() -> [Date] {
         filtredDates
     }
     
@@ -120,13 +120,16 @@ class SearchPepoleViewModel: BaseViewModel {
         getContributors(request: request)
     }
     
-   func setFiltredDates(dates: [TimeInterval]) {
+   func setFiltredDates(dates: [Date]) {
     self.filtredDates = dates
     // to change state of uicollection view to green
     let index = filtrationItems.firstIndex(where: { $0.filtrationType == .calendar })
     guard let calendarIndex = index else { return }
     filtrationItems[calendarIndex].isSelected = !dates.isEmpty
     self.onReloadNeededItems.send(())
+    
+    request.dates = filtredDates.map({ "\($0.timeIntervalSince1970)" }).joined(separator: ",")
+    getContributors(request: request)
     
  }
     

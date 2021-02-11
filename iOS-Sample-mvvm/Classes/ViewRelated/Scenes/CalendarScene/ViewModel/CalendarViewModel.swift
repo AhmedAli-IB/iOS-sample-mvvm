@@ -11,28 +11,28 @@ class CalendarViewModel: BaseViewModel {
     
     // MARK: - Properties
     //
-    private var selectedDates: [TimeInterval]
+    private var selectedDates: [Date]
     
     // MARK: - Init
-    init(selectedDates: [TimeInterval]) {
+    init(selectedDates: [Date]) {
         self.selectedDates = selectedDates
     }
     
     // MARK: - Handlers
     //
     
-    func contain(at date: TimeInterval) -> Bool {
+    func contain(at date: Date) -> Bool {
         selectedDates.contains(date) ? true : false
     }
     
     /// Get selected dates by user
     ///
-    func getSelectedDates() -> [TimeInterval] {
+    func getSelectedDates() -> [Date] {
         selectedDates
     }
     /// User select date
     ///
-    func setSelectedDate(date: TimeInterval) {
+    func setSelectedDate(date: Date) {
         
         if let index = selectedDates.firstIndex(of: date) {
             selectedDates.remove(at: index)
