@@ -29,7 +29,8 @@ class CalendarViewController: BaseViewController {
     //
     private let viewModel: CalendarViewModel!
 
-//    private var filteredDates: [TimeInterval] = []
+    private var filteredDates: [Date] = [Date(timeIntervalSinceReferenceDate: 636069600.0),
+                                         Date(timeIntervalSinceReferenceDate: 635896800.0)]
     private var shouldReload: (() -> Void)?
     weak var delegate: CalendarProtocol?
 
@@ -72,6 +73,11 @@ private extension CalendarViewController {
     func configureCalendar() {
         // swiftlint:disable explicit_init
         calendar.locale = Locale.init(identifier: Strings.arabicIdentifer)
+//        calendar.select(Date(timeIntervalSinceReferenceDate: 633996000.0))
+
+        filteredDates.forEach { (date) in
+            self.calendar.select(date, scrollToDate: false)
+        }
         calendar.allowsMultipleSelection = true
         calendar.delegate = self
         calendar.dataSource = self
@@ -153,6 +159,7 @@ extension CalendarViewController: FSCalendarDelegate, FSCalendarDelegateAppearan
         let string = formatter.string(from: date)
         print(string)
         viewModel.setSelectedDate(date: date.timeIntervalSince1970)
+        print(date.timeIntervalSince1970)
 //        filteredDates.append(date.timeIntervalSince1970)
     }
     
