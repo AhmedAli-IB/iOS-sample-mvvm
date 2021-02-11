@@ -8,8 +8,12 @@
 import Foundation
 
 enum AppEndPoint {
-    
-    // placeholder
-    case getSomeEndpoint
-    
+
+    // MARK: - Search
+    //
+    case getContributors(ContributorRequest)
+    case getSubjects
+    case getCenters
+    case getSessions
+
 }

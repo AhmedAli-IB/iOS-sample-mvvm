@@ -1,0 +1,14 @@
+//
+//  BaseStaging.xcconfig
+//  iOS-Sample-mvvm
+//
+//  Created by Aya Essam on 19/01/2021.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+//#include "Pods/Target Support Files/FSCalendar/FSCalendar.release.xcconfig"
+SERVER_URL = smea-pc.ibtikar.sa
+APP_NAME = Staging
+APP_BUNDLE_IDENTIFIER = com.ibtikar.iOS-Sample-mvvm.stage
+API_KEY =

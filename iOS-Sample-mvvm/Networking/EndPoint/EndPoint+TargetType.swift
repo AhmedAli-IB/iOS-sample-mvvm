@@ -10,34 +10,54 @@ import Moya
 
 extension AppEndPoint: TargetType {
     
-    public var baseURL: URL { return Environment.rootURL }
-    
-    public var path: String {
+    var baseURL: URL { return Environment.rootURL }
+
+    var path: String {
         switch self {
-        case .getSomeEndpoint:
-            return AppURL.Paths.SomePath
+        case .getSessions:
+            return "/api/schedule/sme/sessions"
+        case .getContributors:
+            return "/api/profile/contributors"
+        case .getSubjects:
+            return "/api/dashboard/mobile/subjects"
+        case .getCenters:
+            return "/api/center/centers"
         }
     }
     
-    public var method: Moya.Method {
+    var method: Moya.Method {
        switch self {
-       case .getSomeEndpoint:
+       case .getSessions:
         return .get
-        
+       case .getContributors:
+        return .get
+       case .getSubjects:
+        return .get
+       case .getCenters:
+        return .get
        }
     }
     
-    public var task: Task {
+    var task: Task {
         switch self {
-        case .getSomeEndpoint:
+        case .getSessions:
             return .requestParameters(parameters: [:], encoding: URLEncoding.default)
+        case .getContributors(let request):
+            let parameters = (try? request.asDictionary()) ?? [:]
+            return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
+        case .getSubjects:
+            return .requestPlain
+            
+        case .getCenters:
+            return .requestPlain
         }
     }
     
     var sampleData: Data { return Data() }  // We just need to return something here to fully implement the protocol
     
-    public var headers: [String: String]? {
-        return [KeyConstants.Headers.contentType: KeyConstants.Headers.contentTypeValue]
+    var headers: [String: String]? {
+        return [KeyConstants.Headers.contentType: KeyConstants.Headers.contentTypeValue,
+                KeyConstants.Headers.authorization: KeyConstants.token]
     }
 
 }
