@@ -29,7 +29,26 @@ final class HomeCoordinator: Coordinator {
     ///
     private func showHomeViewController() {
         let homeVC = HomeViewController()
-//        homeVC.coordinator = self
+        homeVC.coordinator = self
         self.navigationController.setViewControllers([homeVC], animated: false)
     }
+}
+
+protocol HomeCoordinatorProtocol {
+    func pushSerchViewController()
+    func popViewController()
+}
+
+extension HomeCoordinator: HomeCoordinatorProtocol {
+    
+    func popViewController() {
+        self.navigationController.popViewController(animated: true)
+    }
+    
+    func pushSerchViewController() {
+        let vc = SearchPepoleViewController()
+        vc.coordinator = self
+        self.navigationController.pushViewController(vc, animated: true)
+    }
+    
 }

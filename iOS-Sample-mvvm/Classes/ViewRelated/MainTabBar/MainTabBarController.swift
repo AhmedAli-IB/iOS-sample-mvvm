@@ -18,7 +18,7 @@ class MainTabBarController: UITabBarController {
     ///
     private lazy var homeViewController: UIViewController = {
         let navigationController = BaseNavigationController()
-        SearchCoordinator(navigationController: navigationController).start()
+        HomeCoordinator(navigationController: navigationController).start()
         let tabBarItem = UITabBarItem(title: nil,
                                       image: Asset.Assets.icHomeActive.image,
                                       selectedImage: Asset.Assets.icHomeDot.image)

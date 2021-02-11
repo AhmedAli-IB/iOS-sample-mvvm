@@ -19,6 +19,8 @@ class HomeViewController: BaseViewController {
 
     private lazy var noInternetView = NoInternet(with: self)
     
+    var coordinator: HomeCoordinatorProtocol?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,7 +35,7 @@ class HomeViewController: BaseViewController {
     }
 
     @IBAction func searchTapped(_ sender: Any) {
-        
+        coordinator?.pushSerchViewController()
     }
 }
 

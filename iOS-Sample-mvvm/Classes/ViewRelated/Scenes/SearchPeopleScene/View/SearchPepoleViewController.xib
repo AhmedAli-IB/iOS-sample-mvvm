@@ -26,13 +26,6 @@
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mask" translatesAutoresizingMaskIntoConstraints="NO" id="apU-0h-rIq">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="230"/>
                         </imageView>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_back-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="pm3-VT-5vs">
-                            <rect key="frame" x="12" y="56" width="24" height="24"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="24" id="7mg-Nm-sUl"/>
-                                <constraint firstAttribute="width" constant="24" id="hH6-eu-Cau"/>
-                            </constraints>
-                        </imageView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5qa-18-F1x">
                             <rect key="frame" x="8" y="92" width="398" height="118"/>
                             <subviews>
@@ -78,19 +71,30 @@
                                 </stackView>
                             </subviews>
                         </stackView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pRx-gB-RRU">
+                            <rect key="frame" x="12" y="56" width="24" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="24" id="gIw-nR-0Kj"/>
+                                <constraint firstAttribute="width" constant="24" id="gtA-bN-oMR"/>
+                            </constraints>
+                            <state key="normal" image="ic_back-arrow"/>
+                            <connections>
+                                <action selector="backButtonTapped:" destination="-1" eventType="touchUpInside" id="KnV-0h-Ecj"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="apU-0h-rIq" firstAttribute="leading" secondItem="Lya-sa-InA" secondAttribute="leading" id="Ggf-Iu-Ej8"/>
-                        <constraint firstItem="pm3-VT-5vs" firstAttribute="leading" secondItem="Lya-sa-InA" secondAttribute="leading" constant="12" id="KLZ-W1-Knf"/>
-                        <constraint firstItem="pm3-VT-5vs" firstAttribute="top" secondItem="Lya-sa-InA" secondAttribute="top" constant="56" id="Mff-ye-AZ9"/>
                         <constraint firstAttribute="bottom" secondItem="apU-0h-rIq" secondAttribute="bottom" id="RyJ-uo-1kh"/>
+                        <constraint firstItem="pRx-gB-RRU" firstAttribute="top" secondItem="Lya-sa-InA" secondAttribute="top" constant="56" id="S7F-kw-Lgd"/>
                         <constraint firstItem="apU-0h-rIq" firstAttribute="top" secondItem="Lya-sa-InA" secondAttribute="top" id="XIp-l4-geM"/>
                         <constraint firstAttribute="bottom" secondItem="5qa-18-F1x" secondAttribute="bottom" constant="20" id="dNw-gY-QRb"/>
-                        <constraint firstItem="5qa-18-F1x" firstAttribute="top" secondItem="pm3-VT-5vs" secondAttribute="bottom" constant="12" id="gD7-ay-28Y"/>
                         <constraint firstAttribute="trailing" secondItem="apU-0h-rIq" secondAttribute="trailing" id="hc8-RP-Ctw"/>
+                        <constraint firstItem="5qa-18-F1x" firstAttribute="top" secondItem="pRx-gB-RRU" secondAttribute="bottom" constant="12" id="iej-Tn-YOh"/>
                         <constraint firstAttribute="height" constant="230" id="ixQ-9W-J4D"/>
                         <constraint firstAttribute="trailing" secondItem="5qa-18-F1x" secondAttribute="trailing" constant="8" id="pE3-fY-eKq"/>
+                        <constraint firstItem="pRx-gB-RRU" firstAttribute="leading" secondItem="Lya-sa-InA" secondAttribute="leading" constant="12" id="q1H-Re-Xj2"/>
                         <constraint firstItem="5qa-18-F1x" firstAttribute="leading" secondItem="Lya-sa-InA" secondAttribute="leading" constant="8" id="uKO-NE-c2w"/>
                     </constraints>
                 </view>

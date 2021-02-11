@@ -16,6 +16,8 @@ class SearchPepoleViewController: BaseViewController {
     
     @IBOutlet weak private var tableView: UITableView!
     
+    var coordinator: HomeCoordinatorProtocol?
+    
     // MARK: - Properties
     //
     private let viewModel: SearchPepoleViewModel = SearchPepoleViewModel()
@@ -26,6 +28,14 @@ class SearchPepoleViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
+    }
+}
+
+// MARK: - IBActions
+//
+private extension SearchPepoleViewController {
+    @IBAction func backButtonTapped(_ sender: UIButton) {
+        coordinator?.popViewController()
     }
 }
 
