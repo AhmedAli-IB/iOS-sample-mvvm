@@ -99,35 +99,6 @@ private extension SearchPepoleViewController {
         collectionView.reloadData()
     }
 }
-// MARK: - Handlers
-//
-private extension SearchPepoleViewController {
-    
-//    /// Filter contributors
-//    ///
-//    func filterContributors(with online: Bool, searchText: String) {
-//        let request = ContributorRequest(searchText: searchText)
-//        viewModel.filterOnlineContributors = online
-//        viewModel.getContributors(request: request)
-//    }
-    
-    /// Show action sheet bottom card
-    ///
-    func showActionSheet(_ viewController: UIViewController & ActionSheetPresentable) {
-        
-        let cardVC = CardViewController(viewController: viewController)
-        
-        // set the modal presentation to full screen, in iOS 13, its no longer full screen by default
-        cardVC.modalPresentationStyle = .fullScreen
-        
-        // take a snapshot of current view and set it as backingImage
-        cardVC.backingImage = self.view.asImage()
-        
-        // present the view controller modally without animation
-        self.present(cardVC, animated: false, completion: nil)
-    }
-    
-}
 // MARK: - Helpers
 //
 private extension SearchPepoleViewController {
@@ -204,8 +175,7 @@ extension SearchPepoleViewController: UICollectionViewDelegate,
             }
         
             guard let controller =  actionSheetController else { return }
-            showActionSheet(controller)
-    
+            coordinator?.showActionSheet(self.view, controller)    
     }
 
 }
