@@ -10,7 +10,7 @@ import UIKit
 // MARK: - HomeCoordinatorProtocol
 /// `HomeCoordinatorProtocol` responsable for navigation logic in home flow
 ///
-protocol HomeCoordinatorProtocol {
+protocol HomeCoordinatorProtocol: class {
     func pushSerchViewController()
     func popViewController()
 

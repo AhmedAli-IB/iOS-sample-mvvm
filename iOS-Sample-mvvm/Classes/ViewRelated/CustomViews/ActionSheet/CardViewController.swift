@@ -60,6 +60,10 @@ class CardViewController: BaseViewController {
         super.viewDidAppear(animated)
         showCard()
     }
+    
+    deinit {
+        print("deinit card view")
+    }
 }
 
 // MARK: - Configure View
@@ -113,8 +117,8 @@ private extension CardViewController {
     /// Bind  on change content in child view controller
     ///
     func bindViewContent() {
-        childViewController.shouldReloadContent = {
-            self.calculateCardIntialHeight()
+        childViewController.shouldReloadContent = { [weak self] in
+            self?.calculateCardIntialHeight()
         }
     }
     

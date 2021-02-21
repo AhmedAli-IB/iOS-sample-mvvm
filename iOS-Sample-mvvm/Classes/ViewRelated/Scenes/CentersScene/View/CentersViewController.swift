@@ -44,7 +44,9 @@ class CentersViewController: BaseViewController {
         super.viewDidLoad()
         configureView()
     }
-    
+    deinit {
+        print("CentersViewController -- deinit")
+    }
 }
 
 // MARK: - IBActions

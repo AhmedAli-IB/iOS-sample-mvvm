@@ -16,7 +16,7 @@ class SearchPepoleViewController: BaseViewController {
     
     @IBOutlet weak private var tableView: UITableView!
     
-    var coordinator: HomeCoordinatorProtocol?
+    weak var coordinator: HomeCoordinatorProtocol?
     
     // MARK: - Properties
     //

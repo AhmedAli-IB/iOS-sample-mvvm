@@ -54,6 +54,10 @@ class CalendarViewController: BaseViewController {
         super.viewDidAppear(animated)
         shouldReload?()
     }
+    
+    deinit {
+        print("CalendarViewController----deinit")
+    }
 }
 
 // MARK: - IBActions
@@ -154,17 +158,10 @@ private extension CalendarViewController {
 extension CalendarViewController: FSCalendarDelegate, FSCalendarDelegateAppearance, FSCalendarDataSource {
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MM-dd-YYYY at h:mm a"
-        let string = formatter.string(from: date)
-        print(string)
         viewModel.setSelectedDate(date: date)
-        print(date.timeIntervalSince1970)
-//        filteredDates.append(date.timeIntervalSince1970)
     }
     
     func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
-//        filteredDates.removeAll { $0 == date.timeIntervalSince1970 }
         viewModel.setSelectedDate(date: date)
 
     }

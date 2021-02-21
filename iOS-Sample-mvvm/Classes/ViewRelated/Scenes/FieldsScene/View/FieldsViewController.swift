@@ -49,6 +49,10 @@ class FieldsViewController: BaseViewController {
         setupCollectionView()
         configureViewModel()
     }
+    
+    deinit {
+        print("FieldsViewController --- deinit")
+    }
 }
 
 extension FieldsViewController {
