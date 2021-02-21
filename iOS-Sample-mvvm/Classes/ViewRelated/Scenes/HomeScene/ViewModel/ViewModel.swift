@@ -9,12 +9,18 @@ import Foundation
 
 class HomeViewModel: BaseViewModel {
     
-    var onReload: (() -> Void)?
-    var onNetworkFailure: (() -> Void)?
+//    var onReload: (() -> Void)?
+//    var onNetworkFailure: (() -> Void)?
 
     private let photoServiceLocator: HomeServiceLocatorProtocol
     private var sessions: [SessionsData] = []
     private var staticSessions: [StaticSessionData] = []
+    
+    // MARK: - CallBacks
+    
+    /// Called when data is updated and reload is needed.
+    ///
+    private var onReloadNeededItems = PublishSubject<Void>()
     
     init(photoServiceLocator: HomeServiceLocatorProtocol = HomeServiceLocator()) {
         self.photoServiceLocator = photoServiceLocator
@@ -45,7 +51,7 @@ extension HomeViewModel {
         self.state.send(.loading)
         
         if !InternetChecker.isConnectedToNetwork() {
-            self.onNetworkFailure?()
+            self.state.send(.failure(""))
         }
         
         photoServiceLocator.getSessions { [weak self](result) in
@@ -55,7 +61,7 @@ extension HomeViewModel {
             case .success(let sessions):
                
                 self.sessions = sessions
-                self.onReload?()
+                self.onReloadNeededItems.send(())
                 self.state.send(.success)
                 
             case .failure(let error):
@@ -87,7 +93,17 @@ extension HomeViewModel {
         self.staticSessions.append(session2)
         self.staticSessions.append(session3)
 
-        self.onReload?()
+        self.onReloadNeededItems.send(())
         self.state.send(.success)
+    }
+}
+// MARK: - Helpers
+//
+extension HomeViewModel {
+    
+    /// Provide access to `onReloadNeededSubject`
+    ///
+    var onReloadNeeded: Observable<Void> {
+        return onReloadNeededItems
     }
 }

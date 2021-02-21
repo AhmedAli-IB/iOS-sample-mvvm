@@ -27,7 +27,8 @@ class HomeViewController: BaseViewController {
         configureView()
         configureAppearance()
         bindLoadingState(to: viewModel)
-        bindErrorState(to: viewModel)
+//        bindErrorState(to: viewModel)
+        bindViewModelErrorState()
         viewModel.getSessions()
         viewModel.getStaticSessionsData()
         configureViewModel()
@@ -69,30 +70,44 @@ private extension HomeViewController {
                                 forCellWithReuseIdentifier: CardCollectionViewCell.reuseIdentifier)
     }
     
+     func reloadDataAndSections() {
+        self.tableViewHeightConstraint.constant = self.tableView.contentSize.height
+        self.tableView.estimatedRowHeight = CGFloat(Constants.tabelViewCellEstimatedHeight)
+        self.tableView.rowHeight = UITableView.automaticDimension
+        
+        self.collectionView.isHidden = false
+        self.tableView.isHidden = false
+        self.noInternetView.removeFromSuperview()
+        self.tableView.reloadData()
+        self.collectionView.reloadData()
+    }
+    
     /// Configure tableview and collectionview on viewmodel reload data and network failure
     func configureViewModel() {
         
-        viewModel.onReload = { [weak self] in
+        viewModel.onReloadNeeded.subscribe { [weak self] _ in
             guard  let self = self else { return }
-            self.tableViewHeightConstraint.constant = self.tableView.contentSize.height
-            self.tableView.estimatedRowHeight = CGFloat(Constants.tabelViewCellEstimatedHeight)
-            self.tableView.rowHeight = UITableView.automaticDimension
+            self.reloadDataAndSections()
+        }
 
-            self.collectionView.isHidden = false
-            self.tableView.isHidden = false
-            self.noInternetView.removeFromSuperview()
-            self.tableView.reloadData()
-            self.collectionView.reloadData()
+    }
+     func setupNoInternetView() {
+        collectionView.isHidden = true
+        tableView.isHidden = true
+        superView.addSubview(self.noInternetView)
+        configureNoInternetView()
+    }
+    
+    /// Bind on error state (No internet connection)
+    ///
+    func bindViewModelErrorState() {
+        viewModel.state.subscribe { [weak self] state in
+            if case .failure(let error) = state {
+             guard  let self = self else { return }
+                error.isEmpty ?  self.setupNoInternetView() : self.showErrorAlert(error: error)
+            }
         }
-        
-        viewModel.onNetworkFailure = { [weak self] in
-            guard  let self = self else { return }
-            self.collectionView.isHidden = true
-            self.tableView.isHidden = true
-            self.superView.addSubview(self.noInternetView)
-            configureNoInternetView()
-        }
-        
+    }
         /// Configure no internet view constraints and center in superview
         func configureNoInternetView() {
             self.noInternetView.translatesAutoresizingMaskIntoConstraints = false
@@ -106,7 +121,6 @@ private extension HomeViewController {
         }
         
     }
-}
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 

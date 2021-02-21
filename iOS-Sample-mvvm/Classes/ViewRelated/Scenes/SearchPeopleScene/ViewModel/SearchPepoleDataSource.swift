@@ -51,6 +51,7 @@ extension SearchPeopleDataSource: UITableViewDataSource {
 // MARK: - Helpers
 //
 extension SearchPeopleDataSource {
+    
     func setupEmptyView(_ tableView: UITableView) {
         tableView.setEmptyView(image: Asset.Assets.icNoSearchResult.image, message: Strings.noSearchResult)
     }
