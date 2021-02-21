@@ -193,7 +193,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         guard let sessionCell = cell else {
             fatalError("Unexpected cell sent to \(#function)")
         }
-        sessionCell.setupCellData(staticSession: viewModel.getCurrentObject(for: indexPath))
+        sessionCell.viewModel = viewModel.getCurrentObject(for: indexPath)
         return sessionCell
     }
 }

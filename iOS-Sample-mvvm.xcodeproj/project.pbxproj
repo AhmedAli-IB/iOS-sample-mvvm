@@ -128,6 +128,8 @@
 		E02F0E9E25CC13FC002E61B4 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02F0E9B25CC13FC002E61B4 /* BaseNavigationController.swift */; };
 		E02F0EA825CC168F002E61B4 /* ContributorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02F0EA725CC168F002E61B4 /* ContributorResponse.swift */; };
 		E08C033125BD77640034E887 /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = E08C033025BD77640034E887 /* Cosmos */; };
+		E0DA434625E2753D008F2493 /* StaticSessionData+Representable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DA434525E2753D008F2493 /* StaticSessionData+Representable.swift */; };
+		E0DA434A25E2755A008F2493 /* StaticSessionDataRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DA434925E2755A008F2493 /* StaticSessionDataRepresentable.swift */; };
 		E0FAB42525C01EA400A940E6 /* UIView+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FAB42425C01EA400A940E6 /* UIView+Extention.swift */; };
 		E0FC1BD525B55BFF00EDAE4E /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FC1BD425B55BFF00EDAE4E /* EndPoint.swift */; };
 		E0FC1BDA25B55C9500EDAE4E /* EndPoint+TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FC1BD925B55C9500EDAE4E /* EndPoint+TargetType.swift */; };
@@ -328,6 +330,8 @@
 		E08C032B25BD616F0034E887 /* CardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardCollectionViewCell.xib; sourceTree = "<group>"; };
 		E08C034825BDB7160034E887 /* SessionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTableViewCell.swift; sourceTree = "<group>"; };
 		E08C034C25BDB7240034E887 /* SessionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionTableViewCell.xib; sourceTree = "<group>"; };
+		E0DA434525E2753D008F2493 /* StaticSessionData+Representable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StaticSessionData+Representable.swift"; sourceTree = "<group>"; };
+		E0DA434925E2755A008F2493 /* StaticSessionDataRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticSessionDataRepresentable.swift; sourceTree = "<group>"; };
 		E0FAB41E25C01CCA00A940E6 /* NoInternet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoInternet.xib; sourceTree = "<group>"; };
 		E0FAB41F25C01CCA00A940E6 /* NoInternet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoInternet.swift; sourceTree = "<group>"; };
 		E0FAB42425C01EA400A940E6 /* UIView+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extention.swift"; sourceTree = "<group>"; };
@@ -1163,6 +1167,7 @@
 		E02F0E8225CC1258002E61B4 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				E0DA434425E27505008F2493 /* Model */,
 				E02F0E8325CC126C002E61B4 /* SessionTableViewCell.swift */,
 				E02F0E8425CC126C002E61B4 /* SessionTableViewCell.xib */,
 			);
@@ -1185,6 +1190,15 @@
 				E02F0E9925CC13FB002E61B4 /* BaseViewController.swift */,
 			);
 			path = BaseClasses;
+			sourceTree = "<group>";
+		};
+		E0DA434425E27505008F2493 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E0DA434525E2753D008F2493 /* StaticSessionData+Representable.swift */,
+				E0DA434925E2755A008F2493 /* StaticSessionDataRepresentable.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		E0FC1BD325B55BCC00EDAE4E /* EndPoint */ = {
@@ -1571,6 +1585,7 @@
 				6076E46625C7F1200026CB4E /* FieldsViewController.swift in Sources */,
 				60F785BE25BEC151008978D5 /* SearchPepoleDataSource.swift in Sources */,
 				6058ED0125D13970005474E4 /* CalendarViewModel.swift in Sources */,
+				E0DA434625E2753D008F2493 /* StaticSessionData+Representable.swift in Sources */,
 				6091163F25C87689000EE449 /* CardViewController.swift in Sources */,
 				60D3222025BD78B80030E5FA /* SMESearchBar.swift in Sources */,
 				60D3219625B99CA00030E5FA /* MainTabBarController.swift in Sources */,
@@ -1592,6 +1607,7 @@
 				6076E4B725C836470026CB4E /* CenterTableViewCell.swift in Sources */,
 				E02F0E9525CC13B0002E61B4 /* HomeError.swift in Sources */,
 				606BAF9125C9751700E6FE93 /* Array+Contains.swift in Sources */,
+				E0DA434A25E2755A008F2493 /* StaticSessionDataRepresentable.swift in Sources */,
 				6076E4BE25C83BD40026CB4E /* CenterModel.swift in Sources */,
 				6091162B25C83E78000EE449 /* CenterRepresentable.swift in Sources */,
 				60F785DD25BED5CB008978D5 /* ContributorCellRepresentable.swift in Sources */,
