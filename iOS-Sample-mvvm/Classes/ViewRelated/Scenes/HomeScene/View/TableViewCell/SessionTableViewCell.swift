@@ -18,9 +18,17 @@ class SessionTableViewCell: UITableViewCell {
         setupLabelFonts()
     }
     
+    // MARK: - ViewModel
+    //
+    var viewModel: StaticSessionDataRepresentable? {
+        didSet {
+            configureCell()
+        }
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
-
+        
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 5, left: 0, bottom: 5, right: 0))
     }
     
@@ -29,17 +37,10 @@ class SessionTableViewCell: UITableViewCell {
         cellDescription.font = UIFont(font: FontFamily._29LTAzer.regular, size: 15)
     }
     
-    func setupCellData(staticSession: StaticSessionData) {
-        let encoder = JSONEncoder()
-        if let encoded = try? encoder.encode(staticSession) {
-            
-            let decoder = JSONDecoder()
-            if let decodedSession = try? decoder.decode(StaticSessionData.self, from: encoded) {
-                cellTitle.text = decodedSession.title
-                cellDescription.text = decodedSession.description
-                cellIcon.image = UIImage(named: decodedSession.icon)
-                cellTitle.textColor = UIColor(named: decodedSession.color)
-            }
-        }
+    func configureCell() {
+        cellTitle.text = viewModel?.sessionTitle
+        cellDescription.text = viewModel?.sessionDescription
+        cellIcon.setImage(representable: viewModel)
+        cellTitle.textColor = viewModel?.sessionColor
     }
 }

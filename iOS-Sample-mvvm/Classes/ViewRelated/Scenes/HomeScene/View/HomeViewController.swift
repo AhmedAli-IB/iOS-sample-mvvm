@@ -63,10 +63,10 @@ private extension HomeViewController {
     }
     
     func registerCells() {
-        tableView.register(UINib(nibName: Strings.tableViewCellId, bundle: nil),
-                           forCellReuseIdentifier: Strings.tableViewCellId)
-        collectionView.register(UINib(nibName: Strings.collectionViewCellId, bundle: nil),
-                                forCellWithReuseIdentifier: Strings.collectionViewCellId)
+        tableView.register(UINib(nibName: SessionTableViewCell.reuseIdentifier, bundle: nil),
+                           forCellReuseIdentifier: SessionTableViewCell.reuseIdentifier)
+        collectionView.register(UINib(nibName: CardCollectionViewCell.reuseIdentifier, bundle: nil),
+                                forCellWithReuseIdentifier: CardCollectionViewCell.reuseIdentifier)
     }
     
     /// Configure tableview and collectionview on viewmodel reload data and network failure
@@ -108,22 +108,6 @@ private extension HomeViewController {
     }
 }
 
-private extension HomeViewController {
-    
-    enum Strings {
-        static let collectionViewCellId = "CardCollectionViewCell"
-        static let tableViewCellId = "SessionTableViewCell"
-    }
-    
-    enum Constants {
-        static let noInternetViewTopConstraint = 100.0
-        static let numberOfCardsPreBussiness = 5
-        static let tabelViewCellEstimatedHeight = 114.0
-        static let collectionViewCellHeight = 211.0
-        static let collectionViewCellWidth = 345.0
-    }
-}
-
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     // MARK: UICollectionViewDataSource
@@ -150,7 +134,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Strings.collectionViewCellId,
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CardCollectionViewCell.reuseIdentifier,
                                                       for: indexPath) as? CardCollectionViewCell
         guard let cardCell = cell else {
             fatalError("Unexpected cell sent to \(#function)")
@@ -188,12 +172,12 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Strings.tableViewCellId,
+        let cell = tableView.dequeueReusableCell(withIdentifier: SessionTableViewCell.reuseIdentifier,
                                                  for: indexPath) as? SessionTableViewCell
         guard let sessionCell = cell else {
             fatalError("Unexpected cell sent to \(#function)")
         }
-        sessionCell.setupCellData(staticSession: viewModel.getCurrentObject(for: indexPath))
+        sessionCell.viewModel = viewModel.getCurrentObject(for: indexPath)
         return sessionCell
     }
 }
@@ -202,5 +186,16 @@ extension HomeViewController: NoInternetView {
     
     func tryAgain() {
         viewModel.getSessions()
+    }
+}
+
+private extension HomeViewController {
+    
+    enum Constants {
+        static let noInternetViewTopConstraint = 100.0
+        static let numberOfCardsPreBussiness = 5
+        static let tabelViewCellEstimatedHeight = 114.0
+        static let collectionViewCellHeight = 211.0
+        static let collectionViewCellWidth = 345.0
     }
 }

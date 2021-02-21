@@ -24,16 +24,6 @@ class FiltrationCollectionViewCell: UICollectionViewCell {
         configureView()
     }
     
-//    override var isSelected: Bool {
-//        get {
-//            return super.isSelected
-//        }
-//        set {
-//            super.isSelected = newValue
-//            updateViewForSelectedState()
-//        }
-//    }
-    
     // MARK: - ViewModel
     //
     var viewModel: FiltrationCellRepresentable? {
