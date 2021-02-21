@@ -86,16 +86,12 @@ class CardCollectionViewCell: UICollectionViewCell {
             wayOfCommunication.text = Strings.office
 //            officeName.text = session.office
         }
-        date.text = formateDateToArabic(timeResult: session.schedule?.startDate ?? 0)
+        date.text = formateDateToArabicString(timeResult: session.schedule?.startDate ?? 0)
     }
     
-    func formateDateToArabic(timeResult: Int) -> String {
-        
-        let formatter = DateFormatter()
+    func formateDateToArabicString(timeResult: Int) -> String {
         let date = Date(timeIntervalSince1970: TimeInterval(timeResult))
-        formatter.locale = NSLocale(localeIdentifier: "ar_DZ") as Locale
-        formatter.dateFormat = "EEEE, d, MMMM"
-        return formatter.string(from: date)
+        return date.asString(style: .long, formatter: DateFormatter.Defaults.arabicFormatter)
     }
 }
 

@@ -7,3 +7,6 @@ Carthage/Build/
 
 ## User settings
 xcuserdata/
+
+# Cocoapods
+Pods/
