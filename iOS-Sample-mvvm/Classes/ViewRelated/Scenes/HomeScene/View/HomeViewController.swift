@@ -56,7 +56,9 @@ private extension HomeViewController {
         tableView.dataSource = self
         collectionView.delegate = self
         collectionView.dataSource = self
-        
+        if viewModel.numberOfRows == 0 {
+            collectionView.isScrollEnabled = false
+        }
         pageControl.hidesForSinglePage = true
         pageControl.numberOfPages = viewModel.numberOfRows
         
@@ -166,7 +168,8 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-        return CGSize(width: Constants.collectionViewCellWidth,
+        let width = Double(view.frame.width - 30)
+        return CGSize(width: width,
                       height: Constants.collectionViewCellHeight)
     }
 }
