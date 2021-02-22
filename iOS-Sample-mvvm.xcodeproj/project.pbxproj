@@ -61,6 +61,7 @@
 		6091164125C87689000EE449 /* CardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6091163E25C87689000EE449 /* CardViewController.xib */; };
 		6091164725C87699000EE449 /* ActionSheetPresentable+Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6091164525C87699000EE449 /* ActionSheetPresentable+Defaults.swift */; };
 		6091164825C87699000EE449 /* ActionSheetPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6091164625C87699000EE449 /* ActionSheetPresentable.swift */; };
+		6095637E25E3B97A0016C5BC /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6095637D25E3B97A0016C5BC /* TabBarCoordinator.swift */; };
 		60B012B925CC419F00AD7E0E /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B012B725CC419F00AD7E0E /* CalendarViewController.swift */; };
 		60B012BA25CC419F00AD7E0E /* CalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60B012B825CC419F00AD7E0E /* CalendarViewController.xib */; };
 		60B6476725E26720002CC114 /* DateFormatter + App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B6476625E26720002CC114 /* DateFormatter + App.swift */; };
@@ -244,6 +245,7 @@
 		6091163E25C87689000EE449 /* CardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardViewController.xib; sourceTree = "<group>"; };
 		6091164525C87699000EE449 /* ActionSheetPresentable+Defaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ActionSheetPresentable+Defaults.swift"; sourceTree = "<group>"; };
 		6091164625C87699000EE449 /* ActionSheetPresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionSheetPresentable.swift; sourceTree = "<group>"; };
+		6095637D25E3B97A0016C5BC /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 		60B012B725CC419F00AD7E0E /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		60B012B825CC419F00AD7E0E /* CalendarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarViewController.xib; sourceTree = "<group>"; };
 		60B6476625E26720002CC114 /* DateFormatter + App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter + App.swift"; sourceTree = "<group>"; };
@@ -865,6 +867,7 @@
 			children = (
 				60D3219125B99B250030E5FA /* AppTab.swift */,
 				60D3219525B99CA00030E5FA /* MainTabBarController.swift */,
+				6095637D25E3B97A0016C5BC /* TabBarCoordinator.swift */,
 			);
 			path = MainTabBar;
 			sourceTree = "<group>";
@@ -1613,6 +1616,7 @@
 				6040782925B4730C00C8972F /* Assets.swift in Sources */,
 				6076E48625C7FE880026CB4E /* SubjectModel+Representable.swift in Sources */,
 				60D3222F25BD8CA40030E5FA /* UITableViewCell + Helpers.swift in Sources */,
+				6095637E25E3B97A0016C5BC /* TabBarCoordinator.swift in Sources */,
 				60B6476725E26720002CC114 /* DateFormatter + App.swift in Sources */,
 				E02F0E9E25CC13FC002E61B4 /* BaseNavigationController.swift in Sources */,
 				6076E4B725C836470026CB4E /* CenterTableViewCell.swift in Sources */,

@@ -42,8 +42,12 @@ private extension ApplicationCoordinator {
         
     /// Run home  flow
     func runHomeFlow() {
-        let viewController = MainTabBarController()
-        window?.rootViewController = viewController
-        window?.makeKeyAndVisible()
+//        let viewController = MainTabBarController()
+//        window?.rootViewController = viewController
+//        window?.makeKeyAndVisible()
+        
+        let startCoordinator = TabBarCoordinator(navigationController: navigationController)
+        startCoordinator.start()
+
     }
 }
