@@ -171,7 +171,7 @@ private extension FieldsViewController {
 //
 private extension FieldsViewController {
     enum Strings {
-        static let  submmitButtonTitle = "موافق"
+        static let  submmitButtonTitle = "Submit".localized
     }
 }
 

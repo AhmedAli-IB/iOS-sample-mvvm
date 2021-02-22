@@ -181,6 +181,6 @@ private extension CentersViewController {
 //
 private extension CentersViewController {
     enum Strings {
-        static let submmitButtonTitle = "موافق"
+        static let submmitButtonTitle = "Submit".localized
     }
 }

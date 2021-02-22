@@ -32,6 +32,6 @@ private extension ChatViewController {
 private extension ChatViewController {
     
     enum Strings {
-        static let title = "Chat"
+        static let title = "Chat".localized
     }
 }
