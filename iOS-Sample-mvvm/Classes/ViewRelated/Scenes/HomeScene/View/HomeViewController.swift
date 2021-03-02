@@ -176,11 +176,12 @@ private extension HomeViewController {
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let headerView = Bundle.loadv
-//        return headerView
-//    }
-//    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = Bundle.loadView(fromNib: Strings.tableViewHeader,
+                                         withType: TableViewHeader.self)
+        return headerView
+    }
+  
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 264.0
     }
@@ -216,6 +217,9 @@ extension HomeViewController: NoInternetView {
 }
 
 private extension HomeViewController {
+    enum Strings {
+        static let tableViewHeader = "TableViewHeader"
+    }
     
     enum Constants {
         static let noInternetViewTopConstraint = 100.0
