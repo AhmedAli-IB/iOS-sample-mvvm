@@ -83,7 +83,7 @@ extension CentersDataSource {
                     rows.append(RowType.centerRow)
                 }
                 
-                return Section(title: Strings.selectBlace, rows: rows)
+                return Section(title: Strings.selectPlace, rows: rows)
             }()
             return [centersSection].compactMap { $0 }
         }()
@@ -155,6 +155,6 @@ private extension CentersDataSource {
 private extension CentersDataSource {
     
     enum Strings {
-        static let selectBlace: String = "اختار المركز"
+        static let selectPlace: String = "Place".localized
     }
 }

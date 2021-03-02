@@ -202,7 +202,7 @@ extension SearchPepoleViewController: UITableViewDelegate {
 //
 private extension SearchPepoleViewController {
     enum Strings {
-        static let searchBarBlaceholder = "البحث"
+        static let searchBarBlaceholder = "Search".localized
     }
 }
 

@@ -98,8 +98,8 @@ class CardCollectionViewCell: UICollectionViewCell {
 private extension CardCollectionViewCell {
     
     enum Strings {
-        static let online = "Online"
-        static let office = "In Office"
+        static let online = "Online".localized
+        static let office = "In Office".localized
     }
 
 }

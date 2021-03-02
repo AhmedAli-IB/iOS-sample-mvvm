@@ -32,6 +32,6 @@ private extension AccountViewController {
 private extension AccountViewController {
     
     enum Strings {
-        static let title = "Account"
+        static let title = "Account".localized
     }
 }

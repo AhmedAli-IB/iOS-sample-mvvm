@@ -1,0 +1,22 @@
+/* 
+  Localizable.strings
+  iOS-Sample-mvvm
+
+  Created by Ahmed Ali on 22/02/2021.
+  
+*/
+"Submit" = "موافق";
+"Search" = "البحث";
+"Place" = "اختار المركز";
+"Suggestions" = "اقتراحات";
+"NoSearchResult" = "لا يوجد نتائج";
+"Account" = "Account";
+"Chat" = "Chat";
+"Online" = "Online";
+"In Office" = "In Office";
+"Notification" = "Notification";
+"Online" = "آونلاين";
+"InCenter" = "في المركز";
+"Fields" = "مجالات";
+"Calendar" = "التقويم";
+

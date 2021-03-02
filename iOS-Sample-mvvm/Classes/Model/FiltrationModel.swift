@@ -51,10 +51,10 @@ extension FiltrationModel {
 //
 private extension FiltrationModel {
     enum Strings {
-        static let online = "آونلاين"
-        static let inCenter = "في المركز"
-        static let fields = "مجالات"
-        static let calendar = "التقويم"
+        static let online = "Online".localized
+        static let inCenter = "InCenter".localized
+        static let fields = "Fields".localized
+        static let calendar = "Calendar".localized
     }
 }
 

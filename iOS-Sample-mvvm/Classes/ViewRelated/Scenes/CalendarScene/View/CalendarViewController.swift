@@ -148,7 +148,7 @@ private extension CalendarViewController {
 //
 private extension CalendarViewController {
     enum Strings {
-        static let submmitButtonTitle = "موافق"
+        static let submmitButtonTitle = "Submit".localized
         static let arabicIdentifer = "ar_AE"
     }
 }

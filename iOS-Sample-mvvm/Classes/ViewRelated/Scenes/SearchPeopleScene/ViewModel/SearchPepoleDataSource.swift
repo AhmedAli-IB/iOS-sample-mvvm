@@ -165,8 +165,8 @@ private extension SearchPeopleDataSource {
 private extension SearchPeopleDataSource {
     
     enum Strings {
-        static var suggestions: String = "اقتراحات"
-        static let noSearchResult: String = "لا يوجد نتائج"
+        static var suggestions: String = "Suggestions".localized
+        static let noSearchResult: String = "NoSearchResult".localized
 
     }
 }
