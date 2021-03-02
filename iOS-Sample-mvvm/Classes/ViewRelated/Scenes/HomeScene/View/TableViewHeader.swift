@@ -8,28 +8,23 @@
 import UIKit
 
 
-class TableViewHeader: UIViewController {
+class TableViewHeader: UIView {
     
     @IBOutlet private weak var pageControl: UIPageControl!
     @IBOutlet private weak var collectionView: UICollectionView!
     
     private let viewModel: HomeViewModel = HomeViewModel()
 
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    override func awakeFromNib() {
+        super.awakeFromNib()
         configureView()
-//        configureAppearance()
-//        bindLoadingState(to: viewModel)
-//        bindErrorState(to: viewModel)
-//        bindViewModelErrorState()
+
         viewModel.getSessions()
         viewModel.getStaticSessionsData()
         configureViewModel()
 
     }
-    
+
     func configureView() {
 
         collectionView.delegate = self
@@ -107,7 +102,7 @@ extension TableViewHeader: UICollectionViewDataSource, UICollectionViewDelegateF
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-        let width = Double(view.frame.width - 30)
+        let width = Double(UIScreen.main.bounds.width - 30)
         return CGSize(width: width,
                       height: 211.0)
     }

@@ -178,7 +178,7 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
-                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="mgC-HL-AAW" secondAttribute="bottom" id="1Qs-Ui-HGM"/>
                     <constraint firstAttribute="bottom" secondItem="op2-pD-zG0" secondAttribute="bottom" id="2am-0G-2Eo"/>
@@ -202,6 +202,7 @@
                 <outlet property="date" destination="uoT-IU-1YW" id="lSU-CI-Ea5"/>
                 <outlet property="displayAvaSessionsLabel" destination="nhm-2V-jl1" id="p9Z-Ww-Ufx"/>
                 <outlet property="emptyStateView" destination="mgC-HL-AAW" id="rsA-uw-qPd"/>
+                <outlet property="masterView" destination="op2-pD-zG0" id="gha-Ta-NPm"/>
                 <outlet property="noSessionsLabel" destination="UjB-qs-sXe" id="UoO-s4-sPV"/>
                 <outlet property="officeName" destination="O5S-NU-al2" id="4Lv-x2-ZYh"/>
                 <outlet property="userDepartment" destination="Sxs-cs-aoH" id="GKz-YQ-5h0"/>
