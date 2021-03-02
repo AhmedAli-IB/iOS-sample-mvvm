@@ -10,6 +10,7 @@ import Cosmos
 
 class CardCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet private weak var masterView: UIView!
     @IBOutlet private weak var displayAvaSessionsLabel: UILabel!
     @IBOutlet private weak var noSessionsLabel: UILabel!
     @IBOutlet private weak var emptyStateView: UIView!
@@ -20,7 +21,6 @@ class CardCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var userDepartment: UILabel!
     @IBOutlet private weak var userName: UILabel!
     @IBOutlet private weak var userImage: UIImageView!
-    @IBOutlet private weak var pageControl: UIPageControl!
     @IBOutlet private weak var officeName: UILabel!
     
     override func awakeFromNib() {
@@ -31,12 +31,6 @@ class CardCollectionViewCell: UICollectionViewCell {
     }
     
     @IBAction func cancelAppointment(_ sender: UIButton) {
-    }
-    
-    func collectionView(_ collectionView: UICollectionView,
-                        willDisplay cell: UICollectionViewCell,
-                        forItemAt indexPath: IndexPath) {
-        self.pageControl.currentPage = indexPath.section
     }
     
     func setupLabelFonts() {
@@ -55,6 +49,9 @@ class CardCollectionViewCell: UICollectionViewCell {
         userImage.layer.borderWidth = 3
         userImage.layer.borderColor = UIColor(asset: Asset.ColorPalette.platinum)?.cgColor
         userImage.layer.cornerRadius = 16
+        
+        masterView.layer.cornerRadius = 16
+        masterView.layer.masksToBounds = true
     }
     
     func setupEmptySessionView() {

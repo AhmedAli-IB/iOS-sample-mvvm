@@ -10,11 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="iOS_Sample_mvvm" customModuleProvider="target">
             <connections>
-                <outlet property="collectionView" destination="mA7-uc-VEh" id="FTQ-Q9-Zta"/>
-                <outlet property="pageControl" destination="c43-so-0eD" id="BB7-h5-ha9"/>
-                <outlet property="superView" destination="oGO-Ur-pAe" id="Ndd-Xh-op0"/>
-                <outlet property="tableView" destination="HRw-8a-h6n" id="jOR-3w-FdS"/>
-                <outlet property="tableViewHeightConstraint" destination="7GX-sa-6Ct" id="GOO-Uj-F7L"/>
+                <outlet property="tableView" destination="pP9-Hm-KrJ" id="wXs-27-2E4"/>
                 <outlet property="upcommingSessionLogo" destination="tnB-Vl-041" id="8Vb-fj-CIx"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -47,119 +43,24 @@
                     <color key="textColor" name="Glitter"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oGO-Ur-pAe">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pP9-Hm-KrJ">
                     <rect key="frame" x="15" y="129.5" width="384" height="732.5"/>
-                    <subviews>
-                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFw-ho-WRR">
-                            <rect key="frame" x="0.0" y="0.0" width="384" height="732.5"/>
-                            <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AdV-it-3JB" userLabel="Content View">
-                                    <rect key="frame" x="0.0" y="0.0" width="384" height="733"/>
-                                    <subviews>
-                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="mA7-uc-VEh">
-                                            <rect key="frame" x="0.0" y="0.0" width="384" height="211"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="211" id="Gdm-vB-HOt"/>
-                                            </constraints>
-                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ArG-MS-tvv">
-                                                <size key="itemSize" width="128" height="128"/>
-                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                            </collectionViewFlowLayout>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                    <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
-                                        </collectionView>
-                                        <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="c43-so-0eD">
-                                            <rect key="frame" x="130.5" y="229" width="123" height="28"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="28" id="VTd-u3-Hx6"/>
-                                            </constraints>
-                                            <color key="pageIndicatorTintColor" name="Pacific Blue"/>
-                                            <color key="currentPageIndicatorTintColor" name="Sea blue"/>
-                                        </pageControl>
-                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HRw-8a-h6n">
-                                            <rect key="frame" x="0.0" y="285" width="384" height="448"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="448" id="7GX-sa-6Ct"/>
-                                            </constraints>
-                                            <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="sectionIndexColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                    <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
-                                        </tableView>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="HRw-8a-h6n" secondAttribute="bottom" id="6Oz-Rb-kXM"/>
-                                        <constraint firstItem="mA7-uc-VEh" firstAttribute="top" secondItem="AdV-it-3JB" secondAttribute="top" id="7pH-KF-Pgv"/>
-                                        <constraint firstItem="c43-so-0eD" firstAttribute="top" secondItem="mA7-uc-VEh" secondAttribute="bottom" constant="18" id="H8x-Ze-luR"/>
-                                        <constraint firstAttribute="trailing" secondItem="HRw-8a-h6n" secondAttribute="trailing" id="OBb-vu-Ld4"/>
-                                        <constraint firstItem="mA7-uc-VEh" firstAttribute="leading" secondItem="AdV-it-3JB" secondAttribute="leading" id="OFH-Ts-d8k"/>
-                                        <constraint firstItem="c43-so-0eD" firstAttribute="centerX" secondItem="AdV-it-3JB" secondAttribute="centerX" id="Q6m-ME-It8"/>
-                                        <constraint firstAttribute="trailing" secondItem="mA7-uc-VEh" secondAttribute="trailing" id="bfQ-Wt-fG0"/>
-                                        <constraint firstItem="HRw-8a-h6n" firstAttribute="leading" secondItem="AdV-it-3JB" secondAttribute="leading" id="qzY-WY-Sqf"/>
-                                        <constraint firstItem="HRw-8a-h6n" firstAttribute="top" secondItem="c43-so-0eD" secondAttribute="bottom" constant="28" id="t2P-KV-1DH"/>
-                                    </constraints>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                            <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                </view>
-                            </subviews>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstItem="AdV-it-3JB" firstAttribute="top" secondItem="AFw-ho-WRR" secondAttribute="top" id="0Jc-zJ-KWt"/>
-                                <constraint firstAttribute="bottom" secondItem="AdV-it-3JB" secondAttribute="bottom" id="1JD-EJ-61q"/>
-                                <constraint firstAttribute="trailing" secondItem="AdV-it-3JB" secondAttribute="trailing" id="1RS-Fy-M3j"/>
-                                <constraint firstItem="AdV-it-3JB" firstAttribute="leading" secondItem="AFw-ho-WRR" secondAttribute="leading" id="cJz-qA-2aE"/>
-                            </constraints>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                    <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </scrollView>
-                    </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstItem="AFw-ho-WRR" firstAttribute="top" secondItem="oGO-Ur-pAe" secondAttribute="top" id="Nq8-Ae-l8s"/>
-                        <constraint firstItem="AdV-it-3JB" firstAttribute="width" secondItem="oGO-Ur-pAe" secondAttribute="width" id="Rj7-2n-cVx"/>
-                        <constraint firstAttribute="trailing" secondItem="AFw-ho-WRR" secondAttribute="trailing" id="WwT-BH-Wbe"/>
-                        <constraint firstAttribute="bottom" secondItem="AFw-ho-WRR" secondAttribute="bottom" id="a35-2t-zb7"/>
-                        <constraint firstItem="AdV-it-3JB" firstAttribute="height" secondItem="oGO-Ur-pAe" secondAttribute="height" multiplier="1.00068" priority="250" id="bc3-qE-gHK"/>
-                        <constraint firstItem="AFw-ho-WRR" firstAttribute="leading" secondItem="oGO-Ur-pAe" secondAttribute="leading" id="hzb-28-ybR"/>
-                    </constraints>
-                </view>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="White smoke"/>
             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="oGO-Ur-pAe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="ByQ-Gs-8tk"/>
-                <constraint firstItem="oGO-Ur-pAe" firstAttribute="top" secondItem="tnB-Vl-041" secondAttribute="bottom" constant="15" id="HX5-86-1oU"/>
+                <constraint firstItem="pP9-Hm-KrJ" firstAttribute="top" secondItem="tnB-Vl-041" secondAttribute="bottom" constant="15" id="BtM-xP-8c3"/>
                 <constraint firstItem="Ltv-2P-vDE" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="11" id="K0K-fP-UHA"/>
                 <constraint firstItem="tnB-Vl-041" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="bwr-ce-EkO"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="pP9-Hm-KrJ" secondAttribute="bottom" id="dzK-ox-jwv"/>
                 <constraint firstItem="hHl-C7-whz" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="eyd-sW-QhD"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="oGO-Ur-pAe" secondAttribute="bottom" id="gnB-ff-TSk"/>
                 <constraint firstItem="tnB-Vl-041" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="gqq-kZ-T3N"/>
                 <constraint firstItem="hHl-C7-whz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="oYT-ng-iaf"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="oGO-Ur-pAe" secondAttribute="trailing" constant="15" id="qK5-Yt-d3R"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="pP9-Hm-KrJ" secondAttribute="trailing" constant="15" id="rPV-kT-t9G"/>
+                <constraint firstItem="pP9-Hm-KrJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="s19-hM-IrQ"/>
                 <constraint firstItem="hHl-C7-whz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="xDV-TH-LXZ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ltv-2P-vDE" secondAttribute="trailing" constant="16" id="xzd-oF-6wa"/>
             </constraints>
@@ -171,12 +72,6 @@
         <image name="ic_Search" width="21" height="21"/>
         <namedColor name="Glitter">
             <color red="0.83529411764705885" green="0.93333333333333335" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="Pacific Blue">
-            <color red="0.0078431372549019607" green="0.6705882352941176" blue="0.78823529411764703" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="Sea blue">
-            <color red="0.0039215686274509803" green="0.45098039215686275" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="White smoke">
             <color red="0.95294117647058818" green="0.95686274509803926" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

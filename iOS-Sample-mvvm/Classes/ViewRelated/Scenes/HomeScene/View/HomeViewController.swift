@@ -12,9 +12,6 @@ class HomeViewController: BaseViewController {
     @IBOutlet private weak var superView: UIView!
     @IBOutlet private weak var upcommingSessionLogo: UILabel!
     @IBOutlet private weak var tableView: UITableView!
-    @IBOutlet private weak var tableViewHeightConstraint: NSLayoutConstraint!
-    @IBOutlet private weak var collectionView: UICollectionView!
-    @IBOutlet private weak var pageControl: UIPageControl!
     private let viewModel: HomeViewModel = HomeViewModel()
 
     private lazy var noInternetView = NoInternet(with: self)
@@ -27,7 +24,6 @@ class HomeViewController: BaseViewController {
         configureView()
         configureAppearance()
         bindLoadingState(to: viewModel)
-//        bindErrorState(to: viewModel)
         bindViewModelErrorState()
         viewModel.getSessions()
         viewModel.getStaticSessionsData()
@@ -51,37 +47,23 @@ private extension HomeViewController {
     }
     
     func configureView() {
-
         tableView.delegate = self
         tableView.dataSource = self
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        if viewModel.numberOfRows == 0 {
-            collectionView.isScrollEnabled = false
-        }
-        pageControl.hidesForSinglePage = true
-        pageControl.numberOfPages = viewModel.numberOfRows
-        
         registerCells()
     }
     
     func registerCells() {
         tableView.register(UINib(nibName: SessionTableViewCell.reuseIdentifier, bundle: nil),
                            forCellReuseIdentifier: SessionTableViewCell.reuseIdentifier)
-        collectionView.register(UINib(nibName: CardCollectionViewCell.reuseIdentifier, bundle: nil),
-                                forCellWithReuseIdentifier: CardCollectionViewCell.reuseIdentifier)
     }
     
      func reloadDataAndSections() {
-        self.tableViewHeightConstraint.constant = self.tableView.contentSize.height
         self.tableView.estimatedRowHeight = CGFloat(Constants.tabelViewCellEstimatedHeight)
         self.tableView.rowHeight = UITableView.automaticDimension
         
-        self.collectionView.isHidden = false
         self.tableView.isHidden = false
         self.noInternetView.removeFromSuperview()
         self.tableView.reloadData()
-        self.collectionView.reloadData()
     }
     
     /// Configure tableview and collectionview on viewmodel reload data and network failure
@@ -94,9 +76,8 @@ private extension HomeViewController {
 
     }
      func setupNoInternetView() {
-        collectionView.isHidden = true
         tableView.isHidden = true
-        superView.addSubview(self.noInternetView)
+        tableView.backgroundView = self.noInternetView
         configureNoInternetView()
     }
     
@@ -124,57 +105,17 @@ private extension HomeViewController {
         
     }
 
-extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-
-    // MARK: UICollectionViewDataSource
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        if viewModel.numberOfRows > Constants.numberOfCardsPreBussiness {
-            return Constants.numberOfCardsPreBussiness
-        } else if viewModel.numberOfRows == 0 {
-            return 1
-        }
-        return viewModel.numberOfRows
-    }
-    
-    func collectionView(_ collectionView: UICollectionView,
-                        willDisplay cell: UICollectionViewCell,
-                        forItemAt indexPath: IndexPath) {
-        self.pageControl.currentPage = indexPath.section
-    }
-
-    func collectionView(_ collectionView: UICollectionView,
-                        numberOfItemsInSection section: Int) -> Int {
-
-        return 1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView,
-                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CardCollectionViewCell.reuseIdentifier,
-                                                      for: indexPath) as? CardCollectionViewCell
-        guard let cardCell = cell else {
-            fatalError("Unexpected cell sent to \(#function)")
-        }
-        if viewModel.numberOfRows == 0 {
-            cardCell.setupEmptySessionView()
-        } else {
-            cardCell.setupCellData(session: viewModel.getCurrentObject(for: indexPath))
-        }
-        return cardCell
-    }
-    
-    // MARK: UICollectionViewDelegateFlowLayout
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-
-        let width = Double(view.frame.width - 30)
-        return CGSize(width: width,
-                      height: Constants.collectionViewCellHeight)
-    }
-}
-
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = Bundle.loadView(fromNib: Strings.tableViewHeader,
+                                         withType: TableViewHeader.self)
+        return headerView
+    }
+  
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 264.0
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             
@@ -207,6 +148,9 @@ extension HomeViewController: NoInternetView {
 }
 
 private extension HomeViewController {
+    enum Strings {
+        static let tableViewHeader = "TableViewHeader"
+    }
     
     enum Constants {
         static let noInternetViewTopConstraint = 100.0
