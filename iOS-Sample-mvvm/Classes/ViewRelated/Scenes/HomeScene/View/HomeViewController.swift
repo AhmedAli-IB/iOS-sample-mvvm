@@ -9,20 +9,21 @@ import UIKit
 
 class HomeViewController: BaseViewController {
 
-    @IBOutlet private weak var superView: UIView!
+    // MARK: - IBOutlets
+    //
     @IBOutlet private weak var upcommingSessionLogo: UILabel!
     @IBOutlet private weak var tableView: UITableView!
     private let viewModel: HomeViewModel = HomeViewModel()
 
+    // MARK: - Properties
+    //
     private lazy var noInternetView = NoInternet(with: self)
-    
     var coordinator: HomeCoordinatorProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         configureView()
-        configureAppearance()
         bindLoadingState(to: viewModel)
         bindViewModelErrorState()
         viewModel.getSessions()
@@ -30,21 +31,13 @@ class HomeViewController: BaseViewController {
         configureViewModel()
 
     }
-
+    
     @IBAction func searchTapped(_ sender: Any) {
         coordinator?.pushSerchViewController()
     }
 }
 
 private extension HomeViewController {
-    
-    func configureAppearance() {
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(),
-                                                                    for: .any, barMetrics: .default)
-        self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-    }
     
     func configureView() {
         tableView.delegate = self
@@ -60,13 +53,13 @@ private extension HomeViewController {
      func reloadDataAndSections() {
         self.tableView.estimatedRowHeight = CGFloat(Constants.tabelViewCellEstimatedHeight)
         self.tableView.rowHeight = UITableView.automaticDimension
-        
         self.tableView.isHidden = false
         self.noInternetView.removeFromSuperview()
         self.tableView.reloadData()
     }
     
     /// Configure tableview and collectionview on viewmodel reload data and network failure
+    ///
     func configureViewModel() {
         
         viewModel.onReloadNeeded.subscribe { [weak self] _ in
@@ -77,7 +70,6 @@ private extension HomeViewController {
     }
      func setupNoInternetView() {
         tableView.isHidden = true
-        tableView.backgroundView = self.noInternetView
         configureNoInternetView()
     }
     
@@ -87,20 +79,25 @@ private extension HomeViewController {
         viewModel.state.subscribe { [weak self] state in
             if case .failure(let error) = state {
              guard  let self = self else { return }
-                error.isEmpty ?  self.setupNoInternetView() : self.showErrorAlert(error: error)
+                let noInternetError = HomeError.noInternet.localizedDescription
+                error == noInternetError ?  self.setupNoInternetView() : self.showErrorAlert(error: error)
             }
         }
     }
         /// Configure no internet view constraints and center in superview
+        ///
         func configureNoInternetView() {
+            
+            self.view.addSubview(noInternetView)
+            
             self.noInternetView.translatesAutoresizingMaskIntoConstraints = false
-            self.noInternetView.topAnchor.constraint(equalTo: self.superView.topAnchor,
-                                                     constant: CGFloat(Constants.noInternetViewTopConstraint))
+
+            self.noInternetView.widthAnchor.constraint(equalToConstant: Constants.noInternetViewWidthAndHight)
                 .isActive = true
-            self.noInternetView.bottomAnchor.constraint(equalTo: self.superView.bottomAnchor,
-                                                        constant: 0).isActive = true
-            self.noInternetView.centerYAnchor.constraint(equalTo: self.superView.centerYAnchor,
-                                                         constant: 0).isActive = true
+            self.noInternetView.heightAnchor.constraint(equalToConstant: Constants.noInternetViewWidthAndHight)
+                .isActive = true
+            self.noInternetView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+            self.noInternetView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         }
         
     }
@@ -114,11 +111,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
   
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 264.0
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            
+        return Constants.heightForHeaderInSection
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -140,6 +133,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+// MARK: - NoInternetView
+/// Conform to no internet view protocol to handle reload action
+//
 extension HomeViewController: NoInternetView {
     
     func tryAgain() {
@@ -148,15 +144,22 @@ extension HomeViewController: NoInternetView {
 }
 
 private extension HomeViewController {
+    
+    // MARK: - Strings
+    //
     enum Strings {
         static let tableViewHeader = "TableViewHeader"
     }
     
+    // MARK: - Constants
+    //
     enum Constants {
         static let noInternetViewTopConstraint = 100.0
         static let numberOfCardsPreBussiness = 5
         static let tabelViewCellEstimatedHeight = 114.0
         static let collectionViewCellHeight = 211.0
         static let collectionViewCellWidth = 345.0
+        static let noInternetViewWidthAndHight = CGFloat(390.0)
+        static let heightForHeaderInSection = CGFloat(264.0)
     }
 }

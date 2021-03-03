@@ -161,6 +161,7 @@ private extension SearchPepoleViewModel {
                 self.onReloadNeededItems.send(())
             case .failure(let error):
                 self.state.send(.failure(error.localizedDescription))
+                self.onReloadNeededItems.send(())
             }
         }
     }

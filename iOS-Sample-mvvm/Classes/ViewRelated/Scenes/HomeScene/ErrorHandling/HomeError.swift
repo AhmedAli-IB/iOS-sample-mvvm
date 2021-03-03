@@ -13,6 +13,8 @@ extension HomeError: LocalizedError {
         switch self {
         case .unableToGetSessions:
             return "Couldn't get these info now, please try again later"
+        case .noInternet:
+            return "No internet connection please try agin later."
         }
     }
 }

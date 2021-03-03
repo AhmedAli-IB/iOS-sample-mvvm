@@ -21,30 +21,47 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_header-shape" translatesAutoresizingMaskIntoConstraints="NO" id="hHl-C7-whz">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="219"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="219" id="kZy-pt-efN"/>
-                    </constraints>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="242"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ltv-2P-vDE">
-                    <rect key="frame" x="377" y="55" width="21" height="21"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="21" id="4D3-0V-GnB"/>
-                        <constraint firstAttribute="height" constant="21" id="JR0-8o-Ncb"/>
-                    </constraints>
-                    <state key="normal" image="ic_Search"/>
-                    <connections>
-                        <action selector="searchTapped:" destination="-1" eventType="touchUpInside" id="pAz-yq-fau"/>
-                    </connections>
-                </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الجلسات القادمة" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tnB-Vl-041">
-                    <rect key="frame" x="15" y="94" width="111.5" height="20.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" name="Glitter"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pP9-Hm-KrJ">
-                    <rect key="frame" x="15" y="129.5" width="384" height="732.5"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FSi-h5-vGg">
+                    <rect key="frame" x="16" y="52" width="382" height="51"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ltv-2P-vDE">
+                            <rect key="frame" x="361" y="0.0" width="21" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="21" id="4D3-0V-GnB"/>
+                                <constraint firstAttribute="height" constant="21" id="JR0-8o-Ncb"/>
+                            </constraints>
+                            <state key="normal" image="ic_Search"/>
+                            <connections>
+                                <action selector="searchTapped:" destination="-1" eventType="touchUpInside" id="pAz-yq-fau"/>
+                            </connections>
+                        </button>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="AVb-EC-4Ic">
+                            <rect key="frame" x="0.0" y="29" width="382" height="22"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="الجلسات القادمة" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tnB-Vl-041">
+                                    <rect key="frame" x="0.0" y="0.0" width="111.5" height="22"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="22" id="6UK-1f-AYm"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" name="Glitter"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fG3-vk-vNc">
+                                    <rect key="frame" x="171.5" y="0.0" width="210.5" height="22"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" priority="999" constant="210.5" id="R59-fU-nGh"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pP9-Hm-KrJ">
+                    <rect key="frame" x="15" y="119" width="384" height="743"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
             </subviews>
@@ -52,17 +69,17 @@
             <color key="backgroundColor" name="White smoke"/>
             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="pP9-Hm-KrJ" firstAttribute="top" secondItem="tnB-Vl-041" secondAttribute="bottom" constant="15" id="BtM-xP-8c3"/>
-                <constraint firstItem="Ltv-2P-vDE" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="11" id="K0K-fP-UHA"/>
-                <constraint firstItem="tnB-Vl-041" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="bwr-ce-EkO"/>
+                <constraint firstAttribute="trailing" secondItem="FSi-h5-vGg" secondAttribute="trailing" constant="16" id="4Ub-nF-AMc"/>
+                <constraint firstItem="FSi-h5-vGg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="BO4-q0-XKZ"/>
+                <constraint firstItem="hHl-C7-whz" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.27" id="HNn-nQ-05A"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="pP9-Hm-KrJ" secondAttribute="bottom" id="dzK-ox-jwv"/>
                 <constraint firstItem="hHl-C7-whz" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="eyd-sW-QhD"/>
-                <constraint firstItem="tnB-Vl-041" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="gqq-kZ-T3N"/>
+                <constraint firstItem="FSi-h5-vGg" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="gUS-qV-vN8"/>
                 <constraint firstItem="hHl-C7-whz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="oYT-ng-iaf"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="pP9-Hm-KrJ" secondAttribute="trailing" constant="15" id="rPV-kT-t9G"/>
                 <constraint firstItem="pP9-Hm-KrJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="s19-hM-IrQ"/>
+                <constraint firstItem="pP9-Hm-KrJ" firstAttribute="top" secondItem="FSi-h5-vGg" secondAttribute="bottom" constant="16" id="sgf-tB-eWR"/>
                 <constraint firstItem="hHl-C7-whz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="xDV-TH-LXZ"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ltv-2P-vDE" secondAttribute="trailing" constant="16" id="xzd-oF-6wa"/>
             </constraints>
             <point key="canvasLocation" x="-213.04347826086959" y="69.642857142857139"/>
         </view>

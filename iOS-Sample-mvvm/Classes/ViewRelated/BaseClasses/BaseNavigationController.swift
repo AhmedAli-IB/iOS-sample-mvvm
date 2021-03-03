@@ -16,9 +16,12 @@ class BaseNavigationController: UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configureAppearance()
-        
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+//        configureAppearance()
     }
     
 }
@@ -27,7 +30,8 @@ private extension BaseNavigationController {
     /// hide navigation bar
     ///
     func configureAppearance() {
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
+//        self.navigationController.setNavigationBarHidden(true, animated: true)
+//        self.navigationItem.setHidesBackButton(true, animated: true)
         self.navigationBar.setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
         self.navigationBar.isTranslucent = true
         self.navigationBar.shadowImage = UIImage()

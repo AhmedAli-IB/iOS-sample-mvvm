@@ -47,6 +47,8 @@ private extension SearchPepoleViewController {
     ///
     func configureView() {
         searchBar.searchTextField.placeholder = Strings.searchBarBlaceholder
+//        self.navigationItem.setHidesBackButton(true, animated: true)
+
         endEditting()
         configureViewModel()
         registerCells()

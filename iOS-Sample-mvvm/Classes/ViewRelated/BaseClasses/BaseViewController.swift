@@ -33,11 +33,24 @@ class BaseViewController: UIViewController {
         }
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configureAppearance()
+    }
     /// Dismiss Keyboard
     ///
     func endEditting() {
         let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         tapGesture.cancelsTouchesInView = false
         view.addGestureRecognizer(tapGesture)
+    }
+}
+
+private extension BaseViewController {
+    /// hide navigation bar
+    ///
+    func configureAppearance() {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        self.navigationItem.setHidesBackButton(true, animated: true)
     }
 }

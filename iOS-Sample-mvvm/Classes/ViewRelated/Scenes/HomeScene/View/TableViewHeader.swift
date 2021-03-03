@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 class TableViewHeader: UIView {
     
     @IBOutlet private weak var pageControl: UIPageControl!

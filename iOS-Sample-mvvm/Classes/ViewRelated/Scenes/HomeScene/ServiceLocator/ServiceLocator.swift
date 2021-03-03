@@ -39,4 +39,5 @@ class HomeServiceLocator: HomeServiceLocatorProtocol {
 //
 enum HomeError: Error {
     case unableToGetSessions
+    case noInternet
 }

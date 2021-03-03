@@ -58,9 +58,7 @@ private extension SceneDelegate {
     func setupAppWindow(_ windowScene: UIWindowScene) {
         let window = UIWindow(windowScene: windowScene)
         self.window = window
-        let navController = UINavigationController()
-        coordinator = ApplicationCoordinator(window: window, navigationController: navController)
+        coordinator = ApplicationCoordinator(window: window)
         coordinator?.start()
-
     }
 }

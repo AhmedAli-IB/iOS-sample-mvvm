@@ -9,9 +9,6 @@ import Foundation
 
 class HomeViewModel: BaseViewModel {
     
-//    var onReload: (() -> Void)?
-//    var onNetworkFailure: (() -> Void)?
-
     private let photoServiceLocator: HomeServiceLocatorProtocol
     private var sessions: [SessionsData] = []
     private var staticSessions: [StaticSessionData] = []
@@ -51,7 +48,8 @@ extension HomeViewModel {
         self.state.send(.loading)
         
         if !InternetChecker.isConnectedToNetwork() {
-            self.state.send(.failure(""))
+            self.state.send(.failure(HomeError.noInternet.localizedDescription))
+            return
         }
         
         photoServiceLocator.getSessions { [weak self](result) in

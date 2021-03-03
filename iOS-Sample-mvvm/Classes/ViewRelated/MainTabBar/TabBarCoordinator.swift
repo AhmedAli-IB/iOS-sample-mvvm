@@ -9,10 +9,12 @@ import UIKit
 
 // MARK: - TabBarCoordinator
 //
-final class TabBarCoordinator: Coordinator {
+final class TabBarCoordinator {
+    
     // MARK: - Properties
     //
-    var navigationController: UINavigationController
+    let tabBarController: MainTabBarController?
+
     /// Controllers
     ///
     /// HomeViewController
@@ -71,20 +73,16 @@ final class TabBarCoordinator: Coordinator {
     
     // MARK: - Init
     //
-    init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
+    init(tabBarController: MainTabBarController) {
+        self.tabBarController = tabBarController
     }
     
     func start() {
         
-        let tabBarController = MainTabBarController()
-        
-        /// Show tab bar
+        /// Set Controllers to tab bar
         ///
-        navigationController.setViewControllers([tabBarController], animated: true)
-
-        tabBarController.viewControllers = {
-            var controllers = tabBarController.viewControllers ?? []
+        tabBarController?.viewControllers = {
+            var controllers = tabBarController?.viewControllers ?? []
             
             let homeTabIndex = AppTab.home.visibleIndex()
             controllers.insert(homeViewController, at: homeTabIndex)

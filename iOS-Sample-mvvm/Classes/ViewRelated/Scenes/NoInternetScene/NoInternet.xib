@@ -23,14 +23,14 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="539"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_no-internet" translatesAutoresizingMaskIntoConstraints="NO" id="snW-cy-nst">
-                            <rect key="frame" x="122.5" y="82" width="169" height="130"/>
+                            <rect key="frame" x="122.5" y="82" width="169" height="125"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="169" id="A8A-g2-eNr"/>
-                                <constraint firstAttribute="height" constant="130" id="Dqw-ds-rco"/>
+                                <constraint firstAttribute="height" constant="125" id="Dqw-ds-rco"/>
                             </constraints>
                         </imageView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eVV-d9-xuW">
-                            <rect key="frame" x="49" y="247" width="316" height="51"/>
+                            <rect key="frame" x="49" y="242" width="316" height="51"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="لا يوجد اتصال بالانترنت" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KYt-jv-kX0">
                                     <rect key="frame" x="80.5" y="0.0" width="155.5" height="20.5"/>
